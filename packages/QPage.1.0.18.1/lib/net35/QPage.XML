@@ -1,0 +1,798 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QPage</name>
+    </assembly>
+    <members>
+        <member name="T:QPage.HttpContextExtensions">
+            <summary>
+            HttpContext 扩展方法
+            </summary>
+            <summary>
+            HttpContext 扩展方法
+            </summary>
+        </member>
+        <member name="M:QPage.HttpContextExtensions.ResponseStaticFile(System.Web.HttpContext,System.String[])">
+            <summary>
+            返回静态文件
+            </summary>
+            <param name="c"></param>
+            <param name="extensions">允许的后缀名</param>
+        </member>
+        <member name="M:QPage.HttpContextExtensions.CheckNotModified(System.Web.HttpContext,System.DateTime)">
+            <summary>
+            检查请求头的 If-Modified-Since
+            如果大于或等于 lastModified 参数，返回 304 NotModified，终止线程
+            否则在响应头中添加 Last-Modified
+            </summary>
+            <param name="c"></param>
+            <param name="lastModified"></param>
+        </member>
+        <member name="M:QPage.HttpContextExtensions.Redirect(System.Web.HttpContext,QPage.UrlMapper)">
+            <summary>
+            url 重定向
+            </summary>
+            <param name="c"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:QPage.HttpContextExtensions.Rewrite(System.Web.HttpContext,QPage.UrlMapper,System.String[])">
+            <summary>
+            url 重写
+            </summary>
+            <param name="c"></param>
+            <param name="mapper"></param>
+            <param name="extensions"></param>
+        </member>
+        <member name="T:QPage.HttpRequestExtensions">
+            <summary>
+            HttpRequest 扩展方法
+            </summary>
+        </member>
+        <member name="M:QPage.HttpRequestExtensions.IsNotMobile(System.Web.HttpRequest)">
+            <summary>
+            不是手机访问
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.HttpRequestExtensions.IsMobile(System.Web.HttpRequest)">
+            <summary>
+            是否手机访问
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QPage.RequestParametersException">
+            <summary>
+            请求参数错误
+            </summary>
+        </member>
+        <member name="M:QPage.RequestParametersException.#ctor(System.String,System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:QPage.RequestParametersException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            初始化
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:QPage.QBase">
+            <summary>
+            QPage 基类
+            </summary>
+        </member>
+        <member name="P:QPage.QBase.document">
+            <summary>
+            页面文档
+            </summary>
+        </member>
+        <member name="P:QPage.QBase.q">
+            <summary>
+            查询委托
+            </summary>
+        </member>
+        <member name="M:QPage.QBase.Parse(System.String)">
+            <summary>
+            解析 html 文件
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QPage.QControl">
+            <summary>
+            QPage 控件
+            </summary>
+        </member>
+        <member name="P:QPage.QControl.ViewFile">
+            <summary>
+            视图文件
+            </summary>
+        </member>
+        <member name="M:QPage.QControl.Process(Less.Html.Qfun)">
+            <summary>
+            执行控件
+            </summary>
+            <param name="pageQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QControl.Control_Load">
+            <summary>
+            视图加载后执行
+            </summary>
+        </member>
+        <member name="M:QPage.QControl.Merge(Less.Html.Qfun)">
+            <summary>
+            合并到页面
+            </summary>
+            <param name="pageQ"></param>
+        </member>
+        <member name="T:QPage.QPage">
+            <summary>
+            QPage 页面
+            </summary>
+        </member>
+        <member name="P:QPage.QPage.Context">
+            <summary>
+            http 上下文
+            </summary>
+        </member>
+        <member name="P:QPage.QPage.Request">
+            <summary>
+            http 请求
+            </summary>
+        </member>
+        <member name="P:QPage.QPage.Response">
+            <summary>
+            http 响应
+            </summary>
+        </member>
+        <member name="P:QPage.QPage.SessionIdCookieName">
+            <summary>
+            保存在 cookies 中的会话状态名称
+            </summary>
+        </member>
+        <member name="P:QPage.QPage.GetStateFunc">
+            <summary>
+            获取会话状态方法
+            </summary>
+        </member>
+        <member name="P:QPage.QPage.UpdateStateAction">
+            <summary>
+            更新会话状态方法
+            </summary>
+        </member>
+        <member name="P:QPage.QPage.IsReusable">
+            <summary>
+            QPage 不重用实例
+            </summary>
+        </member>
+        <member name="M:QPage.QPage.#ctor">
+            <summary>
+            创建实例
+            </summary>
+        </member>
+        <member name="M:QPage.QPage.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            处理请求
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:QPage.QPage.Page_Load">
+            <summary>
+            视图加载后执行
+            </summary>
+        </member>
+        <member name="M:QPage.QPage.Page_PreLoad">
+            <summary>
+            视图加载前执行
+            </summary>
+        </member>
+        <member name="M:QPage.QPage.Page_Init">
+            <summary>
+            请求上下文初始化后执行
+            </summary>
+        </member>
+        <member name="M:QPage.QPage.MergeHeadAndBottom(Less.Html.Document)">
+            <summary>
+            合并页头和页脚
+            </summary>
+            <param name="child"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.MergeBody(Less.Html.Document)">
+            <summary>
+            合并页面主体
+            </summary>
+            <param name="child"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.appendHidden(System.Object,System.Object)">
+            <summary>
+            在 body 元素中添加 hidden input
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:QPage.QPage.title(System.String)">
+            <summary>
+            设置页面标题
+            </summary>
+            <param name="title"></param>
+        </member>
+        <member name="M:QPage.QPage.BindView(System.String)">
+            <summary>
+            绑定视图
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:QPage.QPage.BindView(System.String,System.Func{Less.Html.Document,Less.Html.Document})">
+            <summary>
+            绑定视图
+            </summary>
+            <param name="file"></param>
+            <param name="mergeBody"></param>
+        </member>
+        <member name="M:QPage.QPage.BindView(System.String,System.Func{Less.Html.Document,Less.Html.Document},System.Func{Less.Html.Document,Less.Html.Document})">
+            <summary>
+            绑定视图
+            </summary>
+            <param name="file"></param>
+            <param name="mergeHeadAndBottom"></param>
+            <param name="mergeBody"></param>
+        </member>
+        <member name="M:QPage.QPage.GetDateTimeNullable(System.String)">
+            <summary>
+            获取 DateTime? 类型请求参数
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.GetDateTime(System.String)">
+            <summary>
+            获取 DateTime 类型请求参数
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.GetBoolNullable(System.String)">
+            <summary>
+            获取 bool? 类型请求参数
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.GetBool(System.String)">
+            <summary>
+            获取 bool 类型请求参数
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.GetLongNullable(System.String)">
+            <summary>
+            获取 long? 类型请求参数
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.GetLong(System.String)">
+            <summary>
+            获取 long 类型请求参数
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.GetIntNullable(System.String)">
+            <summary>
+            获取 int? 类型请求参数
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.GetInt(System.String)">
+            <summary>
+            获取 int 类型请求参数
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.GetString(System.String)">
+            <summary>
+            获取 string 类型请求参数
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.GetGuidFromBase64(System.String)">
+            <summary>
+            获取 Guid 类型请求参数
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.GetParam``1(System.String,System.Func{System.String,``0})">
+            <summary>
+            获取请求参数 并执行指定的转换
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.HasParam(System.String)">
+            <summary>
+            是否存在指定的请求参数
+            </summary>
+            <param name="key">参数名</param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.IsPost">
+            <summary>
+            是否 POST 方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.IsGet">
+            <summary>
+            是否 GET 方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.PageNotFound">
+            <summary>
+            404 page not found
+            </summary>
+        </member>
+        <member name="M:QPage.QPage.Image(System.DateTime,System.IO.Stream,Less.Network.MimeType)">
+            <summary>
+            输出图片
+            </summary>
+            <param name="lastModified"></param>
+            <param name="stream"></param>
+            <param name="mimeType"></param>
+        </member>
+        <member name="M:QPage.QPage.Json(System.Object)">
+            <summary>
+            输出 json 结束响应
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:QPage.QPage.End">
+            <summary>
+            结束响应
+            </summary>
+        </member>
+        <member name="M:QPage.QPage.Redirect(System.String,System.Object[])">
+            <summary>
+            跳转指定的链接 结束响应
+            </summary>
+            <param name="url"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:QPage.QPage.Redirect(System.String)">
+            <summary>
+            跳转指定的链接 结束响应
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:QPage.QPage.Execute(QPage.QPage)">
+            <summary>
+            执行页面 结束响应
+            </summary>
+            <param name="page"></param>
+        </member>
+        <member name="M:QPage.QPage.Write(System.String)">
+            <summary>
+            写入响应流
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:QPage.QPage.GetState(System.String)">
+            <summary>
+            获取会话状态值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QPage.SetState(System.String,System.Object)">
+            <summary>
+            设置会话状态值
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:QPage.QueryExtensions">
+            <summary>
+            Query 扩展方法
+            </summary>
+        </member>
+        <member name="M:QPage.QueryExtensions.select(Less.Html.Query,System.Object)">
+            <summary>
+            选择下拉菜单的选项
+            </summary>
+            <param name="query"></param>
+            <param name="value">选项的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QueryExtensions.select(Less.Html.Query,System.String)">
+            <summary>
+            选择下拉菜单的选项
+            </summary>
+            <param name="query"></param>
+            <param name="value">选项的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QueryExtensions.bind``1(Less.Html.Query,System.Collections.Generic.IEnumerable{``0},System.Action{Less.Html.Query,``0})">
+            <summary>
+            绑定数据
+            </summary>
+            <typeparam name="T">数据类型</typeparam>
+            <param name="query"></param>
+            <param name="data">数据</param>
+            <param name="action">每次枚举数据的绑定操作</param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QueryExtensions.bind``1(Less.Html.Query,System.Collections.Generic.IEnumerable{``0},System.Int32,System.Action{Less.Html.Query,``0})">
+            <summary>
+            绑定数据
+            </summary>
+            <typeparam name="T">数据类型</typeparam>
+            <param name="query"></param>
+            <param name="data">数据</param>
+            <param name="index">标签的起始索引</param>
+            <param name="action">每次枚举数据的绑定操作</param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QueryExtensions.appendCheckBox(Less.Html.Query,System.Object,System.String,System.Boolean,System.Action{Less.Html.Query})">
+            <summary>
+            添加 checkbox input 元素
+            </summary>
+            <param name="query"></param>
+            <param name="value"></param>
+            <param name="title"></param>
+            <param name="chked"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QueryExtensions.appendHidden(Less.Html.Query,System.Object)">
+            <summary>
+            添加 hidden input 元素
+            </summary>
+            <param name="query"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QueryExtensions.appendHidden(Less.Html.Query,System.Object,System.Object)">
+            <summary>
+            添加 hidden input 元素
+            </summary>
+            <param name="query"></param>
+            <param name="id"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QueryExtensions.appendHidden(Less.Html.Query,System.Object,System.Object,System.Action{Less.Html.Query})">
+            <summary>
+            添加 hidden input 元素
+            </summary>
+            <param name="query"></param>
+            <param name="id"></param>
+            <param name="value"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QueryExtensions.prependOption(Less.Html.Query,System.Object,System.Object)">
+            <summary>
+            在子元素开头添加 option 元素
+            </summary>
+            <param name="query"></param>
+            <param name="value"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QueryExtensions.appendOption(Less.Html.Query,System.Object,System.Object)">
+            <summary>
+            在子元素末尾添加 option 元素
+            </summary>
+            <param name="query"></param>
+            <param name="value"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QueryExtensions.appendOption(Less.Html.Query,System.Object,System.Object,System.Boolean)">
+            <summary>
+            在子元素末尾添加 option 元素
+            </summary>
+            <param name="query"></param>
+            <param name="value"></param>
+            <param name="text"></param>
+            <param name="selected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QueryExtensions.appendOption(Less.Html.Query,System.Object,System.Object,System.Action{Less.Html.Query})">
+            <summary>
+            在子元素末尾添加 option 元素
+            </summary>
+            <param name="query"></param>
+            <param name="value"></param>
+            <param name="text"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.QueryExtensions.appendOption(Less.Html.Query,System.Object,System.Object,System.Boolean,System.Action{Less.Html.Query})">
+            <summary>
+            在子元素末尾添加 option 元素
+            </summary>
+            <param name="query"></param>
+            <param name="value"></param>
+            <param name="text"></param>
+            <param name="selected"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QPage.SessionState">
+            <summary>
+            会话状态
+            </summary>
+        </member>
+        <member name="P:QPage.SessionState.States">
+            <summary>
+            状态键值
+            </summary>
+        </member>
+        <member name="M:QPage.SessionState.#ctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:QPage.SessionState.FromJson(System.String)">
+            <summary>
+            从 json 创建实例
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.SessionState.ToJson">
+            <summary>
+            输出 json
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:QPage.StringExtensions">
+            <summary>
+            string 扩展方法
+            </summary>
+        </member>
+        <member name="M:QPage.StringExtensions.ToPhysicalPath(System.String)">
+            <summary>
+            根据虚拟路径获取物理路径
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QPage.UrlMapper">
+            <summary>
+            url 映射器
+            </summary>
+        </member>
+        <member name="P:QPage.UrlMapper.Final">
+            <summary>
+            最终映射器
+            </summary>
+        </member>
+        <member name="P:QPage.UrlMapper.Children">
+            <summary>
+            子映射器
+            </summary>
+        </member>
+        <member name="M:QPage.UrlMapper.#ctor">
+            <summary>
+            创建一个空映射器
+            </summary>
+        </member>
+        <member name="M:QPage.UrlMapper.#ctor(System.Func{System.Uri,System.String})">
+            <summary>
+            创建一个无条件的映射器
+            </summary>
+            <param name="func"></param>
+        </member>
+        <member name="M:QPage.UrlMapper.#ctor(System.Func{System.Uri,System.String},System.Boolean)">
+            <summary>
+            创建一个无条件的映射器
+            </summary>
+            <param name="func"></param>
+            <param name="final"></param>
+        </member>
+        <member name="M:QPage.UrlMapper.#ctor(System.Func{System.Uri,System.Boolean},System.Func{System.Uri,System.String})">
+            <summary>
+            初始化
+            </summary>
+            <param name="condition"></param>
+            <param name="func"></param>
+        </member>
+        <member name="M:QPage.UrlMapper.#ctor(System.Func{System.Uri,System.Boolean},System.Func{System.Uri,System.String},System.Boolean)">
+            <summary>
+            初始化
+            </summary>
+            <param name="condition"></param>
+            <param name="func"></param>
+            <param name="final"></param>
+        </member>
+        <member name="M:QPage.UrlMapper.Map(System.Uri)">
+            <summary>
+            映射
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QPage.MappingResult">
+            <summary>
+            url 映射结果
+            </summary>
+        </member>
+        <member name="P:QPage.MappingResult.Url">
+            <summary>
+            url
+            </summary>
+        </member>
+        <member name="P:QPage.MappingResult.Finished">
+            <summary>
+            是否完成映射
+            </summary>
+        </member>
+        <member name="M:QPage.MappingResult.#ctor(System.Uri)">
+            <summary>
+            初始化
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:QPage.MappingResult.#ctor(System.Uri,System.String,System.Boolean)">
+            <summary>
+            初始化
+            </summary>
+            <param name="url"></param>
+            <param name="relative"></param>
+            <param name="finished"></param>
+        </member>
+        <member name="T:QPage.Condition">
+            <summary>
+            条件映射器
+            仅做条件判断，不改变 url
+            </summary>
+        </member>
+        <member name="M:QPage.Condition.#ctor(System.Func{System.Uri,System.Boolean})">
+            <summary>
+            初始化
+            </summary>
+            <param name="condition"></param>
+        </member>
+        <member name="T:QPage.HttpResponseExtensions">
+            <summary>
+            HttpResponse 扩展方法
+            </summary>
+        </member>
+        <member name="M:QPage.HttpResponseExtensions.NotModified(System.Web.HttpResponse)">
+            <summary>
+            304 Not Modified
+            </summary>
+            <param name="r"></param>
+        </member>
+        <member name="M:QPage.HttpResponseExtensions.PageNotFound(System.Web.HttpResponse)">
+            <summary>
+            404 page not found
+            </summary>
+            <param name="r"></param>
+        </member>
+        <member name="T:QPage.BlockUrl">
+            <summary>
+            阻止访问映射器
+            </summary>
+        </member>
+        <member name="M:QPage.BlockUrl.#ctor(System.Func{System.Uri,System.Boolean})">
+            <summary>
+            初始化
+            </summary>
+            <param name="condition"></param>
+        </member>
+        <member name="T:QPage.DefaultPage">
+            <summary>
+            默认页映射器
+            </summary>
+        </member>
+        <member name="M:QPage.DefaultPage.#ctor(System.Func{System.Uri,System.Boolean},System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="condition"></param>
+            <param name="path"></param>
+        </member>
+        <member name="T:QPage.UriExtensions">
+            <summary>
+            Uri 扩展方法
+            </summary>
+        </member>
+        <member name="M:QPage.UriExtensions.MatchRoot(System.Uri,System.String[])">
+            <summary>
+            是否依次匹配指定的目录名
+            并且在指定目录名的根目录
+            </summary>
+            <param name="uri"></param>
+            <param name="directories"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.UriExtensions.Match(System.Uri,System.Int32,System.String)">
+            <summary>
+            是否匹配指定索引处的目录名
+            </summary>
+            <param name="uri"></param>
+            <param name="index">指定的索引</param>
+            <param name="dir">目录名</param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.UriExtensions.Match(System.Uri,System.String[])">
+            <summary>
+            是否依次匹配指定的目录名
+            </summary>
+            <param name="uri"></param>
+            <param name="directories"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.UriExtensions.GetDirCount(System.Uri)">
+            <summary>
+            获取 uri 目录数
+            </summary>
+            <param name="uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.UriExtensions.GetDir(System.Uri,System.Int32)">
+            <summary>
+            获取 uri 指定索引的目录名
+            </summary>
+            <param name="uri"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QPage.UriExtensions.IsHostRoot(System.Uri,System.String)">
+            <summary>
+            是否主机根目录
+            </summary>
+            <param name="url"></param>
+            <param name="host"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QPage.View">
+            <summary>
+            页面视图
+            </summary>
+        </member>
+        <member name="P:QPage.View.File">
+            <summary>
+            文件虚拟地址
+            </summary>
+        </member>
+        <member name="P:QPage.View.MergeHeadAndBottom">
+            <summary>
+            合并页头和页脚
+            </summary>
+        </member>
+        <member name="P:QPage.View.MergeBody">
+            <summary>
+            合并页面主体
+            </summary>
+        </member>
+        <member name="M:QPage.View.#ctor(System.String,System.Func{Less.Html.Document,Less.Html.Document},System.Func{Less.Html.Document,Less.Html.Document})">
+            <summary>
+            初始化
+            </summary>
+            <param name="file"></param>
+            <param name="mergeHeadAndBottom"></param>
+            <param name="mergeBody"></param>
+        </member>
+    </members>
+</doc>

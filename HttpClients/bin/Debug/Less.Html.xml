@@ -1,0 +1,1506 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Less.Html</name>
+    </assembly>
+    <members>
+        <member name="T:Less.Html.AttributeReader">
+            <summary>
+            属性阅读器
+            </summary>
+        </member>
+        <member name="P:Less.Html.AttributeReader.Pattern">
+            <summary>
+            正则表达式
+            </summary>
+        </member>
+        <member name="P:Less.Html.AttributeReader.CloseTagName">
+            <summary>
+            正在读取的闭标签
+            </summary>
+        </member>
+        <member name="P:Less.Html.AttributeReader.Element">
+            <summary>
+            正在读取属性的元素
+            </summary>
+        </member>
+        <member name="M:Less.Html.AttributeReader.#cctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:Less.Html.AttributeReader.Set(System.String,System.Int32)">
+            <summary>
+            设置正在读取的闭标签
+            </summary>
+            <param name="closeTagName"></param>
+            <param name="closeTagIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.AttributeReader.Set(Less.Html.Element)">
+            <summary>
+            设置正在读取的开标签
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.AttributeReader.Read">
+            <summary>
+            阅读
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.AttributeReader.SetAttribute(System.Text.RegularExpressions.Match,System.Int32)">
+             <summary>
+             设置属性
+             </summary>
+            <param name="match"></param>
+            <param name="offset"></param>
+        </member>
+        <member name="T:Less.Html.CloseStyleReader">
+            <summary>
+            style 闭标签阅读器
+            </summary>
+        </member>
+        <member name="P:Less.Html.CloseStyleReader.Pattern">
+            <summary>
+            正则表达式
+            </summary>
+        </member>
+        <member name="M:Less.Html.CloseStyleReader.#cctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:Less.Html.CloseStyleReader.Read">
+            <summary>
+            阅读
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.CloseScriptReader">
+            <summary>
+            script 闭标签阅读器
+            </summary>
+        </member>
+        <member name="P:Less.Html.CloseScriptReader.Pattern">
+            <summary>
+            正则表达式
+            </summary>
+        </member>
+        <member name="M:Less.Html.CloseScriptReader.#cctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:Less.Html.CloseScriptReader.Read">
+            <summary>
+            阅读
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.Context">
+            <summary>
+            Html 阅读器上下文
+            </summary>
+        </member>
+        <member name="P:Less.Html.Context.CurrentNode">
+            <summary>
+            当前正在读取的节点
+            </summary>
+        </member>
+        <member name="P:Less.Html.Context.Document">
+            <summary>
+            整个 html 文档元素
+            </summary>
+        </member>
+        <member name="P:Less.Html.Context.MarkStack">
+            <summary>
+            标签标记栈 只包括开标签
+            </summary>
+        </member>
+        <member name="P:Less.Html.Context.Previous">
+            <summary>
+            上一个标签标记 包括开标签和闭标签
+            </summary>
+        </member>
+        <member name="P:Less.Html.Context.Position">
+            <summary>
+            当前正在读取的位置
+            </summary>
+        </member>
+        <member name="M:Less.Html.Context.#ctor(System.String,System.Func{System.String,Less.Html.Document})">
+            <summary>
+            创建实例
+            </summary>
+            <param name="content"></param>
+            <param name="parse"></param>
+        </member>
+        <member name="T:Less.Html.EndingReader">
+            <summary>
+            文档结束阅读器
+            </summary>
+        </member>
+        <member name="M:Less.Html.EndingReader.Read">
+            <summary>
+            阅读
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.HtmlParser">
+            <summary>
+            html 解析器
+            </summary>
+        </member>
+        <member name="M:Less.Html.HtmlParser.Query(System.String,System.Boolean)">
+            <summary>
+            解析 html
+            返回选择器
+            </summary>
+            <param name="content">要解析的 html</param>
+            <param name="cache">是否使用缓存</param>
+            <returns>jQuery 风格的 css 选择器</returns>
+        </member>
+        <member name="M:Less.Html.HtmlParser.Query(System.String)">
+            <summary>
+            解析 html
+            返回选择器
+            </summary>
+            <param name="content">要解析的 html</param>
+            <returns>jQuery 风格的 css 选择器</returns>
+        </member>
+        <member name="M:Less.Html.HtmlParser.Parse(System.String,System.Boolean)">
+            <summary>
+            解析 html
+            返回文档
+            </summary>
+            <param name="content">要解析的 html</param>
+            <param name="cache">是否使用缓存</param>
+            <returns>DOM 文档</returns>
+            <exception cref="T:System.ArgumentNullException">content 不能为 null</exception>
+        </member>
+        <member name="M:Less.Html.HtmlParser.Parse(System.String)">
+            <summary>
+            解析 html
+            返回文档
+            </summary>
+            <param name="content">要解析的 html</param>
+            <returns>DOM 文档</returns>
+        </member>
+        <member name="T:Less.Html.ReaderBase">
+            <summary>
+            阅读器 抽象类
+            </summary>
+        </member>
+        <member name="P:Less.Html.ReaderBase.CurrentNode">
+            <summary>
+            当前正在阅读的节点
+            </summary>
+        </member>
+        <member name="P:Less.Html.ReaderBase.MarkStack">
+            <summary>
+            标签标记栈 只包括开标签
+            </summary>
+        </member>
+        <member name="P:Less.Html.ReaderBase.Previous">
+            <summary>
+            上一个标签标记 包括开标签和闭标签
+            </summary>
+        </member>
+        <member name="P:Less.Html.ReaderBase.Position">
+            <summary>
+            当前正在阅读的位置
+            </summary>
+        </member>
+        <member name="P:Less.Html.ReaderBase.Document">
+            <summary>
+            文档
+            </summary>
+        </member>
+        <member name="P:Less.Html.ReaderBase.Content">
+            <summary>
+            文档内容
+            </summary>
+        </member>
+        <member name="P:Less.Html.ReaderBase.Context">
+            <summary>
+            阅读器上下文
+            </summary>
+        </member>
+        <member name="M:Less.Html.ReaderBase.Read">
+            <summary>
+            执行阅读
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.ReaderBase.Pass``1">
+            <summary>
+            当前阅读器任务完成 把工作交给下一个阅读器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.ReaderBase.Ascend(System.Text.RegularExpressions.Capture)">
+            <summary>
+            提升阅读位置
+            </summary>
+            <param name="capture"></param>
+        </member>
+        <member name="M:Less.Html.ReaderBase.Push(System.String,System.Int32)">
+            <summary>
+            把开标签加入标记栈
+            </summary>
+            <param name="name"></param>
+            <param name="position"></param>
+        </member>
+        <member name="M:Less.Html.ReaderBase.AddText(System.Text.RegularExpressions.Match)">
+            <summary>
+            加入文本节点
+            </summary>
+            <param name="tag">现匹配的标签</param>
+        </member>
+        <member name="T:Less.Html.TagMark">
+            <summary>
+            标签标记
+            </summary>
+        </member>
+        <member name="P:Less.Html.TagMark.Name">
+            <summary>
+            标签名
+            </summary>
+        </member>
+        <member name="P:Less.Html.TagMark.Position">
+            <summary>
+            位置 标签结束时 解析器扫描到的位置 等于元素的 End + 1
+            </summary>
+        </member>
+        <member name="M:Less.Html.TagMark.#ctor(System.String,System.Int32)">
+            <summary>
+            创建实例
+            </summary>
+            <param name="name"></param>
+            <param name="position"></param>
+        </member>
+        <member name="T:Less.Html.TagReader">
+            <summary>
+            标签阅读器
+            </summary>
+        </member>
+        <member name="P:Less.Html.TagReader.Pattern">
+            <summary>
+            正则表达式
+            </summary>
+        </member>
+        <member name="M:Less.Html.TagReader.#cctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:Less.Html.TagReader.Read">
+            <summary>
+            阅读
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.Attr">
+            <summary>
+            属性
+            </summary>
+        </member>
+        <member name="P:Less.Html.Attr.NameBegin">
+            <summary>
+            属性名开始索引
+            </summary>
+        </member>
+        <member name="P:Less.Html.Attr.NameLength">
+            <summary>
+            属性名长度
+            </summary>
+        </member>
+        <member name="P:Less.Html.Attr.ValueBegin">
+            <summary>
+            属性值开始索引
+            </summary>
+        </member>
+        <member name="P:Less.Html.Attr.ValueLength">
+            <summary>
+            属性值长度
+            </summary>
+        </member>
+        <member name="P:Less.Html.Attr.nodeName">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="P:Less.Html.Attr.name">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="P:Less.Html.Attr.value">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="M:Less.Html.Attr.cloneNode(System.Boolean)">
+            <summary>
+            克隆节点
+            </summary>
+            <param name="deep"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Attr.OnSetIndex(System.Int32)">
+            <summary>
+            设置新的索引
+            </summary>
+            <param name="offset"></param>
+        </member>
+        <member name="T:Less.Html.Comment">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="P:Less.Html.Comment.NodeName">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="P:Less.Html.Comment.nodeName">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="P:Less.Html.Comment.nodeValue">
+            <summary>
+            节点值
+            </summary>
+        </member>
+        <member name="M:Less.Html.Comment.cloneNode(System.Boolean)">
+            <summary>
+            克隆节点
+            </summary>
+            <param name="deep"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.Document">
+            <summary>
+            文档
+            </summary>
+        </member>
+        <member name="P:Less.Html.Document.Content">
+            <summary>
+            文档内容
+            </summary>
+        </member>
+        <member name="P:Less.Html.Document.Parse">
+            <summary>
+            html 解析委托
+            </summary>
+        </member>
+        <member name="P:Less.Html.Document.nodeName">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="P:Less.Html.Document.links">
+            <summary>
+            返回对文档中所有 area 和 a 元素
+            </summary>
+        </member>
+        <member name="P:Less.Html.Document.all">
+            <summary>
+            所有元素
+            </summary>
+        </member>
+        <member name="M:Less.Html.Document.ToString">
+            <summary>
+            输出字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Document.cloneNode(System.Boolean)">
+            <summary>
+            克隆节点
+            </summary>
+            <param name="deep"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Document.getElementById(System.String)">
+            <summary>
+            返回对拥有指定 id 的第一个元素
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Document.getElementsByName(System.String)">
+            <summary>
+            返回带有指定名称的元素
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Document.getElementsByTagName(System.String)">
+            <summary>
+            返回带有指定标签名的元素
+            </summary>
+            <param name="tagName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Document.createElement(System.String)">
+            <summary>
+            创建元素
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Document.OnAppendChild(Less.Html.Node)">
+            <summary>
+            添加子节点时执行
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:Less.Html.Document.GetAppendIndex">
+            <summary>
+            获取文档的子节点插入索引
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.Element">
+            <summary>
+            元素
+            </summary>
+        </member>
+        <member name="P:Less.Html.Element.IsTable">
+            <summary>
+            是否表格型元素
+            </summary>
+        </member>
+        <member name="P:Less.Html.Element.IsEnum">
+            <summary>
+            是否枚举型元素
+            </summary>
+        </member>
+        <member name="P:Less.Html.Element.IsSingle">
+            <summary>
+            是否单标签元素
+            </summary>
+        </member>
+        <member name="P:Less.Html.Element.nodeName">
+            <summary>
+            元素名称
+            </summary>
+        </member>
+        <member name="P:Less.Html.Element.style">
+            <summary>
+            style 属性
+            </summary>
+        </member>
+        <member name="P:Less.Html.Element.id">
+            <summary>
+            元素 id
+            </summary>
+        </member>
+        <member name="P:Less.Html.Element.className">
+            <summary>
+            class 属性
+            </summary>
+        </member>
+        <member name="P:Less.Html.Element.textContent">
+            <summary>
+            设置或返回节点及其后代的文本内容
+            </summary>
+        </member>
+        <member name="P:Less.Html.Element.innerHTML">
+            <summary>
+            元素内容
+            </summary>
+        </member>
+        <member name="P:Less.Html.Element.attributes">
+            <summary>
+            属性集合
+            </summary>
+        </member>
+        <member name="M:Less.Html.Element.hasAttributes">
+            <summary>
+            元素是否拥有属性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Element.getAttribute(System.String)">
+            <summary>
+            返回元素节点的指定属性值
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Element.getAttributeNode(System.String)">
+            <summary>
+            返回指定的属性节点
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Element.setAttribute(System.String,System.String)">
+            <summary>
+            把指定属性设置或更改为指定值
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Less.Html.Element.setAttributeNode(Less.Html.Attr)">
+            <summary>
+            设置或更改指定属性节点
+            </summary>
+            <param name="attr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Element.removeAttribute(System.String)">
+            <summary>
+            从元素中移除指定属性
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Less.Html.Element.removeAttributeNode(Less.Html.Attr)">
+            <summary>
+            移除指定的属性节点
+            </summary>
+            <param name="attr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Element.cloneNode(System.Boolean)">
+            <summary>
+            克隆节点
+            </summary>
+            <param name="deep"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Element.EnumerateAllElements">
+            <summary>
+            枚举本元素和所有的后代元素
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Element.GetAllElements">
+            <summary>
+            获取本元素和所有的后代元素
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Element.GetAppendIndex">
+            <summary>
+            获取子节点插入索引
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Element.OnRemovedChild(Less.Html.Document,Less.Html.Node[])">
+            <summary>
+            在移除子节点之后调用 此时子节点会属于一个新的文档
+            </summary>
+            <param name="document">移除节点的所属文档</param>
+            <param name="nodes">已经移除的节点</param>
+        </member>
+        <member name="M:Less.Html.Element.OnRemoveChild(Less.Html.Node)">
+            <summary>
+            在移除子节点时执行
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:Less.Html.Element.OnInsertBefore(Less.Html.Node,Less.Html.Node)">
+            <summary>
+            在插入子节点时执行
+            </summary>
+            <param name="newItem"></param>
+            <param name="existingItem"></param>
+        </member>
+        <member name="M:Less.Html.Element.OnAppendChild(Less.Html.Node)">
+            <summary>
+            在添加子节点时执行
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:Less.Html.Element.OnSelfCheck">
+            <summary>
+            自检函数
+            </summary>
+        </member>
+        <member name="M:Less.Html.Element.OnSetIndex(System.Int32)">
+            <summary>
+            设置新的索引
+            </summary>
+            <param name="offset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Element.OnShiftNext(System.Int32)">
+            <summary>
+            作为下一个节点偏移索引
+            </summary>
+            <param name="offset"></param>
+        </member>
+        <member name="M:Less.Html.Element.OnShiftParent(System.Int32)">
+            <summary>
+            作为父节点偏移索引
+            </summary>
+            <param name="offset"></param>
+        </member>
+        <member name="M:Less.Html.Element.OnSetOwnerDocument(Less.Html.Document)">
+            <summary>
+            设置元素的所属文档
+            </summary>
+            <param name="document"></param>
+        </member>
+        <member name="T:Less.Html.ElementCollection">
+            <summary>
+            元素集合
+            </summary>
+        </member>
+        <member name="P:Less.Html.ElementCollection.Item(System.Int32)">
+            <summary>
+            指定索引的元素
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.ElementCollection.op_Implicit(Less.Html.ElementCollection)~Less.Html.Element[]">
+            <summary>
+            从 ElementCollection 到 Element[] 的隐式转换
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Less.Html.ElementCollection.GetEnumerator">
+            <summary>
+            迭代器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.IndexOnClass">
+            <summary>
+            元素 class 索引
+            </summary>
+        </member>
+        <member name="M:Less.Html.IndexOnClass.#ctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="T:Less.Html.IndexOnId">
+            <summary>
+            元素 class 索引
+            </summary>
+        </member>
+        <member name="M:Less.Html.IndexOnId.#ctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="T:Less.Html.IndexOnName">
+            <summary>
+            元素 class 索引
+            </summary>
+        </member>
+        <member name="M:Less.Html.IndexOnName.#ctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="T:Less.Html.IndexOnTagName">
+            <summary>
+            元素 class 索引
+            </summary>
+        </member>
+        <member name="M:Less.Html.IndexOnTagName.#ctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="T:Less.Html.NamedNodeMap`1">
+            <summary>
+            节点集合
+            命名节点映射表
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Less.Html.NamedNodeMap`1.Item(System.Int32)">
+            <summary>
+            指定位置的节点
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Less.Html.NamedNodeMap`1.Item(System.String)">
+            <summary>
+            指定名称的节点
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.NamedNodeMap`1.getNamedItem(System.String)">
+            <summary>
+            获取节点
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.NamedNodeMap`1.removeNamedItem(System.String)">
+            <summary>
+            移除指定的节点
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.NamedNodeMap`1.setNamedItem(`0)">
+            <summary>
+            设置节点
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.NamedNodeMap`1.GetEnumerator">
+            <summary>
+            迭代器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.Node">
+            <summary>
+            节点
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.Pattern">
+            <summary>
+            正则表达式
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.SelfChecking">
+            <summary>
+            是否开启自检程序
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.AllNodesCount">
+            <summary>
+            本节点和所有的后代节点的总数
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.ChildNodeList">
+            <summary>
+            子节点
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.Content">
+            <summary>
+            节点内容
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.Begin">
+            <summary>
+            开始位置
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.End">
+            <summary>
+            结束位置
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.ownerDocument">
+            <summary>
+            所属文档
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.nodeName">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.nodeValue">
+            <summary>
+            节点值
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.parentNode">
+            <summary>
+            父节点
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.childNodes">
+            <summary>
+            子节点
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.firstChild">
+            <summary>
+            第一个子节点
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.lastChild">
+            <summary>
+            最后一个子节点
+            </summary>
+        </member>
+        <member name="P:Less.Html.Node.nextSibling">
+            <summary>
+            同层级的下一个节点
+            </summary>
+        </member>
+        <member name="M:Less.Html.Node.hasChildNodes">
+            <summary>
+            是否有子节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Node.ToString">
+            <summary>
+            输出字面量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Node.cloneNode">
+            <summary>
+            克隆节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Node.cloneNode(System.Boolean)">
+            <summary>
+            克隆节点
+            </summary>
+            <param name="deep"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Node.removeChild(Less.Html.Node)">
+            <summary>
+            从元素中移除子节点
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Node.insertBefore(Less.Html.Node,Less.Html.Node)">
+            <summary>
+            在指定的已有的子节点之前插入新节点。
+            </summary>
+            <param name="newItem"></param>
+            <param name="existingItem"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Node.appendChild(Less.Html.Node)">
+            <summary>
+            添加子节点
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Node.SetIndex(System.Int32)">
+            <summary>
+            设置新的索引
+            </summary>
+            <param name="offset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Node.EnumerateAllNodes">
+            <summary>
+            枚举本节点和所有的后代节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Node.GetAllNodes">
+            <summary>
+            获取本节点和所有的后代节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Node.GetAppendIndex">
+            <summary>
+            获取节点的插入索引
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Node.OnRemovedChild(Less.Html.Document,Less.Html.Node[])">
+            <summary>
+            在移除子节点之后调用 此时子节点会属于一个新的文档
+            </summary>
+            <param name="document">移除节点的所属文档</param>
+            <param name="nodes">已经移除的节点</param>
+        </member>
+        <member name="M:Less.Html.Node.OnRemoveChild(Less.Html.Node)">
+            <summary>
+            在移除子节点时调用
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:Less.Html.Node.OnInsertBefore(Less.Html.Node,Less.Html.Node)">
+            <summary>
+            在插入子节点时调用
+            </summary>
+            <param name="newItem"></param>
+            <param name="existingItem"></param>
+        </member>
+        <member name="M:Less.Html.Node.OnAppendChild(Less.Html.Node)">
+            <summary>
+            在添加子节点时调用
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:Less.Html.Node.OnSelfCheck">
+            <summary>
+            自检函数
+            </summary>
+        </member>
+        <member name="M:Less.Html.Node.OnSetIndex(System.Int32)">
+            <summary>
+            设置新的索引时调用
+            </summary>
+            <param name="offset"></param>
+        </member>
+        <member name="M:Less.Html.Node.OnShiftNext(System.Int32)">
+            <summary>
+            作为下一个节点偏移索引时调用
+            </summary>
+            <param name="offset"></param>
+        </member>
+        <member name="M:Less.Html.Node.OnShiftParent(System.Int32)">
+            <summary>
+            作为父节点偏移索引时调用
+            </summary>
+            <param name="offset"></param>
+        </member>
+        <member name="M:Less.Html.Node.OnSetOwnerDocument(Less.Html.Document)">
+            <summary>
+            设置节点的所属文档时调用
+            </summary>
+            <param name="document"></param>
+        </member>
+        <member name="M:Less.Html.Node.Decode(System.String)">
+            <summary>
+            解码文本
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Node.ShiftNext(System.Int32)">
+            <summary>
+            同层级下一个节点索引偏移
+            </summary>
+            <param name="offset"></param>
+        </member>
+        <member name="M:Less.Html.Node.ShiftParent(System.Int32)">
+            <summary>
+            父节点索引偏移
+            </summary>
+            <param name="offset"></param>
+        </member>
+        <member name="T:Less.Html.SelfCheckingException">
+            <summary>
+            自检错误
+            </summary>
+        </member>
+        <member name="M:Less.Html.SelfCheckingException.#ctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:Less.Html.SelfCheckingException.#ctor(System.Exception)">
+            <summary>
+            初始化
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:Less.Html.Text">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="P:Less.Html.Text.nodeName">
+            <summary>
+            元素名称
+            </summary>
+        </member>
+        <member name="P:Less.Html.Text.nodeValue">
+            <summary>
+            节点值
+            </summary>
+        </member>
+        <member name="M:Less.Html.Text.cloneNode(System.Boolean)">
+            <summary>
+            克隆节点
+            </summary>
+            <param name="deep"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.Query">
+            <summary>
+            查询器
+            </summary>
+            <summary>
+            查询器
+            </summary>
+        </member>
+        <member name="M:Less.Html.Query.id">
+            <summary>
+            获取元素的 id 属性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Query.id(System.Object)">
+            <summary>
+            设置元素的 id 属性
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Query.id(System.String)">
+            <summary>
+            设置元素的 id 属性
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Query.selected">
+            <summary>
+            获取元素的 selected 属性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Query.selected(System.String)">
+            <summary>
+            设置元素的 selected 属性
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Query.chked">
+            <summary>
+            获取元素的 chked 属性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Query.chked(System.String)">
+            <summary>
+            设置元素的 chked 属性
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Query.title">
+            <summary>
+            获取元素的 title 属性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Query.title(System.String)">
+            <summary>
+            设置元素的 title 属性
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Query.src">
+            <summary>
+            获取元素的 src 属性
+            </summary>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.src(System.String)">
+            <summary>
+            设置元素的 src 属性
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.href">
+            <summary>
+            获取元素的 href 属性
+            </summary>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.href(System.String)">
+            <summary>
+            设置元素的 href 属性
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="P:Less.Html.Query.Item(System.Int32)">
+            <summary>
+            获取指定索引的元素
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="P:Less.Html.Query.length">
+            <summary>
+            查询到的元素数
+            </summary>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="P:Less.Html.Query.hasElement">
+            <summary>
+            是否查询到元素
+            </summary>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.css(System.String,System.String)">
+            <summary>
+            设置元素的样式
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+            <exception cref="T:System.ArgumentNullException">name 不能为 null value 不能为 null</exception>
+        </member>
+        <member name="M:Less.Html.Query.css(System.String)">
+            <summary>
+            获取元素的样式
+            </summary>
+            <param name="name">样式名称</param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+            <exception cref="T:System.ArgumentNullException">name 不能为 null</exception>
+        </member>
+        <member name="M:Less.Html.Query.addClass(System.String)">
+            <summary>
+            向元素添加一个或多个类
+            </summary>
+            <param name="classes"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+            <exception cref="T:System.ArgumentNullException">classes 不能为 null</exception>
+        </member>
+        <member name="M:Less.Html.Query.parent">
+            <summary>
+            返回元素的直接父元素
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Query.clone">
+            <summary>
+            创建元素的副本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Query.remove">
+            <summary>
+            移除元素
+            </summary>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.val">
+            <summary>
+            获取元素的 value 属性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Query.val(System.Object)">
+            <summary>
+            设置元素的 value 属性
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.val(System.String)">
+            <summary>
+            设置元素的 value 属性
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.removeAttr(System.String)">
+            <summary>
+            移除元素的属性
+            </summary>
+            <param name="name">属性名</param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.attr(System.String)">
+            <summary>
+            获取元素的属性
+            </summary>
+            <param name="name">属性名</param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.attr(System.String,System.Object)">
+            <summary>
+            设置元素的属性
+            </summary>
+            <param name="name">属性名</param>
+            <param name="value">属性值</param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.attr(System.String,System.String)">
+            <summary>
+            设置元素的属性
+            </summary>
+            <param name="name">属性名</param>
+            <param name="value">属性值</param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.find(System.String)">
+            <summary>
+            根据表达式查找元素
+            </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Query.after(Less.Html.SelectorParam[])">
+            <summary>
+            在元素之后插入内容
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.before(Less.Html.SelectorParam[])">
+            <summary>
+            在元素之前插入内容
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.prepend(Less.Html.SelectorParam[])">
+            <summary>
+            在元素的开头插入内容
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.append(Less.Html.SelectorParam[])">
+            <summary>
+            在元素的结尾插入内容
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.empty">
+            <summary>
+            删除元素的子元素
+            </summary>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.text">
+            <summary>
+            返回元素的 textContent 
+            </summary>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.text(System.Object)">
+            <summary>
+            设置元素的 textContent
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.text(System.String)">
+            <summary>
+            设置元素的 textContent
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.html">
+            <summary>
+            返回元素的 innerHTML
+            </summary>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.html(System.Object)">
+            <summary>
+            设置元素的 innerHTML
+            </summary>
+            <param name="html"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.html(Less.Html.SelectorParam)">
+            <summary>
+            设置元素的 innerHTML
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.GetEnumerator">
+            <summary>
+            获取枚举器
+            </summary>
+            <returns></returns>
+            <exception cref="T:Less.Html.SelectorParamException">选择器参数错误</exception>
+        </member>
+        <member name="M:Less.Html.Query.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            获取枚举器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.ElementExtensions">
+            <summary>
+            元素扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.Html.ElementExtensions.GetChildElements(System.Collections.Generic.IEnumerable{Less.Html.Element})">
+            <summary>
+            获取子元素
+            </summary>
+            <param name="elements"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.NodeExtensions">
+            <summary>
+            节点扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.Html.NodeExtensions.GetElements(System.Collections.Generic.IEnumerable{Less.Html.Node})">
+            <summary>
+            获取节点中的元素
+            </summary>
+            <param name="nodes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.SelectorParamException">
+            <summary>
+            选择器参数错误
+            </summary>
+        </member>
+        <member name="M:Less.Html.SelectorParamException.#ctor(System.Int32,System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="index"></param>
+            <param name="near"></param>
+        </member>
+        <member name="T:Less.Html.Qfun">
+            <summary>
+            选择器委托
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.Selector">
+            <summary>
+            选择器
+            </summary>
+        </member>
+        <member name="M:Less.Html.Selector.Bind(Less.Html.Document)">
+            <summary>
+            绑定文档
+            </summary>
+            <param name="document">文档</param>
+            <returns>jQuery 风格的 css 选择器</returns>
+            <exception cref="T:System.ArgumentNullException">document 不能为 null</exception>
+        </member>
+        <member name="M:Less.Html.Selector.Rebind">
+            <summary>
+            重新绑定同一个文档 以取得一个新的查询器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Selector.Select">
+            <summary>
+            选择元素
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Selector.Select(Less.Html.Document,System.String)">
+            <summary>
+            查询元素
+            </summary>
+            <param name="document"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Html.Selector.Select(Less.Html.Document,System.Collections.Generic.IEnumerable{Less.Html.Element},System.String)">
+            <summary>
+            查询元素
+            </summary>
+            <param name="document"></param>
+            <param name="source"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Html.SelectorParam">
+            <summary>
+            选择器参数
+            </summary>
+        </member>
+        <member name="P:Less.Html.SelectorParam.NodesValue">
+            <summary>
+            节点值
+            </summary>
+        </member>
+        <member name="P:Less.Html.SelectorParam.StringValue">
+            <summary>
+            字符串值
+            </summary>
+        </member>
+        <member name="P:Less.Html.SelectorParam.QueryValue">
+            <summary>
+            查询器值
+            </summary>
+        </member>
+        <member name="M:Less.Html.SelectorParam.#ctor(System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Less.Html.SelectorParam.#ctor(Less.Html.Node[])">
+            <summary>
+            初始化
+            </summary>
+            <param name="nodes"></param>
+        </member>
+        <member name="M:Less.Html.SelectorParam.#ctor(Less.Html.Query)">
+            <summary>
+            初始化
+            </summary>
+            <param name="query"></param>
+        </member>
+        <member name="M:Less.Html.SelectorParam.#ctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:Less.Html.SelectorParam.op_Implicit(System.String)~Less.Html.SelectorParam">
+            <summary>
+            从 string 到 SelectorParam 的隐式转换
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Less.Html.SelectorParam.op_Implicit(Less.Html.Node[])~Less.Html.SelectorParam">
+            <summary>
+            从 Node[] 到 SelectorParam 的隐式转换
+            </summary>
+            <param name="nodes"></param>
+        </member>
+        <member name="M:Less.Html.SelectorParam.op_Implicit(Less.Html.Node)~Less.Html.SelectorParam">
+            <summary>
+            从 Node 到 SelectorParam 的隐式转换
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:Less.Html.SelectorParam.op_Implicit(Less.Html.Query)~Less.Html.SelectorParam">
+            <summary>
+            从 Query 到 SelectorParam 的隐式转换
+            </summary>
+            <param name="query"></param>
+        </member>
+    </members>
+</doc>

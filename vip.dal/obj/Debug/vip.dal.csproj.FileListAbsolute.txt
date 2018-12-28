@@ -1,0 +1,16 @@
+D:\Projects\vip1.680.com\vip.dal\obj\Debug\vip.dal.csprojResolveAssemblyReference.cache
+D:\Projects\vip1.680.com\vip.dal\obj\Debug\vip.dal.csproj.CoreCompileInputs.cache
+D:\Projects\vip1.680.com\vip.dal\bin\Debug\vip.dal.dll
+D:\Projects\vip1.680.com\vip.dal\bin\Debug\vip.dal.pdb
+D:\Projects\vip1.680.com\vip.dal\bin\Debug\vip.common.dll
+D:\Projects\vip1.680.com\vip.dal\bin\Debug\vip.common.pdb
+D:\Projects\vip1.680.com\vip.dal\obj\Debug\vip.dal.dll
+D:\Projects\vip1.680.com\vip.dal\obj\Debug\vip.dal.pdb
+C:\Projects\WebGatherer\vip.dal\bin\Debug\vip.dal.dll
+C:\Projects\WebGatherer\vip.dal\bin\Debug\vip.dal.pdb
+C:\Projects\WebGatherer\vip.dal\bin\Debug\vip.common.dll
+C:\Projects\WebGatherer\vip.dal\bin\Debug\vip.common.pdb
+C:\Projects\WebGatherer\vip.dal\obj\Debug\vip.dal.csprojResolveAssemblyReference.cache
+C:\Projects\WebGatherer\vip.dal\obj\Debug\vip.dal.csproj.CoreCompileInputs.cache
+C:\Projects\WebGatherer\vip.dal\obj\Debug\vip.dal.dll
+C:\Projects\WebGatherer\vip.dal\obj\Debug\vip.dal.pdb

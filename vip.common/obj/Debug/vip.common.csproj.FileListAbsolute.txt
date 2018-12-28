@@ -1,0 +1,12 @@
+D:\Projects\vip1.680.com\vip.common\bin\Debug\vip.common.dll
+D:\Projects\vip1.680.com\vip.common\bin\Debug\vip.common.pdb
+D:\Projects\vip1.680.com\vip.common\obj\Debug\vip.common.csproj.CoreCompileInputs.cache
+D:\Projects\vip1.680.com\vip.common\obj\Debug\vip.common.dll
+D:\Projects\vip1.680.com\vip.common\obj\Debug\vip.common.pdb
+D:\Projects\vip1.680.com\vip.common\obj\Debug\vip.common.csprojResolveAssemblyReference.cache
+C:\Projects\WebGatherer\vip.common\bin\Debug\vip.common.dll
+C:\Projects\WebGatherer\vip.common\bin\Debug\vip.common.pdb
+C:\Projects\WebGatherer\vip.common\obj\Debug\vip.common.csprojResolveAssemblyReference.cache
+C:\Projects\WebGatherer\vip.common\obj\Debug\vip.common.csproj.CoreCompileInputs.cache
+C:\Projects\WebGatherer\vip.common\obj\Debug\vip.common.dll
+C:\Projects\WebGatherer\vip.common\obj\Debug\vip.common.pdb

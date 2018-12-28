@@ -1,0 +1,4305 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApiClient</name>
+    </assembly>
+    <members>
+        <member name="T:WebApiClient.Attributes.ApiActionFilterAttribute">
+            <summary>
+            ApiAction的过滤器抽象特性
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.ApiActionFilterAttribute.OrderIndex">
+            <summary>
+            获取顺序排序索引
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.ApiActionFilterAttribute.AllowMultiple">
+            <summary>
+            获取本类型是否允许在接口与方法上重复
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.ApiActionFilterAttribute.OnBeginRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            准备请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.ApiActionFilterAttribute.OnEndRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            请求完成之后
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.FormFieldAttribute">
+            <summary>
+            表示参数值作为x-www-form-urlencoded的字段
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.FormFieldAttribute.name">
+            <summary>
+            字段名称
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.FormFieldAttribute.value">
+            <summary>
+            字段的值
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.FormFieldAttribute.IgnoreWhenNull">
+            <summary>
+            获取或设置当值为null是否忽略提交
+            默认为false
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.FormFieldAttribute.#ctor">
+            <summary>
+            表示参数值作为x-www-form-urlencoded的字段
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.FormFieldAttribute.#ctor(System.String,System.Object)">
+            <summary>
+            表示name和value写入x-www-form-urlencoded表单
+            </summary>
+            <param name="name">字段名称</param>
+            <param name="value">字段的值</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Attributes.FormFieldAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            执行前
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.FormFieldAttribute.WebApiClient#Interfaces#IApiParameterAttribute#BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            http请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.FormFieldAttribute.WillIgnore(System.Object)">
+            <summary>
+            返回是否应该忽略提交 
+            </summary>
+            <param name="val">值</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.HeaderAttribute">
+            <summary>
+            表示Http请求Header的特性
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.HeaderAttribute.name">
+            <summary>
+            Header名称
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.HeaderAttribute.value">
+            <summary>
+            Header值 
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.HeaderAttribute.EncodeCookie">
+            <summary>
+            获取是对cookie的Value进行Url utf-8编码
+            默认为true
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HeaderAttribute.#ctor(System.Net.HttpRequestHeader)">
+            <summary>
+            将参数值设置到Header        
+            </summary>
+            <param name="name">header名称</param>
+        </member>
+        <member name="M:WebApiClient.Attributes.HeaderAttribute.#ctor(System.String)">
+            <summary>
+            将参数值设置到Header      
+            </summary>
+            <param name="name">header名称</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Attributes.HeaderAttribute.#ctor(System.Net.HttpRequestHeader,System.String)">
+            <summary>
+            将指定值设置到Header       
+            </summary>
+            <param name="name">header名称</param>
+            <param name="value">header值</param>
+        </member>
+        <member name="M:WebApiClient.Attributes.HeaderAttribute.#ctor(System.String,System.String)">
+            <summary>
+            将指定值设置到Header      
+            </summary>
+            <param name="name">header名称</param>
+            <param name="value">header值</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Attributes.HeaderAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            执行前
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.HeaderAttribute.WebApiClient#Interfaces#IApiParameterAttribute#BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            http请求之前
+            值从参数过来
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.HeaderAttribute.SetHeaderValue(WebApiClient.Contexts.ApiActionContext,System.String)">
+            <summary>
+            设置请求头
+            </summary>
+            <param name="context"></param>
+            <param name="headerValue"></param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.HeaderAttribute.SetCookie(WebApiClient.Contexts.ApiActionContext,System.String)">
+            <summary>
+            设置Cookie值
+            </summary>
+            <param name="context">上下文</param>
+            <param name="cookieValues">cookie值</param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <exception cref="T:System.Net.CookieException"></exception>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.ApiActionAttribute">
+            <summary>
+            ApiAction修饰特性抽象
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.ApiActionAttribute.OrderIndex">
+            <summary>
+            获取顺序排序索引
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.ApiActionAttribute.AllowMultiple">
+            <summary>
+            获取本类型是否允许在接口与方法上重复
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.ApiActionAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            执行前
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.BasicAuthAttribute">
+            <summary>
+            表示请求的基本授权
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.BasicAuthAttribute.baiscAuth">
+            <summary>
+            BasicAuth
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.BasicAuthAttribute.#ctor(System.String,System.String)">
+            <summary>
+            基本授权
+            </summary>
+            <param name="userName">账号</param>
+            <param name="password">密码</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Attributes.BasicAuthAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            执行前
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.HttpDeleteAttribute">
+            <summary>
+            表示Delete请求
+            不可继承
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpDeleteAttribute.#ctor">
+            <summary>
+            Delete请求
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpDeleteAttribute.#ctor(System.String)">
+            <summary>
+            Delete请求
+            </summary>
+            <param name="path">请求绝对或相对路径</param>
+        </member>
+        <member name="T:WebApiClient.Attributes.HttpGetAttribute">
+            <summary>
+            表示Get请求
+            不可继承
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpGetAttribute.#ctor">
+            <summary>
+            Get请求
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpGetAttribute.#ctor(System.String)">
+            <summary>
+            Get请求
+            </summary>
+            <param name="path">请求绝对或相对路径</param>
+        </member>
+        <member name="T:WebApiClient.Attributes.HttpHeadAttribute">
+            <summary>
+            表示Head请求
+            不可继承
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpHeadAttribute.#ctor">
+            <summary>
+            Head请求
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpHeadAttribute.#ctor(System.String)">
+            <summary>
+            Head请求
+            </summary>
+            <param name="path">请求绝对或相对路径</param>
+        </member>
+        <member name="T:WebApiClient.Attributes.HttpHostAttribute">
+            <summary>
+            表示请求服务http绝对完整主机域名
+            例如http://www.webapiclient.com
+            不可继承
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.HttpHostAttribute.Host">
+            <summary>
+            获取根路径
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.HttpHostAttribute.OrderIndex">
+            <summary>
+            获取顺序排序索引
+            优先级最高
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpHostAttribute.#ctor(System.String)">
+            <summary>
+            请求服务的根路径
+            例如http://www.webapiclient.com
+            </summary>
+            <param name="host">请求完整绝对根路径</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.UriFormatException"></exception>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpHostAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            执行前
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpHostAttribute.ToString">
+            <summary>
+            转换为字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.HttpMethodAttribute">
+            <summary>
+            表示http请求方法描述特性
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.HttpMethodAttribute.Method">
+            <summary>
+            获取请求方法
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.HttpMethodAttribute.Path">
+            <summary>
+            获取请求相对路径
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.HttpMethodAttribute.OrderIndex">
+            <summary>
+            获取顺序排序索引
+            优先级最高
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpMethodAttribute.#ctor(System.Net.Http.HttpMethod)">
+            <summary>
+            http请求方法描述特性
+            </summary>
+            <param name="method">请求方法</param>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpMethodAttribute.#ctor(System.Net.Http.HttpMethod,System.String)">
+            <summary>
+            http请求方法描述特性
+            </summary>
+            <param name="method">请求方法</param>
+            <param name="path">请求绝对或相对路径</param>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpMethodAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            执行前
+            </summary>
+            <param name="context">上下文</param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpMethodAttribute.GetRequestUri(System.Uri,System.Uri)">
+            <summary>
+            获取请求URL
+            </summary>
+            <param name="baseUri"></param>
+            <param name="relative"></param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.HttpOptionsAttribute">
+            <summary>
+            表示Options请求
+            不可继承
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpOptionsAttribute.#ctor">
+            <summary>
+            Options请求
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpOptionsAttribute.#ctor(System.String)">
+            <summary>
+            Options请求
+            </summary>
+            <param name="path">相对路径</param>
+        </member>
+        <member name="T:WebApiClient.Attributes.HttpPostAttribute">
+            <summary>
+            表示Post请求
+            不可继承
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpPostAttribute.#ctor">
+            <summary>
+            Post请求
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpPostAttribute.#ctor(System.String)">
+            <summary>
+            Post请求
+            </summary>
+            <param name="path">请求绝对或相对路径</param>
+        </member>
+        <member name="T:WebApiClient.Attributes.HttpPutAttribute">
+            <summary>
+            表示Put请求
+            不可继承
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpPutAttribute.#ctor">
+            <summary>
+            Put请求
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpPutAttribute.#ctor(System.String)">
+            <summary>
+            Put请求
+            </summary>
+            <param name="path">请求绝对或相对路径</param>
+        </member>
+        <member name="T:WebApiClient.Attributes.ProxyAttribute">
+            <summary>
+            表示http代理特性
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.ProxyAttribute.host">
+            <summary>
+            域名或ip
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.ProxyAttribute.port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.ProxyAttribute.credential">
+            <summary>
+            凭证
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.ProxyAttribute.#ctor(System.String,System.Int32)">
+            <summary>
+            http代理描述
+            </summary>
+            <param name="host">域名或ip</param>
+            <param name="port">端口</param>    
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Attributes.ProxyAttribute.#ctor(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            http代理描述
+            </summary>
+            <param name="host">域名或ip</param>
+            <param name="port">端口</param>
+            <param name="userName">账号</param>
+            <param name="password">密码</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Attributes.ProxyAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            执行前
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.TimeoutAttribute">
+            <summary>
+            表示此请求的超时时间
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.TimeoutAttribute.TimeSpan">
+            <summary>
+            获取超时时间
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.TimeoutAttribute.#ctor(System.Int32)">
+            <summary>
+            请求的超时时间
+            </summary>
+            <param name="milliseconds">超时时间的毫秒数</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:WebApiClient.Attributes.TimeoutAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            执行前
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.MulitpartTextAttribute">
+            <summary>
+            表示参数值作为multipart/form-data表单的一个文本项
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.MulitpartTextAttribute.name">
+            <summary>
+            字段名称
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.MulitpartTextAttribute.value">
+            <summary>
+            字段的值
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.MulitpartTextAttribute.IgnoreWhenNull">
+            <summary>
+            获取或设置当值为null是否忽略提交
+            默认为false
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.MulitpartTextAttribute.#ctor">
+            <summary>
+            表示参数值作为multipart/form-data表单的一个文本项
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.MulitpartTextAttribute.#ctor(System.String,System.Object)">
+            <summary>
+            表示name和value写入multipart/form-data表单
+            </summary>
+            <param name="name">字段名称</param>
+            <param name="value">字段的值</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Attributes.MulitpartTextAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            执行前
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.MulitpartTextAttribute.WebApiClient#Interfaces#IApiParameterAttribute#BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            http请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.MulitpartTextAttribute.WillIgnore(System.Object)">
+            <summary>
+            返回是否应该忽略提交 
+            </summary>
+            <param name="val">值</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.FormContentAttribute">
+            <summary>
+            使用KeyValueFormatter序列化参数值得到的键值对作为x-www-form-urlencoded请求
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.FormContentAttribute.DateTimeFormat">
+            <summary>
+            获取或设置时期时间格式
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.FormContentAttribute.#ctor">
+            <summary>
+            将参数值作为x-www-form-urlencoded请求
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.FormContentAttribute.#ctor(System.String)">
+            <summary>
+            将参数值作为x-www-form-urlencoded请求
+            </summary>
+            <param name="datetimeFormat">时期时间格式</param>
+        </member>
+        <member name="M:WebApiClient.Attributes.FormContentAttribute.SetHttpContentAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            设置参数到http请求内容
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+        </member>
+        <member name="T:WebApiClient.Attributes.HttpContentAttribute">
+            <summary>
+            表示参数值理解为HttpContent类型的特性    
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpContentAttribute.WebApiClient#Interfaces#IApiParameterAttribute#BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            http请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpContentAttribute.SetHttpContentAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            设置参数到http请求内容
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.HttpContentAttribute.SetHttpContent(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            设置参数到http请求内容
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+        </member>
+        <member name="T:WebApiClient.Attributes.JsonContentAttribute">
+            <summary>
+            使用JsonFormatter序列化参数值得到的json文本作为application/json请求
+            每个Api只能注明于其中的一个参数
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.JsonContentAttribute.DateTimeFormat">
+            <summary>
+            获取或设置时期时间格式
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.JsonContentAttribute.#ctor">
+            <summary>
+            将参数值作为application/json请求
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.JsonContentAttribute.#ctor(System.String)">
+            <summary>
+            将参数体作为application/json请求
+            </summary>
+            <param name="datetimeFormat">日期时间格式</param>
+        </member>
+        <member name="M:WebApiClient.Attributes.JsonContentAttribute.SetHttpContent(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            设置参数到http请求内容
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+        </member>
+        <member name="T:WebApiClient.Attributes.MulitpartContentAttribute">
+            <summary>
+            使用KeyValueFormatter序列化参数值得到的键值对分别作为multipart/form-data表单的一个文本项 
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.MulitpartContentAttribute.DateTimeFormat">
+            <summary>
+            获取或设置时期时间格式
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.MulitpartContentAttribute.#ctor">
+            <summary>
+            将参数值作为multipart/form-data表单或表单的一个项
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.MulitpartContentAttribute.#ctor(System.String)">
+            <summary>
+            将参数值作为multipart/form-data表单或表单的一个项
+            </summary>
+            <param name="datetimeFormat">时期时间格式</param>
+        </member>
+        <member name="M:WebApiClient.Attributes.MulitpartContentAttribute.SetHttpContent(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            设置参数到http请求内容
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+        </member>
+        <member name="T:WebApiClient.Attributes.PathQueryAttribute">
+            <summary>
+            使用KeyValueFormatter序列化参数值得到的键值对作为url路径参数或query参数的特性
+            没有任何特性修饰的参数，将默认被PathQueryAttribute修饰
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.PathQueryAttribute.encoding">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.PathQueryAttribute.Encoding">
+            <summary>
+            获取或设置参数的编码
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.PathQueryAttribute.DateTimeFormat">
+            <summary>
+            获取或设置时期时间格式
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.PathQueryAttribute.IgnoreWhenNull">
+            <summary>
+            获取或设置当值为null是此参数
+            默认为false
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.PathQueryAttribute.#ctor">
+            <summary>
+            表示Url路径参数或query参数的特性
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.PathQueryAttribute.#ctor(System.String)">
+            <summary>
+            表示Url路径参数或query参数的特性
+            </summary>
+            <param name="datetimeFormat">时期时间格式</param>
+        </member>
+        <member name="M:WebApiClient.Attributes.PathQueryAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            http请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.PathQueryAttribute.UsePathQuery(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            url添加query
+            </summary>
+            <param name="url">url</param>
+            <param name="keyValues">键值对</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.PathQueryAttribute.UsePathQuery(System.String,System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+            url添加query
+            </summary>
+            <param name="url">url</param>
+            <param name="keyValue">键值对</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.PathQueryAttribute.WillIgnore(System.Object)">
+            <summary>
+            返回是否应该忽略提交 
+            </summary>
+            <param name="val">值</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.UrlAttribute">
+            <summary>
+            表示将参数值作为请求url的特性  
+            要求必须修饰于第一个参数
+            支持绝对或相对路径
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.UrlAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            http请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.XmlContentAttribute">
+            <summary>
+            使用XmlFormatter序列化参数值得到的json文本作为application/xml请求
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.XmlContentAttribute.encoding">
+            <summary>
+            编码方式
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.XmlContentAttribute.#ctor">
+            <summary>
+            将参数体值为application/xml请求
+            utf-8
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.XmlContentAttribute.#ctor(System.String)">
+            <summary>
+            将参数体作为application/xml请求
+            </summary>
+            <param name="codeName">编码</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Attributes.XmlContentAttribute.#ctor(System.Text.Encoding)">
+            <summary>
+            将参数体作为application/xml请求
+            </summary>
+            <param name="encoding">编码</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Attributes.XmlContentAttribute.SetHttpContent(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            设置参数到http请求内容
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+        </member>
+        <member name="T:WebApiClient.Attributes.ApiReturnAttribute">
+            <summary>
+            回复内容处理特性抽象
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Attributes.ApiReturnAttribute.EnsureSuccessStatusCode">
+            <summary>
+            获取或设置是否确保回复的http状态码是2xx码
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.ApiReturnAttribute.WebApiClient#Interfaces#IApiReturnAttribute#GetTaskResult(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            获取异步结果
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.ApiReturnAttribute.GetTaskResult(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            获取异步结果
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.AutoReturnAttribute">
+            <summary>
+            自动适应返回类型的处理
+            支持返回TaskOf(HttpResponseMessage)或TaskOf(byte[])或TaskOf(string)或TaskOf(Stream)
+            支持返回xml或json转换对应类型
+            没有任何IApiReturnAttribute特性修饰的接口方法，将默认为AutoReturn修饰
+            </summary> 
+        </member>
+        <member name="F:WebApiClient.Attributes.AutoReturnAttribute.xmlReturn">
+            <summary>
+            xml解析
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.AutoReturnAttribute.jsonReturn">
+            <summary>
+            json解析
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.AutoReturnAttribute.GetTaskResult(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            获取异步结果
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.AutoReturnAttribute.ContentType">
+            <summary>
+            表示回复的ContentType
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Attributes.AutoReturnAttribute.ContentType.contentType">
+            <summary>
+            ContentType内容
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.AutoReturnAttribute.ContentType.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            回复的ContentType
+            </summary>
+            <param name="contentType">ContentType内容</param>
+        </member>
+        <member name="M:WebApiClient.Attributes.AutoReturnAttribute.ContentType.Is(System.String)">
+            <summary>
+            是否为某个Mime
+            </summary>
+            <param name="mediaType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.AutoReturnAttribute.ContentType.IsApplicationJson">
+            <summary>
+            是否为json
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Attributes.AutoReturnAttribute.ContentType.IsApplicationXml">
+            <summary>
+            是否为xml
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.JsonReturnAttribute">
+            <summary>
+            使用JsonFormatter反序列化回复内容作为返回值
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.JsonReturnAttribute.GetTaskResult(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            获取异步结果
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Attributes.XmlReturnAttribute">
+            <summary>
+            使用XmlFormatter反序列化回复内容作为返回值
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Attributes.XmlReturnAttribute.GetTaskResult(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            获取异步结果
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Contexts.ApiActionContext">
+            <summary>
+            表示请求Api的上下文
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Contexts.ApiActionContext.tags">
+            <summary>
+            自定义数据的存储和访问容器
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiActionContext.Tags">
+            <summary>
+            获取本次请求相关的自定义数据的存储和访问容器
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiActionContext.HttpApiConfig">
+            <summary>
+            获取关联的HttpApiConfig
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiActionContext.ApiActionDescriptor">
+            <summary>
+            获取关联的ApiActionDescriptor
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiActionContext.RequestMessage">
+            <summary>
+            获取关联的HttpRequestMessage
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiActionContext.ResponseMessage">
+            <summary>
+            获取关联的HttpResponseMessage
+            </summary>
+        </member>
+        <member name="T:WebApiClient.Contexts.ApiActionDescriptor">
+            <summary>
+            表示请求Api描述
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiActionDescriptor.Name">
+            <summary>
+            获取Api名称
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiActionDescriptor.Member">
+            <summary>
+            获取关联的方法信息
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiActionDescriptor.Attributes">
+            <summary>
+            获取Api关联的特性
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiActionDescriptor.Filters">
+            <summary>
+            获取Api关联的过滤器特性
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiActionDescriptor.Parameters">
+            <summary>
+            获取Api的参数描述
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiActionDescriptor.Return">
+            <summary>
+            获取Api的返回描述
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Contexts.ApiActionDescriptor.Clone">
+            <summary>
+            克隆
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Contexts.ApiParameterDescriptor">
+            <summary>
+            表示请求Api的参数描述
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiParameterDescriptor.Name">
+            <summary>
+            获取参数名称
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiParameterDescriptor.Member">
+            <summary>
+            获取关联的参数信息
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiParameterDescriptor.Index">
+            <summary>
+            获取参数索引
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiParameterDescriptor.ParameterType">
+            <summary>
+            获取参数类型
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiParameterDescriptor.Value">
+            <summary>
+            获取参数值
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiParameterDescriptor.Attributes">
+            <summary>
+            获取关联的参数特性
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Contexts.ApiParameterDescriptor.ToString">
+            <summary>
+            值转换为字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Contexts.ApiParameterDescriptor.Clone">
+            <summary>
+            克隆
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Contexts.ApiReturnDescriptor">
+            <summary>
+            表示请求Api的返回描述
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiReturnDescriptor.Attribute">
+            <summary>
+            获取关联的ApiReturnAttribute
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiReturnDescriptor.ReturnType">
+            <summary>
+            获取Api的返回类型
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiReturnDescriptor.DataType">
+            <summary>
+            获取Api返回的ITaskOf(T)或TaskOf(T)的T类型
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiReturnDescriptor.IsITaskDefinition">
+            <summary>
+            获取返回类型是ITaskOf(T)而不是TaskOf(T)
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Contexts.ApiReturnDescriptor.ITaskCtor">
+            <summary>
+            获取返回类型对应的ITask泛型构造器
+            用于构造ITaskOf(T)的实例
+            </summary>
+        </member>
+        <member name="T:WebApiClient.DataAnnotations.AliasAsAttribute">
+            <summary>
+            DataAnnotation
+            表示将参数别名或序列时此属性的别名
+            当修饰属性时默认适用于JsonFormat和KeyValueFormat
+            </summary>
+        </member>
+        <member name="P:WebApiClient.DataAnnotations.AliasAsAttribute.Name">
+            <summary>
+            获取别名
+            </summary>
+        </member>
+        <member name="M:WebApiClient.DataAnnotations.AliasAsAttribute.#ctor(System.String)">
+            <summary>
+            指定参数或属性的别名
+            </summary>
+            <param name="name">参数或属性的别名</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:WebApiClient.DataAnnotations.DataAnnotationAttribute">
+            <summary>
+            表示数据注解特性抽象
+            </summary>
+        </member>
+        <member name="P:WebApiClient.DataAnnotations.DataAnnotationAttribute.Scope">
+            <summary>
+            获取或设置适用的序列化范围
+            </summary>
+        </member>
+        <member name="M:WebApiClient.DataAnnotations.DataAnnotationAttribute.#ctor">
+            <summary>
+            数据注解特性抽象
+            </summary>
+        </member>
+        <member name="M:WebApiClient.DataAnnotations.DataAnnotationAttribute.IsDefinedScope(WebApiClient.DataAnnotations.FormatScope)">
+            <summary>
+            返回是否声明指定的scope
+            </summary>
+            <param name="scope">序列化范围</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.DataAnnotations.DateTimeFormatAttribute">
+            <summary>
+            DataAnnotation
+            表示序列时此属性使用的日期时间格式
+            默认适用于JsonFormat和KeyValueFormat
+            </summary>
+        </member>
+        <member name="P:WebApiClient.DataAnnotations.DateTimeFormatAttribute.Format">
+            <summary>
+            获取格式
+            </summary>
+        </member>
+        <member name="M:WebApiClient.DataAnnotations.DateTimeFormatAttribute.#ctor(System.String)">
+            <summary>
+            日期时间格式
+            </summary>
+            <param name="format">格式</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:WebApiClient.DataAnnotations.FormatScope">
+            <summary>
+            表示适用的序列化的范围
+            </summary>
+        </member>
+        <member name="F:WebApiClient.DataAnnotations.FormatScope.JsonFormat">
+            <summary>
+            适用于Json序列化
+            </summary>
+        </member>
+        <member name="F:WebApiClient.DataAnnotations.FormatScope.KeyValueFormat">
+            <summary>
+            适用于KeyValue序列化
+            </summary>
+        </member>
+        <member name="F:WebApiClient.DataAnnotations.FormatScope.All">
+            <summary>
+            适用于Json序列化和KeyValue序列化
+            </summary>
+        </member>
+        <member name="T:WebApiClient.DataAnnotations.IgnoreSerializedAttribute">
+            <summary>
+            DataAnnotation
+            表示序列时忽略此属性
+            默认适用于JsonFormat和KeyValueFormat
+            </summary>
+        </member>
+        <member name="T:WebApiClient.DataAnnotations.IgnoreWhenNullAttribute">
+            <summary>
+            DataAnnotation
+            表示序列时属性值为null则忽略
+            默认适用于KeyValueFormat
+            </summary>
+        </member>
+        <member name="M:WebApiClient.DataAnnotations.IgnoreWhenNullAttribute.#ctor">
+            <summary>
+            值为null此属性将忽略
+            默认适用于KeyValueFormat
+            </summary>
+        </member>
+        <member name="T:WebApiClient.DateTimeFormats">
+            <summary>
+            提供一些日期时间格式模板
+            </summary>
+        </member>
+        <member name="F:WebApiClient.DateTimeFormats.ISO8601_WithMillisecond">
+            <summary>
+            ISO8601精确到毫秒的日期时间格式
+            </summary>
+        </member>
+        <member name="F:WebApiClient.DateTimeFormats.ISO8601_WithoutMillisecond">
+            <summary>
+            ISO8601精确到秒的日期时间格式
+            </summary>
+        </member>
+        <member name="P:WebApiClient.DateTimeFormats.LocalDateTimeFormat">
+            <summary>
+            获取本地的日期时间格式
+            </summary>
+        </member>
+        <member name="M:WebApiClient.DateTimeFormats.GetLocalDateTimeFormat">
+            <summary>
+            获取本地的日期时间格式
+            ShortDate LongTime
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.ApiInterceptor">
+            <summary>
+            表示http接口调用的拦截器
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.ApiInterceptor.ApiConfig">
+            <summary>
+            获取相关的配置
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.ApiInterceptor.#ctor(WebApiClient.HttpApiConfig)">
+            <summary>
+            http接口调用的拦截器
+            </summary>
+            <param name="apiConfig">httpApi配置</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Defaults.ApiInterceptor.Intercept(System.Object,System.Reflection.MethodInfo,System.Object[])">
+            <summary>
+            拦截方法的调用
+            </summary>
+            <param name="target">接口的实例</param>
+            <param name="method">接口的方法</param>
+            <param name="parameters">接口的参数集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.ApiInterceptor.GetApiActionDescriptor(System.Reflection.MethodInfo,System.Object[])">
+            <summary>
+            获取api的描述
+            </summary>
+            <param name="method">接口的方法</param>
+            <param name="parameters">参数集合</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.HttpClient">
+            <summary>
+            表示默认的HttpClient
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.HttpClient.client">
+            <summary>
+            HttpClient实例
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.HttpClient.isDisposed">
+            <summary>
+            是否已释放
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.HttpClient.pendingCount">
+            <summary>
+            正在挂起的请求
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.HttpClient.supportCreateHandler">
+            <summary>
+            是否支持创建Handler
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.HttpClient.Handler">
+            <summary>
+            获取关联的Http处理对象
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.HttpClient.DefaultRequestHeaders">
+            <summary>
+            获取默认的请求头管理对象
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.HttpClient.Timeout">
+            <summary>
+            获取或设置请求超时时间
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.HttpClient.MaxResponseContentBufferSize">
+            <summary>
+            获取或设置最大回复内容长度
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.#ctor">
+            <summary>
+            默认的HttpClient
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.#ctor(System.Net.Http.HttpClientHandler,System.Boolean)">
+            <summary>
+            默认的HttpClient
+            </summary>
+            <param name="handler">关联的Http处理对象</param>
+            <param name="disposeHandler">调用Dispose方法时，是否也Dispose handler</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.#ctor(System.Net.Http.HttpClientHandler,System.Boolean,System.Boolean)">
+            <summary>
+            默认的HttpClient
+            </summary>
+            <param name="handler"></param>   
+            <param name="disposeHandler">调用HttpClient.Dispose时是否也disposeHandler</param>
+            <param name="supportCreateHandler">是否支持调用创建实例</param>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.SetCookie(System.Uri,System.String)">
+            <summary>
+            设置Cookie值到Cookie容器
+            当Handler.UseCookies才添加
+            </summary>
+            <param name="domain">cookie域名</param>
+            <param name="cookieValues">cookie值，会自动进行URL编码，eg：key1=value1; key2=value2</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Net.CookieException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.SetRawCookie(System.Uri,System.String)">
+            <summary>
+            设置Cookie值到Cookie容器
+            当Handler.UseCookies才添加
+            </summary>
+            <param name="domain">cookie域名</param>
+            <param name="cookieValues">cookie值，不进行URL编码，eg：key1=value1; key2=value2</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Net.CookieException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.SetCookie(System.Uri,System.String,System.Boolean)">
+            <summary>
+            设置Cookie
+            </summary>
+            <param name="domain">cookie域名</param>
+            <param name="cookieValues">cookie值</param>
+            <param name="useUrlEncode">是否URL编码</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Net.CookieException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.SetProxy(System.Net.IWebProxy)">
+            <summary>
+            设置代理
+            </summary>
+            <param name="proxy">代理，为null则清除代理</param>
+            <exception cref="T:System.ObjectDisposedException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.InitWithoutProxy">
+            <summary>
+            重新初始化HttpClient和Handler实例
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.CreateHttpClientHandler">
+            <summary>
+            创建HttpClientHandler的新实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.CopyProperties``1(``0,``0)">
+            <summary>
+            复制source的属性到target
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="F:WebApiClient.Defaults.HttpClient.destination">
+            <summary>
+            目录网址
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.IsProxyEquals(System.Net.IWebProxy,System.Net.IWebProxy)">
+            <summary>
+            比较代理是否相等
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.SendAsync(WebApiClient.HttpApiRequestMessage)">
+            <summary>
+            异步发送请求
+            </summary>
+            <param name="request">请求消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.CancelPendingRequests">
+            <summary>
+            取消挂起的请求
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.HttpClient.Dispose">
+            <summary>
+            释放httpClient
+            </summary>
+        </member>
+        <member name="T:WebApiClient.Defaults.JsonFormatter">
+            <summary>
+            默认的json解析工具
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.JsonFormatter.Serialize(System.Object,WebApiClient.FormatOptions)">
+            <summary>
+            将对象列化为json文本
+            </summary>
+            <param name="obj">对象</param>
+            <param name="options">选项</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.JsonFormatter.Deserialize(System.String,System.Type)">
+            <summary>
+            反序列化json为对象
+            </summary>
+            <param name="json">json</param>
+            <param name="objType">对象类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.JsonFormatter.CreateSerializerSettings">
+            <summary>
+            创建JsonSerializerSettings新实例
+            用于序列化或反序列化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver">
+            <summary>
+            属性解析器
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver.useCamelCase">
+            <summary>
+            是否camel命名
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver.#ctor(System.Boolean)">
+            <summary>
+            属性解析器
+            </summary>
+            <param name="camelCase">是否camel命名</param>
+        </member>
+        <member name="M:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver.CreateProperty(System.Reflection.MemberInfo,Newtonsoft.Json.MemberSerialization)">
+            <summary>        
+            创建属性
+            </summary>
+            <param name="member"></param>
+            <param name="memberSerialization"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver.PropertyDescriptor">
+            <summary>
+            表示属性的描述
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver.PropertyDescriptor.jsonFormatScope">
+            <summary>
+            序列化范围
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver.PropertyDescriptor.descriptorCache">
+            <summary>
+            属性的描述缓存
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver.PropertyDescriptor.Name">
+            <summary>
+            获取属性别名或名称
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver.PropertyDescriptor.DateTimeConverter">
+            <summary>
+            获取时间转换器
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver.PropertyDescriptor.IgnoreSerialized">
+            <summary>
+            获取是否忽略序列化
+            </summary>      
+        </member>
+        <member name="P:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver.PropertyDescriptor.IgnoreWhenNull">
+            <summary>
+            获取当值为null时是否忽略序列化
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver.PropertyDescriptor.#ctor(System.Reflection.MemberInfo)">
+            <summary>
+            属性的描述
+            </summary>
+            <param name="member"></param>
+        </member>
+        <member name="M:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver.PropertyDescriptor.#cctor">
+            <summary>
+            静态构造器
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.JsonFormatter.PropertyContractResolver.PropertyDescriptor.GetDescriptor(System.Reflection.MemberInfo)">
+            <summary>
+            获取成员的描述
+            </summary>
+            <param name="member">成员</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormats.ConvertContext">
+            <summary>
+            表示要转换的上下文
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.ConvertContext.Name">
+            <summary>
+            获取名称
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.ConvertContext.Data">
+            <summary>
+            获取要转换的数据
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.ConvertContext.Depths">
+            <summary>
+            获取已递归层数
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.ConvertContext.Options">
+            <summary>
+            获取格式化选项
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.ConvertContext.DataType">
+            <summary>
+            获取数据类型
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.ConvertContext.#ctor(System.String,System.Object,System.Int32,WebApiClient.FormatOptions)">
+            <summary>
+            要转换的上下文
+            </summary>
+            <param name="name">名称</param>
+            <param name="data">要转换的数据</param>
+            <param name="depths">已递归层数</param>
+            <param name="options">格式化选项</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.ConvertContext.ToKeyValuePairs">
+            <summary>
+            转换为键值对
+            并使用IEnumerable封装
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.ConvertContext.ToKeyValuePair">
+            <summary>
+            转换为键值对
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormats.ConverterBase">
+            <summary>
+            表示转换器的抽象类
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.KeyValueFormats.ConverterBase.first">
+            <summary>
+            第一个转换器
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.KeyValueFormats.ConverterBase.maxDepth">
+            <summary>
+            最高递归的层数     
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.ConverterBase.Next">
+            <summary>
+            获取下一个转换器
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.ConverterBase.WebApiClient#Defaults#KeyValueFormats#IConverter#First">
+            <summary>
+            设置第一个转换器
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.ConverterBase.WebApiClient#Defaults#KeyValueFormats#IConverter#Next">
+            <summary>
+            设置下一个转换器
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.ConverterBase.WebApiClient#Defaults#KeyValueFormats#IConverter#MaxDepth">
+            <summary>
+            设置最高递归的层数
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.ConverterBase.Invoke(WebApiClient.Defaults.KeyValueFormats.ConvertContext)">
+            <summary>
+            执行转换
+            </summary>
+            <param name="context">转换上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.ConverterBase.Recurse(WebApiClient.Defaults.KeyValueFormats.ConvertContext)">
+            <summary>
+            递归执行转换
+            调用头转换器进行解析context
+            </summary>
+            <param name="context">转换上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormats.Converters.DynamicObjectConverter">
+            <summary>
+            表示动态类型转换器
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.DynamicObjectConverter.Invoke(WebApiClient.Defaults.KeyValueFormats.ConvertContext)">
+            <summary>
+            执行转换
+            </summary>
+            <param name="context">转换上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.DynamicObjectConverter.GetValue(System.Dynamic.DynamicObject,System.String)">
+            <summary>
+            获取动态类型的值
+            </summary>
+            <param name="dynamicObject">实例</param>
+            <param name="name">名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormats.Converters.DynamicObjectConverter.MemberBinder">
+            <summary>
+            表示成员值的获取绑定
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.DynamicObjectConverter.MemberBinder.#ctor(System.String)">
+            <summary>
+            键的信息获取绑定
+            </summary>
+            <param name="key">键名</param>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.DynamicObjectConverter.MemberBinder.FallbackGetMember(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject)">
+            <summary>
+            在派生类中重写时，如果无法绑定目标动态对象，则执行动态获取成员操作的绑定
+            </summary>
+            <param name="target"></param>
+            <param name="errorSuggestion"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormats.Converters.EnumerableConverter">
+            <summary>
+            表示集合转换器
+            负责拆解集合并递归转换
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.EnumerableConverter.Invoke(WebApiClient.Defaults.KeyValueFormats.ConvertContext)">
+            <summary>
+            执行转换
+            </summary>
+            <param name="context">转换上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormats.Converters.KeyValuePairConverter">
+            <summary>
+            表示KeyValuePair类型转换器
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.KeyValuePairConverter.Invoke(WebApiClient.Defaults.KeyValueFormats.ConvertContext)">
+            <summary>
+            执行转换
+            </summary>
+            <param name="context">转换上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormats.Converters.KeyValuePairConverter.KeyValuePairReader">
+            <summary>
+            表示KeyValuePair读取器
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.KeyValueFormats.Converters.KeyValuePairConverter.KeyValuePairReader.keyGetter">
+            <summary>
+            key的getter
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.KeyValueFormats.Converters.KeyValuePairConverter.KeyValuePairReader.valueGetter">
+            <summary>
+            value的getter
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.KeyValuePairConverter.KeyValuePairReader.#ctor(System.Type)">
+            <summary>
+            KeyValuePair读取器
+            </summary>
+            <param name="keyValuePairType">KeyValuePair的类型</param>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.KeyValuePairConverter.KeyValuePairReader.GetKey(System.Object)">
+            <summary>
+            返回实例的Key的值
+            </summary>
+            <param name="instance">实例</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.KeyValuePairConverter.KeyValuePairReader.GetValue(System.Object)">
+            <summary>
+            返回实例的Value的值
+            </summary>
+            <param name="instance">实例</param>
+            <returns></returns>
+        </member>
+        <member name="F:WebApiClient.Defaults.KeyValueFormats.Converters.KeyValuePairConverter.KeyValuePairReader.keyValuePairType">
+            <summary>
+            KeyValuePair泛型
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.KeyValueFormats.Converters.KeyValuePairConverter.KeyValuePairReader.readerCache">
+            <summary>
+            类型的KeyValuePairReader缓存
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.KeyValuePairConverter.KeyValuePairReader.GetReader(System.Type)">
+            <summary>
+            从类型获取KeyValuePairReader
+            </summary>
+            <param name="type">类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormats.Converters.NullValueConverter">
+            <summary>
+            表示Null值转换器
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.NullValueConverter.Invoke(WebApiClient.Defaults.KeyValueFormats.ConvertContext)">
+            <summary>
+            执行转换
+            </summary>
+            <param name="context">转换上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter">
+            <summary>
+            表示属性拆解转换器
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.Invoke(WebApiClient.Defaults.KeyValueFormats.ConvertContext)">
+            <summary>
+            执行转换
+            </summary>
+            <param name="context">转换上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.GetPropertiesContexts(WebApiClient.Defaults.KeyValueFormats.ConvertContext)">
+            <summary>
+            解析context的Data的属性
+            返回多个属性组成的ConvertContext
+            </summary>
+            <param name="context">转换上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.PropertyDescriptor">
+            <summary>
+            表示属性描述
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.PropertyDescriptor.keyValueFormatScope">
+            <summary>
+            序列化范围
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.PropertyDescriptor.getter">
+            <summary>
+            获取器
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.PropertyDescriptor.Name">
+            <summary>
+            获取属性名称
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.PropertyDescriptor.DateTimeFormat">
+            <summary>
+            获取声明的DateTimeFormatAttribute的Format
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.PropertyDescriptor.IgnoreSerialized">
+            <summary>
+            获取是否忽略序列化
+            </summary>      
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.PropertyDescriptor.IgnoreWhenNull">
+            <summary>
+            获取当值为null时是否忽略序列化
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.PropertyDescriptor.IsSupportGet">
+            <summary>
+            获取是否支持Get操作
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.PropertyDescriptor.#ctor(System.Reflection.PropertyInfo)">
+            <summary>
+            属性
+            </summary>
+            <param name="property">属性信息</param>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.PropertyDescriptor.GetValue(System.Object)">
+            <summary>
+            获取属性的值
+            </summary>
+            <param name="instance">实例</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <returns></returns>
+        </member>
+        <member name="F:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.PropertyDescriptor.propertyCached">
+            <summary>
+            类型的属性描述缓存
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.PropertiesConverter.PropertyDescriptor.GetProperties(System.Type)">
+            <summary>
+            从类型的属性获取属性
+            </summary>
+            <param name="classType">类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormats.Converters.SimpleTypeConverter">
+            <summary>
+            表示简单类型转换器
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.SimpleTypeConverter.Invoke(WebApiClient.Defaults.KeyValueFormats.ConvertContext)">
+            <summary>
+            执行转换
+            </summary>
+            <param name="context">转换上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.Converters.SimpleTypeConverter.IsSupported(System.Type)">
+            <summary>
+            获取类型是否为简单类型
+            从而直接调用context.ToKeyValuePair()
+            </summary>
+            <param name="dataType">类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormats.IConverter">
+            <summary>
+            定义转换器的接口
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.IConverter.First">
+            <summary>
+            设置第一个转换器
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.IConverter.Next">
+            <summary>
+            设置下一个转换器
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Defaults.KeyValueFormats.IConverter.MaxDepth">
+            <summary>
+            设置最高递归的层数
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormats.IConverter.Invoke(WebApiClient.Defaults.KeyValueFormats.ConvertContext)">
+            <summary>
+            执行转换
+            </summary>
+            <param name="context">转换上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormatter">
+            <summary>
+            表示默认键值对列化工具
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.KeyValueFormatter.defaultConverters">
+            <summary>
+            默认的转换器组合
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Defaults.KeyValueFormatter.firstConverter">
+            <summary>
+            第一个转换器
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormatter.#ctor">
+            <summary>
+            默认键值对列化工具
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormatter.Serialize(WebApiClient.Contexts.ApiParameterDescriptor,WebApiClient.FormatOptions)">
+            <summary>
+            序列化参数为键值对
+            </summary>
+            <param name="parameter">参数</param>
+            <param name="options">选项</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormatter.Serialize(System.String,System.Object,WebApiClient.FormatOptions)">
+            <summary>
+            序列化对象为键值对
+            </summary>
+            <param name="name">对象名称</param>
+            <param name="obj">对象实例</param>
+            <param name="options">选项</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.KeyValueFormatter.GetConverters">
+            <summary>
+            返回一组按顺序的转换器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Defaults.KeyValueFormatter.NotSupportedConverter">
+            <summary>
+            默认的转换器
+            </summary>
+        </member>
+        <member name="T:WebApiClient.Defaults.XmlFormatter">
+            <summary>
+            默认的Xml解析工具
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Defaults.XmlFormatter.Serialize(System.Object,System.Text.Encoding)">
+            <summary>
+            将对象序列化为xml文本
+            </summary>
+            <param name="obj">对象</param>
+            <param name="encoding">编码</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Defaults.XmlFormatter.Deserialize(System.String,System.Type)">
+            <summary>
+            反序列化xml为对象
+            </summary>
+            <param name="xml">xml</param>
+            <param name="objType">对象类型</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.FormatOptions">
+            <summary>
+            表示格式化选项
+            </summary>
+        </member>
+        <member name="F:WebApiClient.FormatOptions.dateTimeFormat">
+            <summary>
+            日期时间格式
+            </summary>
+        </member>
+        <member name="P:WebApiClient.FormatOptions.UseCamelCase">
+            <summary>
+            获取或设置序列化时是否使用骆驼命名
+            对于JsonFormatter将影响到属性的名称
+            对于KeyValueFormatter将影响到Key的值
+            默认为false
+            </summary>
+        </member>
+        <member name="P:WebApiClient.FormatOptions.DateTimeFormat">
+            <summary>
+            获取或设置序列化DateTime类型使用的格式
+            默认为本地日期时间格式
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.FormatOptions.#ctor">
+            <summary>
+            格式化选项
+            </summary>
+        </member>
+        <member name="M:WebApiClient.FormatOptions.CloneChange(System.String)">
+            <summary>
+            当datetimeFormat不为null且有变化时
+            则克隆并使用新的datetimeFormat
+            </summary>
+            <param name="datetimeFormat">日期时间格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.FormatOptions.FormatDateTime(System.DateTime)">
+            <summary>
+            格式化时间为文本
+            </summary>
+            <param name="datetime">时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.FormatOptions.CamelCase(System.String)">
+            <summary>
+            骆驼命名
+            </summary>
+            <param name="name">名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.GlobalFilterCollection">
+            <summary>
+            表示全局过滤器的集合
+            全局过滤器执行优先级最高，执行顺序为添加的顺序
+            非线程安全类型
+            </summary>
+        </member>
+        <member name="F:WebApiClient.GlobalFilterCollection.filters">
+            <summary>
+            保存数据的列表
+            </summary>
+        </member>
+        <member name="M:WebApiClient.GlobalFilterCollection.#ctor">
+            <summary>
+            全局过滤器的集合
+            </summary>
+        </member>
+        <member name="P:WebApiClient.GlobalFilterCollection.Count">
+            <summary>
+            获取过滤器的数量
+            </summary>
+        </member>
+        <member name="M:WebApiClient.GlobalFilterCollection.Add(WebApiClient.Interfaces.IApiActionFilter)">
+            <summary>
+            添加全局过滤器
+            </summary>
+            <param name="item">全局过滤器</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.GlobalFilterCollection.Clear">
+            <summary>
+            清除所有全局过滤器
+            </summary>
+        </member>
+        <member name="M:WebApiClient.GlobalFilterCollection.Contains(WebApiClient.Interfaces.IApiActionFilter)">
+            <summary>
+            返回是否包含指定的全局过滤器
+            </summary>
+            <param name="item">全局过滤器</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.GlobalFilterCollection.Remove(WebApiClient.Interfaces.IApiActionFilter)">
+            <summary>
+            删除指定的全局过滤器
+            </summary>
+            <param name="item">定的全局过滤器</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.GlobalFilterCollection.GetEnumerator">
+            <summary>
+            返回过滤器的迭代器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:WebApiClient.GlobalFilterCollection.System#Collections#Generic#ICollection{WebApiClient#Interfaces#IApiActionFilter}#IsReadOnly">
+            <summary>
+            获取是否是只读的
+            </summary>
+        </member>
+        <member name="M:WebApiClient.GlobalFilterCollection.System#Collections#Generic#ICollection{WebApiClient#Interfaces#IApiActionFilter}#CopyTo(WebApiClient.Interfaces.IApiActionFilter[],System.Int32)">
+            <summary>
+            复制到目前数组
+            </summary>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+        </member>
+        <member name="M:WebApiClient.GlobalFilterCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            获取迭代器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.HttpApiClient">
+            <summary>
+            表示HttpApi客户端
+            提供创建HttpApiClient实例的方法
+            </summary>
+        </member>
+        <member name="P:WebApiClient.HttpApiClient.ApiConfig">
+            <summary>
+            获取相关配置
+            </summary>
+        </member>
+        <member name="P:WebApiClient.HttpApiClient.ApiInterceptor">
+            <summary>
+            获取拦截器
+            </summary>
+        </member>
+        <member name="M:WebApiClient.HttpApiClient.#ctor(WebApiClient.Interfaces.IApiInterceptor)">
+            <summary>
+            http客户端的基类
+            </summary>
+            <param name="interceptor">拦截器</param>
+        </member>
+        <member name="M:WebApiClient.HttpApiClient.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="P:WebApiClient.HttpApiClient.ConnectionLimit">
+            <summary>
+            获取或设置一个站点内的默认连接数限制
+            这个值在初始化HttpClientHandler时使用
+            默认值为128
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:WebApiClient.HttpApiClient.Create``1">
+            <summary>
+            创建实现了指定接口的HttpApiClient实例
+            </summary>
+            <typeparam name="TInterface">请求接口类型</typeparam>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiClient.Create``1(System.String)">
+            <summary>
+            创建实现了指定接口的HttpApiClient实例
+            </summary>
+            <typeparam name="TInterface">请求接口类型</typeparam>
+            <param name="httpHost">Http服务完整主机域名，如http://www.webapiclient.com</param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.UriFormatException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiClient.Create``1(WebApiClient.HttpApiConfig)">
+            <summary>
+            创建实现了指定接口的HttpApiClient实例
+            </summary>
+            <typeparam name="TInterface">请求接口类型</typeparam>
+            <param name="httpApiConfig">接口配置</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiClient.Create(System.Type,WebApiClient.HttpApiConfig)">
+            <summary>
+            创建实现了指定接口的HttpApiClient实例
+            </summary>
+            <param name="interfaceType">请求接口类型</param>
+            <param name="httpApiConfig">接口配置</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiClient.Create(System.Type,WebApiClient.Interfaces.IApiInterceptor)">
+            <summary>
+            创建实现了指定接口的HttpApiClient实例
+            </summary>
+            <param name="interfaceType">请求接口类型</param>
+            <param name="apiInterceptor">http接口调用拦截器</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.HttpApiConfig">
+            <summary>
+            表示Http接口的配置项
+            </summary>
+        </member>
+        <member name="F:WebApiClient.HttpApiConfig.DefaultXmlFormatter">
+            <summary>
+            获取默认xml格式化工具唯一实例
+            </summary>
+        </member>
+        <member name="F:WebApiClient.HttpApiConfig.DefaultJsonFormatter">
+            <summary>
+            获取默认json格式化工具唯一实例
+            </summary>
+        </member>
+        <member name="F:WebApiClient.HttpApiConfig.DefaultKeyValueFormatter">
+            <summary>
+            获取默认KeyValue格式化工具唯一实例
+            </summary>
+        </member>
+        <member name="F:WebApiClient.HttpApiConfig.tags">
+            <summary>
+            自定义数据容器
+            </summary>
+        </member>
+        <member name="F:WebApiClient.HttpApiConfig.httpClient">
+            <summary>
+            与HttpClientHandler实例关联的HttpClient
+            </summary>
+        </member>
+        <member name="F:WebApiClient.HttpApiConfig.syncRoot">
+            <summary>
+            同步锁
+            </summary>
+        </member>
+        <member name="P:WebApiClient.HttpApiConfig.Tags">
+            <summary>
+            获取配置的自定义数据的存储和访问容器
+            </summary>
+        </member>
+        <member name="P:WebApiClient.HttpApiConfig.HttpClient">
+            <summary>
+            获取HttpClient实例
+            </summary>
+            <exception cref="T:System.ObjectDisposedException"></exception>
+        </member>
+        <member name="P:WebApiClient.HttpApiConfig.HttpHost">
+            <summary>
+            获取或设置Http服务完整主机域名
+            例如http://www.webapiclient.com
+            设置了HttpHost值，HttpHostAttribute将失效  
+            </summary>
+        </member>
+        <member name="P:WebApiClient.HttpApiConfig.FormatOptions">
+            <summary>
+            获取或设置请求时序列化使用的默认格式   
+            影响JsonFormatter或KeyValueFormatter的序列化
+            </summary>
+        </member>
+        <member name="P:WebApiClient.HttpApiConfig.XmlFormatter">
+            <summary>
+            获取或设置Xml格式化工具
+            </summary>
+        </member>
+        <member name="P:WebApiClient.HttpApiConfig.JsonFormatter">
+            <summary>
+            获取或设置Json格式化工具
+            </summary>
+        </member>
+        <member name="P:WebApiClient.HttpApiConfig.KeyValueFormatter">
+            <summary>
+            获取或设置KeyValue格式化工具
+            </summary>
+        </member>
+        <member name="P:WebApiClient.HttpApiConfig.GlobalFilters">
+            <summary>
+            获取全局过滤器集合
+            非线程安全类型
+            </summary>
+        </member>
+        <member name="M:WebApiClient.HttpApiConfig.#ctor">
+            <summary>
+            Http接口的配置项   
+            </summary>
+        </member>
+        <member name="M:WebApiClient.HttpApiConfig.#ctor(WebApiClient.Interfaces.IHttpClient)">
+            <summary>
+            Http接口的配置项   
+            </summary>
+            <param name="client">客户端对象</param>
+        </member>
+        <member name="P:WebApiClient.HttpApiConfig.IsDisposed">
+            <summary>
+            获取对象是否已释放
+            </summary>
+        </member>
+        <member name="M:WebApiClient.HttpApiConfig.Dispose">
+            <summary>
+            关闭和释放所有相关资源
+            </summary>
+        </member>
+        <member name="M:WebApiClient.HttpApiConfig.Finalize">
+            <summary>
+            析构函数
+            </summary>
+        </member>
+        <member name="M:WebApiClient.HttpApiConfig.Dispose(System.Boolean)">
+            <summary>
+            释放资源
+            </summary>
+            <param name="disposing">是否也释放托管资源</param>
+        </member>
+        <member name="T:WebApiClient.HttpApiConfigException">
+            <summary>
+            表示Http接口的特性配置异常
+            </summary>
+        </member>
+        <member name="M:WebApiClient.HttpApiConfigException.#ctor(System.String)">
+            <summary>
+            Http接口特性配置异常
+            </summary>
+            <param name="message">提示信息</param>
+        </member>
+        <member name="T:WebApiClient.HttpApiRequestMessage">
+            <summary>
+            表示http api的请求消息
+            </summary>
+        </member>
+        <member name="P:WebApiClient.HttpApiRequestMessage.Timeout">
+            <summary>
+            获取或设置请求的超时时间
+            </summary>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.AddUrlQuery(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            追加Query参数到请求路径
+            </summary>
+            <param name="keyValue">参数</param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.AddUrlQuery(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Text.Encoding)">
+            <summary>
+            追加Query参数到请求路径
+            </summary>
+            <param name="keyValue">参数</param>
+            <param name="encoding">编码</param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.AddUrlQuery(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+            追加Query参数到请求路径
+            </summary>
+            <param name="keyValue">参数</param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.AddUrlQuery(System.Collections.Generic.KeyValuePair{System.String,System.String},System.Text.Encoding)">
+            <summary>
+            追加Query参数到请求路径
+            </summary>
+            <param name="keyValue">参数</param>
+            <param name="encoding">编码</param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.AddUrlQuery(System.String,System.String)">
+            <summary>
+            追加Query参数到请求路径
+            </summary>
+            <param name="key">参数名</param>
+            <param name="value">参数值</param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.AddUrlQuery(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            追加Query参数到请求路径
+            </summary>
+            <param name="key">参数名</param>
+            <param name="value">参数值</param>
+            <param name="encoding">编码</param>
+            <exception cref="T:WebApiClient.HttpApiConfigException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.AddFormFieldAsync(System.String,System.String)">
+            <summary>
+            添加字段到已有的Content
+            要求content-type为application/x-www-form-urlencoded
+            </summary>
+            <param name="name">名称</param>
+            <param name="value">值</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.AddFormFieldAsync(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            添加字段到已有的Content
+            要求content-type为application/x-www-form-urlencoded
+            </summary>
+            <param name="keyValues">键值对</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.MergeFields(System.Byte[],System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            合并内容
+            </summary>
+            <param name="formBody"></param>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.MergeBytes(System.Byte[],System.Byte[])">
+            <summary>
+            合并字节组
+            </summary>
+            <param name="formBody"></param>
+            <param name="byteConent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.AddMulitpartFile(System.IO.Stream,System.String,System.String,System.String)">
+            <summary>
+            添加文件内容到已有的Content
+            要求content-type为multipart/form-data
+            </summary>
+            <param name="stream">文件流</param>
+            <param name="name">名称</param>
+            <param name="fileName">文件名</param>
+            <param name="contentType">文件Mime</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.AddMulitpartText(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            添加文本内容到已有的Content
+            要求content-type为multipart/form-data
+            </summary>     
+            <param name="keyValues">键值对</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.AddMulitpartText(System.String,System.String)">
+            <summary>
+            添加文本内容到已有的Content
+            要求content-type为multipart/form-data
+            </summary>     
+            <param name="name">名称</param>
+            <param name="value">文本</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.AddMulitpartTextInternal(System.String,System.String)">
+            <summary>
+            添加文本内容到已有的Content
+            要求content-type为multipart/form-data
+            </summary>     
+            <param name="name">名称</param>
+            <param name="value">文本</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.SetCookies(System.String)">
+            <summary>
+            设置Cookie值到请求头
+            当HttpClientHandler.UseCookies == false才会提交到服务端
+            </summary>
+            <param name="cookieValues">cookie值，会自动进行URL编码，eg：key1=value1; key2=value2</param>
+            <exception cref="T:System.Net.CookieException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.SetCookie(System.String)">
+            <summary>
+            设置Cookie值到请求头
+            当HttpClientHandler.UseCookies == false才会提交到服务端
+            </summary>
+            <param name="cookieValues">cookie值，会自动进行URL编码，eg：key1=value1; key2=value2</param>
+            <exception cref="T:System.Net.CookieException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.SetRawCookie(System.String)">
+            <summary>
+            设置Cookie值到请求头
+            当HttpClientHandler.UseCookies == false才会提交到服务端
+            </summary>
+            <param name="cookieValues">cookie值，不进行URL编码，eg：key1=value1; key2=value2</param>
+            <exception cref="T:System.Net.CookieException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.SetCookie(System.String,System.Boolean)">
+            <summary>
+            设置Cookie值到请求头
+            当HttpClientHandler.UseCookies == false才会提交到服务端
+            </summary>
+            <param name="cookieValues">cookie值，eg：key1=value1; key2=value2</param>
+            <param name="useUrlEncode">是否使用Url编码</param>
+            <exception cref="T:System.Net.CookieException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.CastOrCreateMultipartContent">
+            <summary>
+            转换为MultipartContent
+            为null则返回MultipartContent的实例
+            </summary>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.EnsureMediaTypeEqual(System.String)">
+            <summary>
+            确保前后的mediaType一致
+            </summary>
+            <param name="newMediaType">新的MediaType</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.EnsureNotGetOrHead">
+            <summary>
+            确保不是Get或Head请求
+            返回关联的HttpContent对象
+            </summary>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.ToString">
+            <summary>
+            转换为字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiRequestMessage.ToStringAsync">
+            <summary>
+            转换为字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.HttpResponseMessageExtend">
+            <summary>
+            提供对 HttpResponseMessage内容保存的扩展
+            </summary>
+        </member>
+        <member name="M:WebApiClient.HttpResponseMessageExtend.SaveAsync(System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage},System.String)">
+            <summary>
+            保存到目标文件
+            </summary>
+            <param name="response"></param>
+            <param name="filePath">文件路径</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpResponseMessageExtend.SaveAsync(System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage},System.IO.Stream)">
+            <summary>
+            保存到目标流
+            </summary>
+            <param name="response"></param>
+            <param name="targetStream">流</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpResponseMessageExtend.SaveAsync(WebApiClient.ITask{System.Net.Http.HttpResponseMessage},System.String)">
+            <summary>
+            保存到目标文件
+            </summary>
+            <param name="response"></param>
+            <param name="filePath">文件路径</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpResponseMessageExtend.SaveAsync(WebApiClient.ITask{System.Net.Http.HttpResponseMessage},System.IO.Stream)">
+            <summary>
+            保存到目标流
+            </summary>
+            <param name="response"></param>
+            <param name="targetStream">流</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpResponseMessageExtend.SaveAsync(System.Net.Http.HttpResponseMessage,System.String)">
+            <summary>
+            保存到目标文件
+            </summary>
+            <param name="response"></param>
+            <param name="filePath">文件路径</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpResponseMessageExtend.SaveAsync(System.Net.Http.HttpResponseMessage,System.IO.Stream)">
+            <summary>
+            保存到目标流
+            </summary>
+            <param name="response"></param>
+            <param name="targetStream">流</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.IHttpApiClient">
+            <summary>
+            定义HttpApi客户端的接口
+            </summary>
+        </member>
+        <member name="P:WebApiClient.IHttpApiClient.ApiConfig">
+            <summary>
+            获取相关配置
+            </summary>
+        </member>
+        <member name="P:WebApiClient.IHttpApiClient.ApiInterceptor">
+            <summary>
+            获取拦截器
+            </summary>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IApiActionAttribute">
+            <summary>
+            定义ApiAction修饰特性的行为
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IApiActionAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            执行前
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IApiActionFilter">
+            <summary>
+            定义ApiAction过滤器的行为
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IApiActionFilter.OnBeginRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            准备请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IApiActionFilter.OnEndRequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            请求完成之后
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IApiActionFilterAttribute">
+            <summary>
+            定义ApiAction过滤器修饰特性的的行为
+            </summary>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IApiInterceptor">
+            <summary>
+            定义http接口拦截器的行为
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Interfaces.IApiInterceptor.ApiConfig">
+            <summary>
+            获取相关的配置
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IApiInterceptor.Intercept(System.Object,System.Reflection.MethodInfo,System.Object[])">
+            <summary>
+            拦截方法的调用
+            </summary>
+            <param name="target">接口的实例</param>
+            <param name="method">接口的方法</param>
+            <param name="parameters">接口的参数集合</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IApiParameterable">
+            <summary>
+            定义自身可以做为参数并进行相应处理的对象的行为
+            此对象作为参数时，不需要特性修饰
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IApiParameterable.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            http请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IApiParameterAttribute">
+            <summary>
+            定义Api参数修饰特性的行为
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IApiParameterAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            http请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IApiReturnAttribute">
+            <summary>
+            定义回复内容处理特性的行为
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IApiReturnAttribute.GetTaskResult(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            获取异步结果
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IAttributeMultiplable">
+            <summary>
+            定义特性是否允许在接口与方法上重复声明
+            如果不允许则优先选取方法上的特性
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Interfaces.IAttributeMultiplable.OrderIndex">
+            <summary>
+            获取顺序排序的索引
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Interfaces.IAttributeMultiplable.AllowMultiple">
+            <summary>
+            获取本类型是否允许在接口与方法上重复
+            </summary>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IHandleTask`1">
+            <summary>
+            定义异常处理的行为
+            </summary>
+            <typeparam name="TResult"></typeparam>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IHandleTask`1.WhenCatch``1(System.Func{`0})">
+            <summary>
+            当捕获到异常时返回指定结果
+            </summary>
+            <typeparam name="TException"></typeparam>
+            <param name="func">获取结果</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IHandleTask`1.WhenCatch``1(System.Func{``0,`0})">
+            <summary>
+            当捕获到异常时返回指定结果
+            </summary>
+            <typeparam name="TException"></typeparam>
+            <param name="func">获取结果</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IHandleTask`1.WhenCatch``1(System.Func{``0,System.Threading.Tasks.Task{`0}})">
+            <summary>
+            当捕获到异常时返回指定结果
+            </summary>
+            <typeparam name="TException"></typeparam>
+            <param name="func">获取结果</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IHttpClient">
+            <summary>
+            定义HttpClient的接口
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Interfaces.IHttpClient.Handler">
+            <summary>
+            获取关联的Http处理对象
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Interfaces.IHttpClient.DefaultRequestHeaders">
+            <summary>
+            获取默认的请求头管理对象
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Interfaces.IHttpClient.Timeout">
+            <summary>
+            获取或设置请求超时时间
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Interfaces.IHttpClient.MaxResponseContentBufferSize">
+            <summary>
+            获取或设置最大回复内容长度
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IHttpClient.SetProxy(System.Net.IWebProxy)">
+            <summary>
+            设置代理
+            </summary>
+            <param name="proxy">代理，为null则清除代理</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IHttpClient.SetCookie(System.Uri,System.String)">
+            <summary>
+            设置Cookie值到Cookie容器
+            当Handler.UseCookies才添加
+            </summary>
+            <param name="domain">cookie域名</param>
+            <param name="cookieValues">cookie值，会自动进行URL编码，eg：key1=value1; key2=value2</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IHttpClient.SetRawCookie(System.Uri,System.String)">
+            <summary>
+            设置Cookie值到Cookie容器
+            当Handler.UseCookies才添加
+            </summary>
+            <param name="domain">cookie域名</param>
+            <param name="cookieValues">cookie值，不进行URL编码，eg：key1=value1; key2=value2</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IHttpClient.CancelPendingRequests">
+            <summary>
+            取消正在挂起的请求
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IHttpClient.SendAsync(WebApiClient.HttpApiRequestMessage)">
+            <summary>
+            异步发送请求
+            </summary>
+            <param name="request">请求消息</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IJsonFormatter">
+            <summary>
+            定义json序列化/反序列化的行为
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IJsonFormatter.Serialize(System.Object,WebApiClient.FormatOptions)">
+            <summary>
+            将对象序列化为json文本
+            </summary>
+            <param name="obj">对象</param>
+            <param name="options">选项</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IJsonFormatter.Deserialize(System.String,System.Type)">
+            <summary>
+            将json文本反序列化对象
+            </summary>
+            <param name="json">json文本内容</param>
+            <param name="objType">对象类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IKeyValueFormatter">
+            <summary>
+            定义将对象转换为键值对的行为
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IKeyValueFormatter.Serialize(System.String,System.Object,WebApiClient.FormatOptions)">
+            <summary>
+            序列化对象为键值对
+            </summary>
+            <param name="name">对象名称</param>
+            <param name="obj">对象实例</param>
+            <param name="options">选项</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IKeyValueFormatter.Serialize(WebApiClient.Contexts.ApiParameterDescriptor,WebApiClient.FormatOptions)">
+            <summary>
+            序列化参数为键值对
+            </summary>
+            <param name="parameter">参数</param>
+            <param name="options">选项</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IRetryTask`1">
+            <summary>
+            定义重试的行为
+            </summary>
+            <typeparam name="TResult"></typeparam>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IRetryTask`1.WhenCatch``1">
+            <summary>
+            当捕获到异常时进行Retry
+            </summary>
+            <typeparam name="TException">异常类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IRetryTask`1.WhenCatch``1(System.Func{``0,System.Boolean})">
+            <summary>
+            当捕获到异常时进行Retry
+            </summary>
+            <typeparam name="TException">异常类型</typeparam>
+            <param name="predicate">返回true才Retry</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IRetryTask`1.WhenResult(System.Func{`0,System.Boolean})">
+            <summary>
+            当结果符合条件时进行Retry
+            </summary>
+            <param name="predicate">条件</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Interfaces.IXmlFormatter">
+            <summary>
+            定义xml序列化/反序列化的行为
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IXmlFormatter.Serialize(System.Object,System.Text.Encoding)">
+            <summary>
+            将对象序列化为xml文本
+            </summary>
+            <param name="obj">对象</param>
+            <param name="encoding">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Interfaces.IXmlFormatter.Deserialize(System.String,System.Type)">
+            <summary>
+            将xml文本反序列化对象
+            </summary>
+            <param name="xml">xml文本内容</param>
+            <param name="objType">对象类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.ApiDescriptorCache">
+            <summary>
+            提供Api描述的缓存
+            </summary>
+        </member>
+        <member name="F:WebApiClient.ApiDescriptorCache.cache">
+            <summary>
+            缓存字典
+            </summary>
+        </member>
+        <member name="M:WebApiClient.ApiDescriptorCache.#cctor">
+            <summary>
+            Api描述的缓存
+            </summary>
+        </member>
+        <member name="M:WebApiClient.ApiDescriptorCache.GetApiActionDescriptor(System.Reflection.MethodInfo)">
+            <summary>
+            从缓存获得ApiActionDescriptor
+            </summary>
+            <param name="method">接口的方法</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiDescriptorCache.GetActionDescriptor(System.Reflection.MethodInfo)">
+            <summary>
+            从拦截内容获得ApiActionDescriptor
+            </summary>
+            <param name="method">接口的方法</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiDescriptorCache.GetParameterDescriptor(System.Reflection.ParameterInfo)">
+            <summary>
+            生成ApiParameterDescriptor
+            </summary>
+            <param name="parameter">参数信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiDescriptorCache.GetReturnDescriptor(System.Reflection.MethodInfo)">
+            <summary>
+            生成ApiReturnDescriptor
+            </summary>
+            <param name="method">方法信息</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.ApiDescriptorCache.ParameterAttributeCollection">
+            <summary>
+            表示参数特性集合
+            </summary>
+        </member>
+        <member name="F:WebApiClient.ApiDescriptorCache.ParameterAttributeCollection.attribueList">
+            <summary>
+            特性列表
+            </summary>
+        </member>
+        <member name="P:WebApiClient.ApiDescriptorCache.ParameterAttributeCollection.Count">
+            <summary>
+            获取元素数量
+            </summary>
+        </member>
+        <member name="M:WebApiClient.ApiDescriptorCache.ParameterAttributeCollection.#ctor(System.Collections.Generic.IEnumerable{WebApiClient.Interfaces.IApiParameterAttribute})">
+            <summary>
+            参数特性集合
+            </summary>
+            <param name="defined">声明的特性</param>
+        </member>
+        <member name="M:WebApiClient.ApiDescriptorCache.ParameterAttributeCollection.Add(WebApiClient.Interfaces.IApiParameterAttribute)">
+            <summary>
+            添加新特性
+            </summary>
+            <param name="attribute"></param>
+        </member>
+        <member name="M:WebApiClient.ApiDescriptorCache.ParameterAttributeCollection.AddIfNotExists(WebApiClient.Interfaces.IApiParameterAttribute)">
+            <summary>
+            添加新特性
+            </summary>
+            <param name="attribute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiDescriptorCache.ParameterAttributeCollection.ToArray">
+            <summary>
+            转换为数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.ApiDescriptorCache.MultiplableComparer`1">
+            <summary>
+            是否允许重复的特性比较器
+            </summary>
+        </member>
+        <member name="M:WebApiClient.ApiDescriptorCache.MultiplableComparer`1.Equals(`0,`0)">
+            <summary>
+            是否相等
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiDescriptorCache.MultiplableComparer`1.GetHashCode(`0)">
+            <summary>
+            获取哈希码
+            </summary>
+            <param name="obj"></param>
+            <returns></returns> 
+        </member>
+        <member name="T:WebApiClient.ApiHandleTask`1">
+            <summary>
+            提供异常处理的请求任务
+            </summary>
+            <typeparam name="TResult"></typeparam>
+        </member>
+        <member name="F:WebApiClient.ApiHandleTask`1.invoker">
+            <summary>
+            请求任务创建的委托
+            </summary>
+        </member>
+        <member name="M:WebApiClient.ApiHandleTask`1.#ctor(System.Func{System.Threading.Tasks.Task{`0}})">
+            <summary>
+            异常处理的请求任务
+            </summary>
+            <param name="invoker">请求任务创建的委托</param>
+        </member>
+        <member name="M:WebApiClient.ApiHandleTask`1.GetAwaiter">
+            <summary>
+            执行InvokeAsync
+            并返回其TaskAwaiter对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiHandleTask`1.InvokeAsync">
+            <summary>
+            创建请求任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiHandleTask`1.WhenCatch``1(System.Func{`0})">
+            <summary>
+            当捕获到异常时返回指定结果
+            </summary>
+            <typeparam name="TException"></typeparam>
+            <param name="func">获取结果</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiHandleTask`1.WhenCatch``1(System.Func{``0,`0})">
+            <summary>
+            当捕获到异常时返回指定结果
+            </summary>
+            <typeparam name="TException"></typeparam>
+            <param name="func">获取结果</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiHandleTask`1.WhenCatch``1(System.Func{``0,System.Threading.Tasks.Task{`0}})">
+            <summary>
+            当捕获到异常时返回指定结果
+            </summary>
+            <typeparam name="TException"></typeparam>
+            <param name="func">获取结果</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.ApiRetryTask`1">
+            <summary>
+            表示支持重试的Api请求任务
+            </summary>
+            <typeparam name="TResult">结果类型</typeparam>
+        </member>
+        <member name="F:WebApiClient.ApiRetryTask`1.invoker">
+            <summary>
+            请求任务创建的委托
+            </summary>
+        </member>
+        <member name="F:WebApiClient.ApiRetryTask`1.retryMaxCount">
+            <summary>
+            获取最大重试次数
+            </summary>
+        </member>
+        <member name="F:WebApiClient.ApiRetryTask`1.retryDelay">
+            <summary>
+            获取各次重试的延时时间
+            </summary>
+        </member>
+        <member name="M:WebApiClient.ApiRetryTask`1.#ctor(System.Func{System.Threading.Tasks.Task{`0}},System.Int32,System.Func{System.Int32,System.TimeSpan})">
+            <summary>
+            支持重试的Api请求任务
+            </summary>
+            <param name="invoker">请求任务创建的委托</param>
+            <param name="retryMaxCount">最大尝试次数</param>
+            <param name="retryDelay">各次重试的延时时间</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:WebApiClient.ApiRetryTask`1.GetAwaiter">
+            <summary>
+            执行InvokeAsync
+            并返回其TaskAwaiter对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiRetryTask`1.InvokeAsync">
+            <summary>
+            创建请求任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiRetryTask`1.DelayBeforRetry(System.Int32)">
+            <summary>
+            执行前延时
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiRetryTask`1.WhenCatch``1">
+            <summary>
+            当捕获到异常时进行Retry
+            </summary>
+            <typeparam name="TException">异常类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiRetryTask`1.WhenCatch``1(System.Func{``0,System.Boolean})">
+            <summary>
+            当捕获到异常时进行Retry
+            </summary>
+            <typeparam name="TException">异常类型</typeparam>
+            <param name="predicate">返回true才Retry</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiRetryTask`1.WhenResult(System.Func{`0,System.Boolean})">
+            <summary>
+            当结果符合条件时进行Retry
+            </summary>
+            <param name="predicate">条件</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.ApiRetryTask`1.RetryMarkException">
+            <summary>
+            表示重试标记的异常
+            </summary>
+        </member>
+        <member name="M:WebApiClient.ApiRetryTask`1.RetryMarkException.#ctor(System.Exception)">
+            <summary>
+            重试标记的异常
+            </summary>
+            <param name="inner">内部异常</param>
+        </member>
+        <member name="T:WebApiClient.ApiTask">
+            <summary>
+            提供ApiTask的创建
+            </summary>
+        </member>
+        <member name="F:WebApiClient.ApiTask.CompletedTask">
+            <summary>
+            完成的任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiTask.GetConstructor(System.Type)">
+            <summary>
+            获取泛型构造器
+            </summary>
+            <param name="dataType">泛型参数类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiTask.CreateInstance(WebApiClient.HttpApiConfig,WebApiClient.Contexts.ApiActionDescriptor)">
+            <summary>
+            创建ApiTaskOf(T)的实例
+            </summary>
+            <param name="httpApiConfig">http接口配置</param>
+            <param name="apiActionDescriptor">api描述</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiTask.InvokeAsync">
+            <summary>
+            创建请求任务
+            返回请求结果
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.ApiTask.ApiTaskOf`1">
+            <summary>
+            表示Api请求的异步任务
+            </summary>
+            <typeparam name="TResult">结果类型</typeparam>
+        </member>
+        <member name="F:WebApiClient.ApiTask.ApiTaskOf`1.httpApiConfig">
+            <summary>
+            http接口配置
+            </summary>
+        </member>
+        <member name="F:WebApiClient.ApiTask.ApiTaskOf`1.apiActionDescriptor">
+            <summary>
+            api描述
+            </summary>
+        </member>
+        <member name="M:WebApiClient.ApiTask.ApiTaskOf`1.#ctor(WebApiClient.HttpApiConfig,WebApiClient.Contexts.ApiActionDescriptor)">
+            <summary>
+            Api请求的异步任务
+            </summary>
+            <param name="httpApiConfig">http接口配置</param>
+            <param name="apiActionDescriptor">api描述</param>
+        </member>
+        <member name="M:WebApiClient.ApiTask.ApiTaskOf`1.GetAwaiter">
+            <summary>
+            执行InvokeAsync
+            并返回其TaskAwaiter对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiTask.ApiTaskOf`1.InvokeAsync">
+            <summary>
+            创建请求任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiTask.ApiTaskOf`1.WebApiClient#ITask{TResult}#InvokeAsync">
+            <summary>
+            创建请求任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiTask.ApiTaskOf`1.RequestAsync">
+            <summary>
+            执行一次请求
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ApiTask.ApiTaskOf`1.RequestAsync(WebApiClient.Contexts.ApiActionContext)">
+            <summary>
+            异步执行http请求
+            </summary>
+            <param name="context">上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.AttributeExtend">
+            <summary>
+            成员特性扩展
+            </summary>
+        </member>
+        <member name="M:WebApiClient.AttributeExtend.GetAttribute``1(System.Reflection.MemberInfo,System.Boolean)">
+            <summary>
+            获取成员的特性
+            </summary>
+            <typeparam name="TAttribute"></typeparam>
+            <param name="member">成员</param>
+            <param name="inherit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.AttributeExtend.GetAttributes``1(System.Reflection.MemberInfo,System.Boolean)">
+            <summary>
+            获取成员的特性
+            </summary>
+            <typeparam name="TAttribute"></typeparam>
+            <param name="member">成员</param>
+            <param name="inherit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.AttributeExtend.GetAttributes``1(System.Reflection.ParameterInfo,System.Boolean)">
+            <summary>
+            获取成员的特性
+            </summary>
+            <typeparam name="TAttribute"></typeparam>
+            <param name="parameter">参数</param>
+            <param name="inherit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.AttributeExtend.FindDeclaringAttribute``1(System.Reflection.MethodInfo,System.Boolean)">
+            <summary>
+            从方法或声明的类型中查找第一个特性
+            </summary>
+            <typeparam name="TAttribute"></typeparam>
+            <param name="method">方法</param>
+            <param name="inherit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.AttributeExtend.FindDeclaringAttributes``1(System.Reflection.MethodInfo,System.Boolean)">
+            <summary>
+            从方法和声明的类型中查找所有特性
+            </summary>
+            <typeparam name="TAttribute"></typeparam>
+            <param name="method">方法</param>
+            <param name="inherit"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.DefaultHttpClientHandler">
+            <summary>
+            默认的HttpClientHandler
+            </summary>
+        </member>
+        <member name="F:WebApiClient.DefaultHttpClientHandler.sendTimes">
+            <summary>
+            发送次数
+            </summary>
+        </member>
+        <member name="F:WebApiClient.DefaultHttpClientHandler.syncRoot">
+            <summary>
+            同步锁
+            </summary>
+        </member>
+        <member name="F:WebApiClient.DefaultHttpClientHandler.hashSet">
+            <summary>
+            站点地址
+            </summary>
+        </member>
+        <member name="F:WebApiClient.DefaultHttpClientHandler.maxConnectionsPerServerSetter">
+            <summary>
+            每个服务的最大连接数设置器
+            </summary>
+        </member>
+        <member name="M:WebApiClient.DefaultHttpClientHandler.#cctor">
+            <summary>
+            静态构造器
+            </summary>
+        </member>
+        <member name="M:WebApiClient.DefaultHttpClientHandler.#ctor">
+            <summary>
+            HttpClientHandler
+            </summary>
+        </member>
+        <member name="M:WebApiClient.DefaultHttpClientHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            发送请求
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.DefaultHttpClientHandler.SetServicePointConnectionLimit(System.Uri,System.Int32)">
+            <summary>
+            通过ServicePoint设置最大连接数
+            如果其它实例也操作ServicePoint，将影响到本实例
+            每个站点只设置一次
+            </summary>
+            <param name="address">站点地址</param>
+            <param name="limit">最大连接数</param>
+        </member>
+        <member name="T:WebApiClient.DefaultHttpClientHandler.UriComparer">
+            <summary>
+            Uri比较器
+            </summary>
+        </member>
+        <member name="T:WebApiClient.HttpApiClientProxy">
+            <summary>
+            提供HttpApiClient代理类生成
+            不支持泛型方法的接口
+            不支持ref/out参数的接口
+            </summary>
+        </member>
+        <member name="F:WebApiClient.HttpApiClientProxy.interceptMethod">
+            <summary>
+            IApiInterceptor的Intercept方法
+            </summary>
+        </member>
+        <member name="F:WebApiClient.HttpApiClientProxy.baseConstructor">
+            <summary>
+            HttpApiClient的构造器
+            </summary>
+        </member>
+        <member name="F:WebApiClient.HttpApiClientProxy.proxyTypeCtorArgTypes">
+            <summary>
+            代理类型的构造器的参数类型
+            </summary>
+        </member>
+        <member name="F:WebApiClient.HttpApiClientProxy.hashCodeModuleBuilderCache">
+            <summary>
+            程序集HashCode^模块HashCode与模块创建器的缓存
+            </summary>
+        </member>
+        <member name="F:WebApiClient.HttpApiClientProxy.proxyTypeCtorCache">
+            <summary>
+            接口类型与代理类型的构造器缓存
+            </summary>
+        </member>
+        <member name="M:WebApiClient.HttpApiClientProxy.CreateProxyWithInterface(System.Type,WebApiClient.Interfaces.IApiInterceptor)">
+            <summary>
+            创建HttpApiClient代理类
+            并实现指定的接口
+            </summary>
+            <param name="interfaceType">接口类型</param>
+            <param name="interceptor">拦截器</param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiClientProxy.ImplementAsHttpApiClient(System.Type,System.Reflection.MethodInfo[])">
+            <summary>
+            继承HttpApiClient并实现接口
+            并返回代理类的构造器
+            </summary>
+            <param name="interfaceType">接口类型</param>
+            <param name="apiMethods">接口方法集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiClientProxy.BuildProxyType(System.Reflection.Emit.TypeBuilder,System.Reflection.MethodInfo[])">
+            <summary>
+            生成代理类型并实现相关方法
+            并返回其构造器
+            </summary>
+            <param name="builder"></param>
+            <param name="apiMethods">接口方法集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiClientProxy.BuildField(System.Reflection.Emit.TypeBuilder,System.String,System.Type)">
+            <summary>
+            生成代理类型的字段
+            </summary>
+            <param name="typeBuilder">类型生成器</param>
+            <param name="fieldName">字段名称</param>
+            <param name="type">字段类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiClientProxy.BuildCtor(System.Reflection.Emit.TypeBuilder,System.Reflection.Emit.FieldBuilder,System.Reflection.Emit.FieldBuilder)">
+            <summary>
+            生成代理类型的构造器
+            </summary>
+            <param name="builder">类型生成器</param>
+            <param name="fieldInterceptor">拦截器字段</param>
+            <param name="fieldApiMethods">接口方法集合字段</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpApiClientProxy.BuildMethods(System.Reflection.Emit.TypeBuilder,System.Reflection.MethodInfo[],System.Reflection.Emit.FieldBuilder,System.Reflection.Emit.FieldBuilder)">
+            <summary>
+            生成代理类型的接口实现方法
+            </summary>
+            <param name="builder">类型生成器</param>
+            <param name="apiMethods">接口方法集合</param>
+            <param name="fieldInterceptor">拦截器字段</param>
+            <param name="fieldApiMethods">接口方法集合字段</param>
+        </member>
+        <member name="T:WebApiClient.HttpUtility">
+            <summary>
+            提供URL的编解码功能
+            </summary>
+        </member>
+        <member name="M:WebApiClient.HttpUtility.ParseCookie(System.String,System.Boolean)">
+            <summary>
+            解析cookie
+            </summary>
+            <param name="cookieValues">cookie值</param>
+            <param name="useUrlEncode">是否对cookie的Value进行url utf-8编码</param>
+            <exception cref="T:System.Net.CookieException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpUtility.UrlEncode(System.String,System.Text.Encoding)">
+            <summary>
+            Url编码
+            </summary>
+            <param name="str">字符串</param>
+            <param name="encoding">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpUtility.UrlEncode(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Url编码为字节组
+            </summary>
+            <param name="bytes">url字节组</param>
+            <param name="offset">偏移量</param>
+            <param name="count">数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpUtility.UrlDecode(System.Byte[],System.Text.Encoding)">
+            <summary>
+            Url解码
+            </summary>
+            <param name="bytes">字节组</param>
+            <param name="encoding">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpUtility.UrlDecode(System.Byte[],System.Int32,System.Int32,System.Text.Encoding)">
+            <summary>
+            Url解码
+            </summary>
+            <param name="bytes">字节组</param>
+            <param name="offset">偏移量</param>
+            <param name="count">数量</param>
+            <param name="encoding">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpUtility.UrlDecode(System.String,System.Text.Encoding)">
+            <summary>
+            Url解码
+            </summary>
+            <param name="str">字符串</param>
+            <param name="encoding">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpUtility.HexToInt(System.Char)">
+            <summary>
+            hex转为int
+            </summary>
+            <param name="h">hex</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpUtility.IntToHex(System.Int32)">
+            <summary>
+            int转为hex
+            </summary>
+            <param name="n">int</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.HttpUtility.IsUrlSafeChar(System.Char)">
+            <summary>
+            获取字符是否为url安全字符
+            </summary>
+            <param name="ch">字符</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.MimeTable">
+            <summary>
+            提供文件扩展名与文件类型/子类型映射
+            </summary>
+        </member>
+        <member name="F:WebApiClient.MimeTable.defaultContentType">
+            <summary>
+            默认文件类型
+            </summary>
+        </member>
+        <member name="F:WebApiClient.MimeTable.mimeTable">
+            <summary>
+            mime数据表
+            </summary>
+        </member>
+        <member name="M:WebApiClient.MimeTable.#cctor">
+            <summary>
+            文件扩展名与文件类型/子类型映射
+            </summary>
+        </member>
+        <member name="M:WebApiClient.MimeTable.LoadMimeLines">
+            <summary>
+            加载mime资源所有行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.MimeTable.GetContentType(System.String)">
+            <summary>
+            获取ContentType
+            </summary>
+            <param name="fileNameOrExtension">文件扩展名</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.MulitpartFileContent">
+            <summary>
+            表示文件内容
+            </summary>
+        </member>
+        <member name="M:WebApiClient.MulitpartFileContent.#ctor(System.IO.Stream,System.String,System.String,System.String)">
+            <summary>
+            文件内容
+            </summary>
+            <param name="stream">文件流</param>
+            <param name="name">名称</param>
+            <param name="fileName">文件名</param>
+            <param name="contentType">文件Mime</param>
+        </member>
+        <member name="T:WebApiClient.MulitpartTextContent">
+            <summary>
+            表示文本内容
+            </summary>
+        </member>
+        <member name="M:WebApiClient.MulitpartTextContent.#ctor(System.String,System.String)">
+            <summary>
+            文本内容
+            </summary>     
+            <param name="name">名称</param>
+            <param name="value">文本</param>
+        </member>
+        <member name="M:WebApiClient.MulitpartTextContent.EncodingValue(System.String)">
+            <summary>
+            对值进行编码
+            </summary>
+            <param name="value">值</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.ParameterableAttribute">
+            <summary>
+            表示参数内容为IApiParameterable对象或其数组
+            不可继承
+            </summary>
+        </member>
+        <member name="M:WebApiClient.ParameterableAttribute.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            http请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ParameterableAttribute.GetApiParameterables(WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            从参数值获取IApiParameterable对象
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.PropertyGetter">
+            <summary>
+            表示属性的Getter
+            </summary>
+        </member>
+        <member name="F:WebApiClient.PropertyGetter.getFunc">
+            <summary>
+            get方法委托
+            </summary>
+        </member>
+        <member name="M:WebApiClient.PropertyGetter.#ctor(System.Reflection.PropertyInfo)">
+            <summary>
+            表示属性的Getter
+            </summary>
+            <param name="property">属性</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.PropertyGetter.#ctor(System.Type,System.String)">
+            <summary>
+            表示类型字段或属性的Getter
+            </summary>
+            <param name="declaringType">声名属性的类型</param>
+            <param name="propertyName">属性的名称</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.PropertyGetter.Invoke(System.Object)">
+            <summary>
+            获取属性的值
+            </summary>
+            <param name="instance">实例</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.PropertyGetter.CreateGetterDelegate(System.Type,System.String)">
+            <summary>
+            创建declaringType类型获取property值的委托
+            </summary>
+            <param name="declaringType">实例的类型</param>
+            <param name="propertyName">属性的名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.PropertySetter">
+            <summary>
+            表示属性的设置器
+            </summary>
+        </member>
+        <member name="F:WebApiClient.PropertySetter.setFunc">
+            <summary>
+            set方法委托
+            </summary>
+        </member>
+        <member name="M:WebApiClient.PropertySetter.#ctor(System.Reflection.PropertyInfo)">
+            <summary>
+            表示属性的Getter
+            </summary>
+            <param name="property">属性</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.PropertySetter.Invoke(System.Object,System.Object)">
+            <summary>
+            设置属性的值
+            </summary>
+            <param name="instance">实例</param>
+            <param name="value">值</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.PropertySetter.CreateSetterDelegate(System.Reflection.PropertyInfo)">
+            <summary>
+            创建属性的Set委托
+            </summary>
+            <param name="property">属性</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.RequestHeader">
+            <summary>
+            提供请求头枚举到名称的转换
+            </summary>
+        </member>
+        <member name="F:WebApiClient.RequestHeader.cache">
+            <summary>
+            请求头枚举和名称的缓存
+            </summary>
+        </member>
+        <member name="M:WebApiClient.RequestHeader.#cctor">
+            <summary>
+            请求头枚举到名称的转换
+            </summary>
+        </member>
+        <member name="M:WebApiClient.RequestHeader.GetName(System.Net.HttpRequestHeader)">
+            <summary>
+            获取请求头名称
+            </summary>
+            <param name="header">请求头枚举</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.TypeExtend">
+            <summary>
+            类型扩展
+            </summary>
+        </member>
+        <member name="F:WebApiClient.TypeExtend.interfaceMethodsCache">
+            <summary>
+            接口的方法缓存
+            </summary>
+        </member>
+        <member name="F:WebApiClient.TypeExtend.typeAllowMultipleCache">
+            <summary>
+            类型是否AllowMultiple的缓存
+            </summary>
+        </member>
+        <member name="M:WebApiClient.TypeExtend.GetAllApiMethods(System.Type)">
+            <summary>
+            获取接口类型及其继承的接口的所有方法
+            忽略HttpApiClient类型的所有接口的方法
+            </summary>
+            <param name="interfaceType">接口类型</param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TypeExtend.GetAllApiMethodsNoCache(System.Type)">
+            <summary>
+            获取接口类型及其继承的接口的所有方法
+            忽略HttpApiClient类型的所有接口的方法
+            </summary>
+            <param name="interfaceType">接口类型</param> 
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TypeExtend.GetInterfaceMethods(System.Type,System.Collections.Generic.HashSet{System.Type}@,System.Collections.Generic.HashSet{System.Reflection.MethodInfo}@)">
+            <summary>
+            递归查找接口的方法
+            </summary>
+            <param name="interfaceType">接口类型</param>
+            <param name="exceptHashSet">排除的接口类型</param>
+            <param name="methodHashSet">收集到的方法</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:WebApiClient.TypeExtend.EnsureApiMethod(System.Reflection.MethodInfo)">
+            <summary>
+            确保方法是支持的Api接口
+            </summary>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:WebApiClient.TypeExtend.IsInheritFrom``1(System.Type)">
+            <summary>
+            是否可以从TBase类型派生
+            </summary>
+            <typeparam name="TBase"></typeparam>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TypeExtend.AllowMultiple(System.Type)">
+            <summary>
+            关联的AttributeUsageAttribute是否AllowMultiple
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TypeExtend.IsDefinedFormatScope``1(System.Reflection.MemberInfo,WebApiClient.DataAnnotations.FormatScope)">
+            <summary>
+            返回特性是否声明指定的FormatScope
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="element"></param>
+            <param name="scope"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.ITask`1">
+            <summary>
+            定义返回结果的行为
+            </summary>
+            <typeparam name="TResult"></typeparam>
+        </member>
+        <member name="M:WebApiClient.ITask`1.InvokeAsync">
+            <summary>
+            创建请求任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.ITask`1.GetAwaiter">
+            <summary>
+            调用InvokeAsync
+            并返回其TaskAwaiter对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Parameterables.BasicAuth">
+            <summary>
+            表示将自身作为请求的基本授权
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Parameterables.BasicAuth.authValue">
+            <summary>
+            授权的值
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Parameterables.BasicAuth.scheme">
+            <summary>
+            secheme
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Parameterables.BasicAuth.#ctor(System.String,System.String)">
+            <summary>
+            基本授权
+            </summary>
+            <param name="userName">账号</param>
+            <param name="password">密码</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Parameterables.BasicAuth.GetBasicAuthValue(System.String,System.String)">
+            <summary>
+            获取基础认证的内容
+            </summary>
+            <param name="userName">账号</param>
+            <param name="password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.BasicAuth.WebApiClient#Interfaces#IApiParameterable#BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            http请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.BasicAuth.ToString">
+            <summary>
+            转换为字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Parameterables.FormField">
+            <summary>
+            表示将自身作为x-www-form-urlencoded的字段
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Parameterables.FormField.stringValue">
+            <summary>
+            文本内容
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Parameterables.FormField.IgnoreWhenNull">
+            <summary>
+            获取或设置当值为null是否忽略提交
+            默认为false
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.#ctor(System.Object)">
+            <summary>
+            将自身作为x-www-form-urlencoded的字段
+            </summary>     
+            <param name="value">文本内容</param>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.#ctor(System.String)">
+            <summary>
+            x-www-form-urlencoded的字段
+            如果有[FormContent]的参数，FormField需要放在其后
+            </summary>     
+            <param name="value">文本内容</param>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.WebApiClient#Interfaces#IApiParameterable#BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            http请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.WillIgnore(System.Object)">
+            <summary>
+            返回是否应该忽略提交 
+            </summary>
+            <param name="val">值</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.op_Implicit(System.String)~WebApiClient.Parameterables.FormField">
+            <summary>
+            从string类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.op_Implicit(System.Int32)~WebApiClient.Parameterables.FormField">
+            <summary>
+            从int类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.op_Implicit(System.Nullable{System.Int32})~WebApiClient.Parameterables.FormField">
+            <summary>
+            从int?类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.op_Implicit(System.Decimal)~WebApiClient.Parameterables.FormField">
+            <summary>
+            从decimal类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.op_Implicit(System.Nullable{System.Decimal})~WebApiClient.Parameterables.FormField">
+            <summary>
+            从decimal?类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.op_Implicit(System.Single)~WebApiClient.Parameterables.FormField">
+            <summary>
+            从float类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.op_Implicit(System.Nullable{System.Single})~WebApiClient.Parameterables.FormField">
+            <summary>
+            从float?类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.op_Implicit(System.Double)~WebApiClient.Parameterables.FormField">
+            <summary>
+            从double类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.op_Implicit(System.Nullable{System.Double})~WebApiClient.Parameterables.FormField">
+            <summary>
+            从double?类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.op_Implicit(System.DateTime)~WebApiClient.Parameterables.FormField">
+            <summary>
+            从DateTime类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.FormField.op_Implicit(System.Nullable{System.DateTime})~WebApiClient.Parameterables.FormField">
+            <summary>
+            从DateTime?类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Parameterables.MulitpartFile">
+            <summary>
+            表示将自身作为multipart/form-data的一个文件项
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Parameterables.MulitpartFile.stream">
+            <summary>
+            流
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Parameterables.MulitpartFile.filePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Parameterables.MulitpartFile.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Parameterables.MulitpartFile.ContentType">
+            <summary>
+            获取或设置文件的Mime
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartFile.#ctor(System.Byte[],System.String)">
+            <summary>
+            将自身作为multipart/form-data的一个文件项
+            </summary>
+            <param name="buffer">数据</param>
+            <param name="fileName">文件友好名称</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartFile.#ctor(System.IO.Stream,System.String)">
+            <summary>
+            将自身作为multipart/form-data的一个文件项
+            </summary>
+            <param name="stream">数据流</param>
+            <param name="fileName">文件友好名称</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartFile.#ctor(System.String)">
+            <summary>
+            multipart/form-data的一个文件项
+            </summary>
+            <param name="localFilePath">本地文件路径</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartFile.WebApiClient#Interfaces#IApiParameterable#BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            执行请求前
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartFile.GetStream">
+            <summary>
+            获取文件流
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Parameterables.MulitpartText">
+            <summary>
+            表示将自身作为multipart/form-data的一个文本项
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Parameterables.MulitpartText.stringValue">
+            <summary>
+            文本内容
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Parameterables.MulitpartText.IgnoreWhenNull">
+            <summary>
+            获取或设置当值为null是否忽略提交
+            默认为false
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.#ctor(System.Object)">
+            <summary>
+            将自身作为multipart/form-data的一个文本项
+            </summary>     
+            <param name="value">文本内容</param>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.#ctor(System.String)">
+            <summary>
+            multipart/form-data的一个文本项
+            </summary>     
+            <param name="value">文本内容</param>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.WebApiClient#Interfaces#IApiParameterable#BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            http请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.WillIgnore(System.Object)">
+            <summary>
+            返回是否应该忽略提交 
+            </summary>
+            <param name="val">值</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.op_Implicit(System.String)~WebApiClient.Parameterables.MulitpartText">
+            <summary>
+            从string类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.op_Implicit(System.Int32)~WebApiClient.Parameterables.MulitpartText">
+            <summary>
+            从int类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.op_Implicit(System.Nullable{System.Int32})~WebApiClient.Parameterables.MulitpartText">
+            <summary>
+            从int?类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.op_Implicit(System.Decimal)~WebApiClient.Parameterables.MulitpartText">
+            <summary>
+            从decimal类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.op_Implicit(System.Nullable{System.Decimal})~WebApiClient.Parameterables.MulitpartText">
+            <summary>
+            从decimal?类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.op_Implicit(System.Single)~WebApiClient.Parameterables.MulitpartText">
+            <summary>
+            从float类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.op_Implicit(System.Nullable{System.Single})~WebApiClient.Parameterables.MulitpartText">
+            <summary>
+            从float?类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.op_Implicit(System.Double)~WebApiClient.Parameterables.MulitpartText">
+            <summary>
+            从double类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.op_Implicit(System.Nullable{System.Double})~WebApiClient.Parameterables.MulitpartText">
+            <summary>
+            从double?类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.op_Implicit(System.DateTime)~WebApiClient.Parameterables.MulitpartText">
+            <summary>
+            从DateTime类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.MulitpartText.op_Implicit(System.Nullable{System.DateTime})~WebApiClient.Parameterables.MulitpartText">
+            <summary>
+            从DateTime?类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Parameterables.Timeout">
+            <summary>
+            表示将自身作为请求的超时时间控制
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Parameterables.Timeout.TimeSpan">
+            <summary>
+            获取超时时间
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Parameterables.Timeout.#ctor(System.Int32)">
+            <summary>
+            请求的超时时间
+            </summary>
+            <param name="milliseconds">超时时间的毫秒数</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:WebApiClient.Parameterables.Timeout.#ctor(System.TimeSpan)">
+            <summary>
+            请求的超时时间
+            </summary>
+            <param name="timeSpan">超时时间</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:WebApiClient.Parameterables.Timeout.BeforeRequestAsync(WebApiClient.Contexts.ApiActionContext,WebApiClient.Contexts.ApiParameterDescriptor)">
+            <summary>
+            http请求之前
+            </summary>
+            <param name="context">上下文</param>
+            <param name="parameter">特性关联的参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.Timeout.op_Implicit(System.Int32)~WebApiClient.Parameterables.Timeout">
+            <summary>
+            从int类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Parameterables.Timeout.op_Implicit(System.TimeSpan)~WebApiClient.Parameterables.Timeout">
+            <summary>
+            从TimeSpan类型隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.RetryException">
+            <summary>
+            表示重试异常
+            </summary>
+        </member>
+        <member name="M:WebApiClient.RetryException.#ctor(System.String)">
+            <summary>
+            重试异常
+            </summary>
+            <param name="message">提示</param>
+        </member>
+        <member name="T:WebApiClient.TagItem">
+            <summary>
+            表示Tags的一个数据项
+            </summary>
+        </member>
+        <member name="F:WebApiClient.TagItem.value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:WebApiClient.TagItem.IsNull">
+            <summary>
+            获取值是否为NULL
+            </summary>
+        </member>
+        <member name="P:WebApiClient.TagItem.Value">
+            <summary>
+            获取值
+            </summary>
+        </member>
+        <member name="M:WebApiClient.TagItem.#ctor(System.Object)">
+            <summary>
+            ITag的数据项
+            </summary>
+            <param name="value">数据</param>
+        </member>
+        <member name="M:WebApiClient.TagItem.As``1">
+            <summary>
+            强制转换为指定类型
+            为null则返回目标类型的默认值
+            </summary>
+            <typeparam name="T">指定类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TagItem.As``1(``0)">
+            <summary>
+            强制转换为指定类型
+            </summary>
+            <typeparam name="T">指定类型</typeparam>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TagItem.AsInt32">
+            <summary>
+            转换为int
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TagItem.AsBoolean">
+            <summary>
+            转换为bool
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TagItem.AsDateTime">
+            <summary>
+            转换为时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TagItem.ToString">
+            <summary>
+            转换为字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiClient.Tags">
+            <summary>
+            表示自定义数据的存储和访问容器
+            线程安全类型
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Tags.syncRoot">
+            <summary>
+            同步锁
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Tags.lazy">
+            <summary>
+            数据字典
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Tags.#ctor">
+            <summary>
+            定义数据的存储和访问容器
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Tags.Id">
+            <summary>
+            获取或设置唯一标识符
+            </summary>
+        </member>
+        <member name="P:WebApiClient.Tags.Item(System.String)">
+            <summary>
+            获取值
+            </summary>
+            <param name="key">键</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Tags.Get(System.String)">
+            <summary>
+            获取值
+            </summary>
+            <param name="key">键</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Tags.Remove(System.String)">
+            <summary>
+            删除键
+            </summary>
+            <param name="key">键</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.Tags.Set(System.String,System.Object)">
+            <summary>
+            设置值
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="T:WebApiClient.Tags.DebugView">
+            <summary>
+            调试视图
+            </summary>
+        </member>
+        <member name="F:WebApiClient.Tags.DebugView.value">
+            <summary>
+            查看的对象
+            </summary>
+        </member>
+        <member name="M:WebApiClient.Tags.DebugView.#ctor(WebApiClient.Tags)">
+            <summary>
+            调试视图
+            </summary>
+            <param name="target">查看的对象</param>
+        </member>
+        <member name="P:WebApiClient.Tags.DebugView.Values">
+            <summary>
+            查看的内容
+            </summary>
+        </member>
+        <member name="T:WebApiClient.TaskExtend">
+            <summary>
+            提供ITask的扩展
+            </summary>
+        </member>
+        <member name="M:WebApiClient.TaskExtend.Retry``1(WebApiClient.ITask{``0},System.Int32)">
+            <summary>
+            返回提供请求重试的请求任务对象
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="task"></param>
+            <param name="maxCount">最大重试次数</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TaskExtend.Retry``1(WebApiClient.ITask{``0},System.Int32,System.TimeSpan)">
+            <summary>
+            返回提供请求重试的请求任务对象
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="task"></param>
+            <param name="maxCount">最大重试次数</param>
+            <param name="delay">各次重试的延时时间</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TaskExtend.Retry``1(WebApiClient.ITask{``0},System.Int32,System.Func{System.Int32,System.TimeSpan})">
+            <summary>
+            返回提供请求重试的请求任务对象
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="task"></param>
+            <param name="maxCount">最大重试次数</param>
+            <param name="delay">各次重试的延时时间</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TaskExtend.Handle``1(WebApiClient.ITask{``0})">
+            <summary>
+            返回提供异常处理请求任务对象
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="task"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TaskExtend.HandleAsDefaultWhenException``1(WebApiClient.ITask{``0})">
+            <summary>
+            当遇到异常时返回默认值
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="task"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+        <member name="M:WebApiClient.TaskExtend.HandleAsDefaultWhenException``1(WebApiClient.ITask{``0},System.Action{System.Exception})">
+            <summary>
+            当遇到异常时返回默认值
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="task"></param>
+            <param name="handler">异常处理委托</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

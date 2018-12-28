@@ -1,0 +1,15 @@
+C:\Projects\WebGatherer\HttpImg\bin\Debug\HttpImg.exe.config
+C:\Projects\WebGatherer\HttpImg\bin\Debug\HttpImg.exe
+C:\Projects\WebGatherer\HttpImg\bin\Debug\HttpImg.pdb
+C:\Projects\WebGatherer\HttpImg\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\WebGatherer\HttpImg\bin\Debug\vip.common.dll
+C:\Projects\WebGatherer\HttpImg\bin\Debug\vip.dal.dll
+C:\Projects\WebGatherer\HttpImg\bin\Debug\WebApiClient.dll
+C:\Projects\WebGatherer\HttpImg\bin\Debug\vip.common.pdb
+C:\Projects\WebGatherer\HttpImg\bin\Debug\vip.dal.pdb
+C:\Projects\WebGatherer\HttpImg\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\WebGatherer\HttpImg\bin\Debug\WebApiClient.xml
+C:\Projects\WebGatherer\HttpImg\obj\Debug\HttpImg.csprojResolveAssemblyReference.cache
+C:\Projects\WebGatherer\HttpImg\obj\Debug\HttpImg.csproj.CoreCompileInputs.cache
+C:\Projects\WebGatherer\HttpImg\obj\Debug\HttpImg.exe
+C:\Projects\WebGatherer\HttpImg\obj\Debug\HttpImg.pdb

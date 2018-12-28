@@ -1,0 +1,3776 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Less.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Less.Base64">
+            <summary>
+            表示 Base64 字符串
+            </summary>
+        </member>
+        <member name="P:Less.Base64.StringValue">
+            <summary>
+            字符串值
+            </summary>
+        </member>
+        <member name="P:Less.Base64.ByteArrayValue">
+            <summary>
+            字节值
+            </summary>
+        </member>
+        <member name="M:Less.Base64.#ctor(System.String)">
+            <summary>
+            创建实例
+            </summary>
+            <param name="stringValue">Base64 字符串</param>
+            <exception cref="T:System.ArgumentNullException">Base64 字符串不能为 null</exception>
+            <exception cref="T:System.FormatException">Base64 字符串格式不正确</exception>
+        </member>
+        <member name="M:Less.Base64.#ctor(System.Byte[])">
+            <summary>
+            创建实例
+            </summary>
+            <param name="byteArrayValue">字节序列</param>
+            <exception cref="T:System.ArgumentNullException">字节序列不能为 null</exception>
+        </member>
+        <member name="M:Less.Base64.op_Implicit(System.String)~Less.Base64">
+            <summary>
+            从 string 到 Base64 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Base64.op_Implicit(Less.Base64)~System.String">
+            <summary>
+            从 Base64 到 string 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Base64.op_Implicit(System.Byte[])~Less.Base64">
+            <summary>
+            从 byte[] 到 Base64 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Base64.op_Implicit(Less.Base64)~System.Byte[]">
+            <summary>
+            从 Base64 到 byte[] 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Base64.op_Equality(Less.Base64,Less.Base64)">
+            <summary>
+            比较两个实例是否相等
+            </summary>
+            <param name="l"></param>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Base64.op_Inequality(Less.Base64,Less.Base64)">
+            <summary>
+            比较两个实例是否不相等
+            </summary>
+            <param name="l"></param>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Base64.Equals(System.Object)">
+            <summary>
+            比较两个实例是否相等
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Base64.GetHashCode">
+            <summary>
+            重写获取哈希码方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Base64.ToString">
+            <summary>
+            输出标准 Base64 字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Base64.ToUrlString">
+            <summary>
+            输出适用于 Url 的 Base64 字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Base64.ToByteArray">
+            <summary>
+            输出字节序列
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Base64.ToHexString">
+            <summary>
+            输出 Hex 字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Base64.ConvertToStandardString(System.String)">
+            <summary>
+            转换成标准 Base64 字符串
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Base64.ConvertToUrlString(System.String)">
+            <summary>
+            转换成适用于 Url 的 Base64 字符串
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Class`1">
+            <summary>
+            值类型的一个引用包装
+            用来隐式转换到值类型或可空的值类型
+            </summary>
+        </member>
+        <member name="P:Less.Class`1.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="M:Less.Class`1.#ctor(`0)">
+            <summary>
+            私有构造函数
+            </summary>
+        </member>
+        <member name="M:Less.Class`1.op_Implicit(Less.Class{`0})~System.Nullable{`0}">
+            <summary>
+            从 Class&lt;T&gt; 到 T? 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Class`1.op_Implicit(System.Nullable{`0})~Less.Class{`0}">
+            <summary>
+            从 T? 到 Class&lt;T&gt; 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Class`1.op_Implicit(Less.Class{`0})~`0">
+            <summary>
+            从 Class&lt;T&gt; 到 T 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Class`1.op_Implicit(`0)~Less.Class{`0}">
+            <summary>
+            从 T 到 Class&lt;T&gt; 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.ByteExtensions">
+            <summary>
+            byte 的扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.ByteExtensions.ToHexString(System.Byte[])">
+            <summary>
+            输出 Hex 字符串
+            </summary>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.ByteExtensions.ToString(System.Byte[],System.Text.Encoding)">
+            <summary>
+            按指定编码输出字符串
+            </summary>
+            <param name="array"></param>
+            <param name="encoding">指定的编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.ByteExtensions.Copy(System.Byte[])">
+            <summary>
+            复制 byte[]
+            </summary>
+            <param name="array"></param>
+            <returns>返回复制的 byte[] 副本</returns>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.OverflowException">数组超过了最大长度</exception>
+        </member>
+        <member name="M:Less.ByteExtensions.ExtArray(System.Byte[],System.Int32)">
+            <summary>
+            扩展 byte[]
+            </summary>
+            <param name="array"></param>
+            <param name="length">新长度</param>
+            <returns></returns>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.OverflowException">数组超过了最大长度</exception>
+        </member>
+        <member name="T:Less.CharExtensions">
+            <summary>
+            char 的扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.CharExtensions.IsUnicode(System.Char)">
+            <summary>
+            是否 unicode 字符
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.CharExtensions.ToUpper(System.Char)">
+            <summary>
+            转换为大写
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.CharExtensions.ToLower(System.Char)">
+            <summary>
+            转换为小写
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.CharExtensions.IsEnglish(System.Char)">
+            <summary>
+            是否英文字符
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.CharExtensions.ToChineseNumber(System.Char)">
+            <summary>
+            转换为中文数字字符
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.DateTimeExtensions">
+            <summary>
+            DateTime 扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.DateTimeExtensions.ToExactString(System.DateTime)">
+            <summary>
+            精确的日期时间格式化字符串
+            yyyy-MM-dd HH:mm:ss.fffffff
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="M:Less.DateTimeExtensions.ToDateTimeStringForDisplay(System.DateTime)">
+            <summary>
+            日期时间格式化字符串
+            yyyy-M-d H:mm
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="M:Less.DateTimeExtensions.ToDateStringForDisplay(System.DateTime)">
+            <summary>
+            日期格式化字符串
+            yyyy-M-d
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="M:Less.DateTimeExtensions.ToDateString(System.DateTime)">
+            <summary>
+            日期格式化字符串
+            yyyy-MM-dd
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="M:Less.DateTimeExtensions.ToTimeString(System.DateTime)">
+            <summary>
+            时间格式化字符串
+            HH:mm:ss.fffffff
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="T:Less.DecimalExtensions">
+            <summary>
+            decimal 扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.DecimalExtensions.Floor(System.Decimal)">
+            <summary>
+            向下取整
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.DecimalExtensions.Ceiling(System.Decimal)">
+            <summary>
+            向上取整
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.DecimalExtensions.ToLong(System.Decimal)">
+            <summary>
+            输出长整型
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.DecimalExtensions.ToInt(System.Decimal)">
+            <summary>
+            输出整型
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.DecimalExtensions.ToString(System.Decimal,System.Int32)">
+            <summary>
+            输出字符串
+            </summary>
+            <param name="d"></param>
+            <param name="keep">保留小数位</param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.DoubleExtensions">
+            <summary>
+            double 扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.DoubleExtensions.ToInt(System.Double)">
+            <summary>
+            转换为整型
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.FloatExtensions">
+            <summary>
+            float 扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.FloatExtensions.Floor(System.Single)">
+            <summary>
+            向下取整
+            </summary>
+            <param name="f"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.FloatExtensions.Ceiling(System.Single)">
+            <summary>
+            向上取整
+            </summary>
+            <param name="f"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.FloatExtensions.ToInt(System.Single)">
+            <summary>
+            转换为整型
+            </summary>
+            <param name="f"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.GuidExtensions">
+            <summary>
+            Guid 扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.GuidExtensions.ToBase64(System.Guid)">
+            <summary>
+            转换成 Base64
+            </summary>
+            <param name="g"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.GuidExtensions.IsNotEmpty(System.Guid)">
+            <summary>
+            是否非空
+            </summary>
+            <param name="g"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.GuidExtensions.IsEmpty(System.Guid)">
+            <summary>
+            是否空Guid
+            </summary>
+            <param name="g"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.GuidExtensions.ToStringWithoutHyphen(System.Guid)">
+            <summary>
+            输出没有横杠的字符串
+            </summary>
+            <param name="g"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.LongExtensions">
+            <summary>
+            long 扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.LongExtensions.ToInt(System.Int64)">
+            <summary>
+            输出整型
+            </summary>
+            <param name="l"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.UintExtensions">
+            <summary>
+            uint 的扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.UintExtensions.ToInt(System.UInt32)">
+            <summary>
+            转换为 int
+            </summary>
+            <param name="ui"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.IntExtensions">
+            <summary>
+            int 的扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.IntExtensions.#cctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:Less.IntExtensions.Pow(System.Int32,System.Int32)">
+            <summary>
+            返回指定次幂
+            </summary>
+            <param name="i"></param>
+            <param name="power">次幂</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.IntExtensions.In(System.Int32,System.Int32[])">
+            <summary>
+            是否与数组中的任意一项相等
+            </summary>
+            <param name="i"></param>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.IntExtensions.IsEvenNumber(System.Int32)">
+            <summary>
+            是否偶数
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.IntExtensions.Random(System.Int32)">
+            <summary>
+            以此实例为最大值 生成非负随机数 不包括最大值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.IntExtensions.ToString(System.Int32,System.Int32)">
+            <summary>
+            输出指定长度的字符串
+            数字长度不足在前面补零
+            </summary>
+            <param name="i"></param>
+            <param name="length">字符串长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.IntExtensions.Between(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            是否在指定的范围之间
+            </summary>
+            <param name="i"></param>
+            <param name="begin"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.MatchCollectionExtensions">
+            <summary>
+            MatchCollection 的扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.MatchCollectionExtensions.GetValues(System.Text.RegularExpressions.MatchCollection,System.String)">
+            <summary>
+            获取匹配
+            </summary>
+            <param name="m"></param>
+            <param name="groupName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.MatchCollectionExtensions.GetValues(System.Text.RegularExpressions.MatchCollection,System.Int32)">
+            <summary>
+            获取匹配
+            </summary>
+            <param name="m"></param>
+            <param name="groupIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.MatchExtensions">
+            <summary>
+            Match 的扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.MatchExtensions.GetValue(System.Text.RegularExpressions.Match,System.String)">
+            <summary>
+            获取匹配
+            </summary>
+            <param name="m"></param>
+            <param name="groupName">分组</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.MatchExtensions.GetValue(System.Text.RegularExpressions.Match,System.Int32)">
+            <summary>
+            获取匹配
+            </summary>
+            <param name="m"></param>
+            <param name="groupIndex">分组</param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.ObjectExtensions">
+            <summary>
+            object 的扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.ObjectExtensions.IsNotDefault``1(``0)">
+            <summary>
+            如果不是默认值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.ObjectExtensions.IsDefault``1(``0,``0)">
+            <summary>
+            如果是默认值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <param name="instead">替代值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.ObjectExtensions.IsDefault``1(``0)">
+            <summary>
+            如果是默认值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.ObjectExtensions.IsNotNull(System.Object)">
+            <summary>
+            如果不是 null
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.ObjectExtensions.IsNull``1(``0,``0)">
+            <summary>
+            如果是 null
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <param name="instead">替代实例</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.ObjectExtensions.IsNull(System.Object)">
+            <summary>
+            如果是 null
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.HexString">
+            <summary>
+            表示 Hex 字符串
+            </summary>
+        </member>
+        <member name="P:Less.HexString.ByteArrayValue">
+            <summary>
+            字节值
+            </summary>
+        </member>
+        <member name="P:Less.HexString.Item(System.Int32)">
+            <summary>
+            获取或设置指定索引的字节
+            </summary>
+            <param name="index">索引</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.HexString.#ctor(System.String)">
+            <summary>
+            创建实例
+            </summary>
+            <param name="stringValue">Hex 字符串</param>
+            <exception cref="T:System.ArgumentNullException">Hex 字符串不能为 null</exception>
+            <exception cref="T:System.FormatException">Hex 字符串格式不正确</exception>
+        </member>
+        <member name="M:Less.HexString.#ctor(System.Byte[])">
+            <summary>
+            创建实例
+            </summary>
+            <param name="byteArrayValue">字节序列</param>
+            <exception cref="T:System.ArgumentNullException">字节序列不能为 null</exception>
+        </member>
+        <member name="M:Less.HexString.op_Equality(Less.HexString,Less.HexString)">
+            <summary>
+            重载操作符
+            </summary>
+            <param name="l"></param>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.HexString.op_Inequality(Less.HexString,Less.HexString)">
+            <summary>
+            重载操作符
+            </summary>
+            <param name="l"></param>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.HexString.Equals(System.Object)">
+            <summary>
+            比较两个 HexString 是否相等
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.HexString.GetHashCode">
+            <summary>
+            哈希
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.HexString.op_Implicit(System.Byte[])~Less.HexString">
+            <summary>
+            从 byte[] 到 HexString 的转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.HexString.op_Implicit(Less.HexString)~System.Byte[]">
+            <summary>
+            从 HexString 到 byte[] 的转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.HexString.op_Implicit(System.String)~Less.HexString">
+            <summary>
+            从 string 到 HexString 的转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.HexString.op_Implicit(Less.HexString)~System.String">
+            <summary>
+            从 HexString 到 string 的转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.HexString.ToString">
+            <summary>
+            输出 Hex 字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.HexString.ToString(System.Boolean)">
+            <summary>
+            输出 Hex 字符串
+            </summary>
+            <param name="prefix0x">0x前缀的格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.HexString.ToByteArray">
+            <summary>
+            输出字节数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.HexString.ToBase64">
+            <summary>
+            输出 Base64 字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Collection.ArrayEnumerator`1">
+            <summary>
+            数组枚举器
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Less.Collection.ArrayEnumerator`1.#ctor(`0[],System.Int32)">
+            <summary>
+            创建实例
+            </summary>
+            <param name="array">要枚举的数组</param>
+            <param name="startIndex">起始索引</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex 不能小于零</exception>
+        </member>
+        <member name="M:Less.Collection.ArrayEnumerator`1.#ctor(`0[],System.Int32,System.Int32)">
+            <summary>
+            创建实例
+            </summary>
+            <param name="array">要枚举的数组</param>
+            <param name="startIndex">起始索引</param>
+            <param name="count">枚举次数</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex 不能小于零</exception>
+            <exception cref="T:System.ArgumentException">count 不能大于 startIndex 到数组末尾的元素数</exception>
+        </member>
+        <member name="P:Less.Collection.ArrayEnumerator`1.Current">
+            <summary>
+            获取集合中位于枚举数当前位置的元素
+            </summary>
+            <exception cref="T:System.InvalidOperationException">在创建了枚举数后集合被修改了</exception>
+        </member>
+        <member name="M:Less.Collection.ArrayEnumerator`1.Dispose">
+            <summary>
+            不需要 没有非托管资源需要释放
+            </summary>
+        </member>
+        <member name="M:Less.Collection.ArrayEnumerator`1.MoveNext">
+            <summary>
+            将枚举数推进到集合的下一个元素
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Collection.ArrayEnumerator`1.Reset">
+            <summary>
+            将枚举数设置为其初始位置，该位置位于集合中第一个元素之前
+            </summary>
+        </member>
+        <member name="M:Less.Collection.ArrayEnumerator`1.GetEnumerator">
+            <summary>
+            返回一个循环访问集合的枚举数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Collection.ArrayExtensions">
+            <summary>
+            数组扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.GetEnumerator``1(``0[],System.Int32)">
+            <summary>
+            获取数组枚举器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="startIndex">起始索引</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex 不能小于零</exception>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.GetEnumerator``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            获取数组枚举器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="startIndex">起始索引</param>
+            <param name="count">枚举次数</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex 不能小于零</exception>
+            <exception cref="T:System.ArgumentException">count 不能大于 startIndex 到数组末尾的元素数</exception>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.EachDesc``1(``0[],System.Action{``0})">
+            <summary>
+            倒序枚举
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.EachDesc``1(``0[],System.Action{System.Int32,``0})">
+            <summary>
+            倒序枚举
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.EachDesc``1(``0[],System.Func{``0,System.Boolean})">
+            <summary>
+            倒序枚举
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="func"></param>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.EachDesc``1(``0[],System.Func{System.Int32,``0,System.Boolean})">
+            <summary>
+            倒序枚举
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="func"></param>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.Each``1(``0[],System.Action{System.Int32,``0})">
+            <summary>
+            枚举数组 在处理委托中同时得到当前的实例、计数
+            </summary>
+            <typeparam name="T">数组类型</typeparam>
+            <param name="array"></param>
+            <param name="action">枚举处理的委托</param>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.Each``1(``0[],System.Func{System.Int32,``0,System.Boolean})">
+            <summary>
+            枚举数组 在处理委托中同时得到当前的实例、计数
+            </summary>
+            <typeparam name="T">数组类型</typeparam>
+            <param name="array"></param>
+            <param name="func">枚举处理的委托</param>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.Each``1(``0[],System.Action{System.Int32,``0,Less.Collection.EnumInfo})">
+            <summary>
+            枚举数组 在处理委托中同时得到当前的实例、计数和扩展信息
+            </summary>
+            <typeparam name="T">数组类型</typeparam>
+            <param name="array"></param>
+            <param name="action">枚举处理的委托</param>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.Each``1(``0[],System.Func{System.Int32,``0,Less.Collection.EnumInfo,System.Boolean})">
+            <summary>
+            枚举数组 在处理委托中同时得到当前的实例、计数和扩展信息
+            </summary>
+            <typeparam name="T">数组类型</typeparam>
+            <param name="array"></param>
+            <param name="func">枚举处理的委托</param>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.SortDescending``1(``0[])">
+            <summary>
+            降序排序
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <returns>降序数组</returns>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.Sort``1(``0[])">
+            <summary>
+            升序排序
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <returns>升序数组</returns>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.ExtArray``1(``0[],``0[])">
+            <summary>
+            扩展数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="extension">扩展元素</param>
+            <returns></returns>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.OverflowException">数组超过了最大长度</exception>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.ExtArray``1(``0[],System.Int32)">
+            <summary>
+            扩展数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="length">新长度</param>
+            <returns></returns>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.OverflowException">数组超过了最大长度</exception>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.SubArray``1(``0[],System.Int32)">
+            <summary>
+            获取子数组
+            </summary>
+            <typeparam name="T">元素类型</typeparam>
+            <param name="array">父数组</param>
+            <param name="startIndex">起始索引</param>
+            <returns>子数组</returns>
+            <exception cref="T:System.NullReferenceException">数组不能为 null</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex 不能小于数组的下限</exception>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.SubArray``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            获取子数组
+            </summary>
+            <typeparam name="T">元素类型</typeparam>
+            <param name="array">父数组</param>
+            <param name="startIndex">起始索引</param>
+            <param name="count">元素个数</param>
+            <returns>子数组</returns>
+            <exception cref="T:System.ArgumentNullException">数组不能为 null</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex 不能小于数组的下限</exception>
+            <exception cref="T:System.ArgumentException">count 不能大于 startIndex 到数组末尾的元素数</exception>
+            <exception cref="T:System.OverflowException">count 超出范围</exception>
+        </member>
+        <member name="M:Less.Collection.ArrayExtensions.Copy``1(``0[])">
+            <summary>
+            复制数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <returns>返回复制的数组副本</returns>
+            <exception cref="T:System.NullReferenceException">数组不能为 null</exception>
+            <exception cref="T:System.RankException">不能复制多维数组</exception>
+        </member>
+        <member name="T:Less.Collection.ListEnumerator`1">
+            <summary>
+            列表枚举器
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Less.Collection.ListEnumerator`1.#ctor(System.Collections.Generic.List{`0},System.Int32)">
+            <summary>
+            创建实例
+            </summary>
+            <param name="list">要枚举的列表</param>
+            <param name="startIndex">起始索引</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex 不能小于零</exception>
+        </member>
+        <member name="M:Less.Collection.ListEnumerator`1.#ctor(System.Collections.Generic.List{`0},System.Int32,System.Int32)">
+            <summary>
+            创建实例
+            </summary>
+            <param name="list">要枚举的列表</param>
+            <param name="startIndex">起始索引</param>
+            <param name="count">枚举次数</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex 不能小于零</exception>
+            <exception cref="T:System.ArgumentException">count 不能大于 startIndex 到列表末尾的元素数</exception>
+        </member>
+        <member name="P:Less.Collection.ListEnumerator`1.Current">
+            <summary>
+            获取集合中位于枚举数当前位置的元素
+            </summary>
+            <exception cref="T:System.InvalidOperationException">在创建了枚举数后集合被修改了</exception>
+        </member>
+        <member name="M:Less.Collection.ListEnumerator`1.Dispose">
+            <summary>
+            不需要 没有非托管资源需要释放
+            </summary>
+        </member>
+        <member name="M:Less.Collection.ListEnumerator`1.MoveNext">
+            <summary>
+            将枚举数推进到集合的下一个元素
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Collection.ListEnumerator`1.Reset">
+            <summary>
+            将枚举数设置为其初始位置，该位置位于集合中第一个元素之前
+            </summary>
+        </member>
+        <member name="M:Less.Collection.ListEnumerator`1.GetEnumerator">
+            <summary>
+            返回一个循环访问集合的枚举数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Collection.EnumInfo">
+            <summary>
+            枚举信息
+            </summary>
+        </member>
+        <member name="P:Less.Collection.EnumInfo.IsFirst">
+            <summary>
+            是否第一个元素
+            </summary>
+        </member>
+        <member name="P:Less.Collection.EnumInfo.IsLast">
+            <summary>
+            是否最后一个元素
+            </summary>
+        </member>
+        <member name="T:Less.Collection.HashSetExtensions">
+            <summary>
+            HashSet 扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.Collection.HashSetExtensions.ToArray``1(System.Collections.Generic.HashSet{``0})">
+            <summary>
+            复制到数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="hashSet"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Collection.IEnumerableExtensions">
+            <summary>
+            可枚举对象的扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.Collection.IEnumerableExtensions.Dispose(System.Collections.Generic.IEnumerable{System.IDisposable})">
+            <summary>
+            释放资源
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:Less.Collection.IEnumerableExtensions.Select``1(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            获取指定类型的项
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Collection.IEnumerableExtensions.IsNotEmpty(System.Collections.IEnumerable)">
+            <summary>
+            项数是否不为零
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Collection.IEnumerableExtensions.IsEmpty(System.Collections.IEnumerable)">
+            <summary>
+            项数是否为零
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Collection.IEnumerableExtensions.SortDescending``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            降序排序
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="items"></param>
+            <returns>降序排列的一组元素</returns>
+        </member>
+        <member name="M:Less.Collection.IEnumerableExtensions.Sort``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            升序排序
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="items"></param>
+            <returns>升序排列的一组元素</returns>
+        </member>
+        <member name="M:Less.Collection.IEnumerableExtensions.Each``1(System.Collections.Generic.IEnumerable{``0},System.Action{System.Int32,``0})">
+            <summary>
+            枚举对象 在处理委托中同时得到当前的实例、计数
+            </summary>
+            <typeparam name="T">元素类型</typeparam>
+            <param name="e">可枚举的对象</param>
+            <param name="action">枚举处理的委托</param>
+        </member>
+        <member name="M:Less.Collection.IEnumerableExtensions.Each``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Int32,``0,System.Boolean})">
+            <summary>
+            枚举对象 在处理委托中同时得到当前的实例、计数
+            </summary>
+            <typeparam name="T">元素类型</typeparam>
+            <param name="e">可枚举的对象</param>
+            <param name="func">枚举处理的委托</param>
+        </member>
+        <member name="M:Less.Collection.IEnumerableExtensions.Each``1(System.Collections.Generic.IEnumerable{``0},System.Action{System.Int32,``0,Less.Collection.EnumInfo})">
+            <summary>
+            枚举对象 在处理委托中同时得到当前的实例、计数和扩展信息
+            </summary>
+            <typeparam name="T">元素类型</typeparam>
+            <param name="e">可枚举的对象</param>
+            <param name="action">枚举处理的委托</param>
+        </member>
+        <member name="M:Less.Collection.IEnumerableExtensions.Each``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.Int32,``0,Less.Collection.EnumInfo,System.Boolean})">
+            <summary>
+            枚举对象 在处理委托中同时得到当前的实例、计数和扩展信息
+            </summary>
+            <typeparam name="T">元素类型</typeparam>
+            <param name="e">可枚举的对象</param>
+            <param name="func">枚举处理的委托</param>
+        </member>
+        <member name="T:Less.Collection.IntExtensions">
+            <summary>
+            int 扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.Collection.IntExtensions.Each(System.Int32,System.Action)">
+            <summary>
+            按次数枚举
+            </summary>
+            <param name="count">枚举次数</param>
+            <param name="action">枚举处理的委托</param>
+        </member>
+        <member name="M:Less.Collection.IntExtensions.Each(System.Int32,System.Action{System.Int32})">
+            <summary>
+            按次数枚举
+            在处理委托中得到当前的计数
+            </summary>
+            <param name="count">枚举次数</param>
+            <param name="action">枚举处理的委托</param>
+        </member>
+        <member name="M:Less.Collection.IntExtensions.EachDesc(System.Int32,System.Action{System.Int32})">
+            <summary>
+            按次数倒序枚举
+            在处理委托中得到当前的计数
+            </summary>
+            <param name="count">枚举次数</param>
+            <param name="action">枚举处理的委托</param>
+        </member>
+        <member name="M:Less.Collection.IntExtensions.Each(System.Int32,System.Func{System.Int32,System.Boolean})">
+            <summary>
+            按次数枚举
+            在处理委托中得到当前的计数
+            </summary>
+            <param name="count">枚举次数</param>
+            <param name="func">枚举处理的委托</param>
+        </member>
+        <member name="M:Less.Collection.IntExtensions.EachDesc(System.Int32,System.Func{System.Int32,System.Boolean})">
+            <summary>
+            按次数倒序枚举
+            在处理委托中得到当前的计数
+            </summary>
+            <param name="count">枚举次数</param>
+            <param name="func">枚举处理的委托</param>
+        </member>
+        <member name="T:Less.Collection.ListExtensions">
+            <summary>
+            列表扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.Collection.ListExtensions.GetEnumerator``1(System.Collections.Generic.List{``0},System.Int32)">
+            <summary>
+            获取列表枚举器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="startIndex">起始索引</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex 不能小于零</exception>
+        </member>
+        <member name="M:Less.Collection.ListExtensions.GetEnumerator``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
+            <summary>
+            获取列表枚举器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="startIndex">起始索引</param>
+            <param name="count">枚举次数</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex 不能小于零</exception>
+            <exception cref="T:System.ArgumentException">count 不能大于 startIndex 到列表末尾的元素数</exception>
+        </member>
+        <member name="T:Less.Collection.ObjectExtensions">
+            <summary>
+            object 扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.Collection.ObjectExtensions.ConstructArray``1(``0)">
+            <summary>
+            把元素转换成数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Collection.ObjectExtensions.ConstructArray``1(``0,``0[])">
+            <summary>
+            连接元素成为数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t"></param>
+            <param name="array"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">array 不能为 null</exception>
+        </member>
+        <member name="T:Less.Encrypt.Encrypt">
+            <summary>
+            提供加密方法
+            </summary>
+        </member>
+        <member name="M:Less.Encrypt.Encrypt.MD5(System.String[],System.Text.Encoding,System.Boolean)">
+            <summary>
+            把若干个字符串连接起来进行MD5 加密
+            </summary>
+            <param name="s">要加密的字符串</param>
+            <param name="e">字符串编码</param>
+            <param name="sortByValue">对字符串的值进行排序</param>
+            <returns>散列值</returns>
+        </member>
+        <member name="M:Less.Encrypt.Encrypt.MD5(System.String[],System.Text.Encoding)">
+            <summary>
+            把若干个字符串连接起来进行MD5 加密
+            </summary>
+            <param name="s">要加密的字符串</param>
+            <param name="e">字符串编码</param>
+            <returns>散列值</returns>
+        </member>
+        <member name="M:Less.Encrypt.Encrypt.MD5(System.String,System.Text.Encoding)">
+            <summary>
+            MD5 加密
+            </summary>
+            <param name="s">要加密的字符串</param>
+            <param name="e">字符串编码</param>
+            <returns>散列值</returns>
+        </member>
+        <member name="M:Less.Encrypt.Encrypt.SHA1(System.String[],System.Text.Encoding,System.Boolean)">
+            <summary>
+            把若干个字符串连接起来进行SHA1 加密
+            </summary>
+            <param name="s">要加密的字符串</param>
+            <param name="e">字符串编码</param>
+            <param name="sortByValue">对字符串的值进行排序</param>
+            <returns>散列值</returns>
+        </member>
+        <member name="M:Less.Encrypt.Encrypt.SHA1(System.String[],System.Text.Encoding)">
+            <summary>
+            把若干个字符串连接起来进行SHA1 加密
+            </summary>
+            <param name="s">要加密的字符串</param>
+            <param name="e">字符串编码</param>
+            <returns>散列值</returns>
+        </member>
+        <member name="M:Less.Encrypt.Encrypt.SHA1(System.String,System.Text.Encoding)">
+            <summary>
+            SHA1 加密
+            </summary>
+            <param name="s">要加密的字符串</param>
+            <param name="e">字符串编码</param>
+            <returns>散列值</returns>
+        </member>
+        <member name="T:Less.MultiThread.Asyn">
+            <summary>
+            异步执行任务
+            </summary>
+        </member>
+        <member name="M:Less.MultiThread.Asyn.Exec(System.Action)">
+            <summary>
+            异步执行任务
+            </summary>
+            <param name="action">任务委托</param>
+        </member>
+        <member name="M:Less.MultiThread.Asyn.Exec``1(``0,System.Action{``0})">
+            <summary>
+            异步执行任务
+            </summary>
+            <param name="value">传递的值</param>
+            <param name="action">任务委托</param>
+        </member>
+        <member name="T:Less.MultiThread.Pool">
+            <summary>
+            线程池
+            </summary>
+        </member>
+        <member name="P:Less.MultiThread.Pool.Threads">
+            <summary>
+            线程数
+            </summary>
+        </member>
+        <member name="P:Less.MultiThread.Pool.Busy">
+            <summary>
+            正在工作的线程数
+            </summary>
+        </member>
+        <member name="P:Less.MultiThread.Pool.Available">
+            <summary>
+            空闲的线程数
+            </summary>
+        </member>
+        <member name="P:Less.MultiThread.Pool.Done">
+            <summary>
+            线程池的所有线程已经退出
+            </summary>
+        </member>
+        <member name="M:Less.MultiThread.Pool.#ctor(System.Int32)">
+            <summary>
+            创建一个线程池
+            </summary>
+            <param name="threads"></param>
+            <exception cref="T:System.ArgumentOutOfRangeException">线程数超出范围</exception>
+        </member>
+        <member name="M:Less.MultiThread.Pool.Finalize">
+            <summary>
+            释放非托管资源
+            </summary>
+        </member>
+        <member name="M:Less.MultiThread.Pool.GetAvailableThreads">
+            <summary>
+             获取可用线程数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.MultiThread.Pool.GetMaxThreads">
+            <summary>
+            获取最大线程数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.MultiThread.Pool.SetMaxThreads(System.Int32)">
+            <summary>
+            设置最大线程数
+            </summary>
+            <param name="value"></param>
+            <exception cref="T:System.ArgumentOutOfRangeException">线程数超出范围</exception>
+        </member>
+        <member name="M:Less.MultiThread.Pool.Exec(System.Action)">
+            <summary>
+            在进程的线程池中执行任务
+            </summary>
+            <param name="action">任务委托</param>
+            <exception cref="T:System.ApplicationException">遇到了内存不足的情况</exception>
+            <exception cref="T:System.OutOfMemoryException">无法将该工作项排队</exception>
+        </member>
+        <member name="M:Less.MultiThread.Pool.Exec``1(``0,System.Action{``0})">
+            <summary>
+            在进程的线程池中执行任务
+            </summary>
+            <param name="value">委托参数</param>
+            <param name="action">任务委托</param>        
+            <exception cref="T:System.ApplicationException">遇到了内存不足的情况</exception>
+            <exception cref="T:System.OutOfMemoryException">无法将该工作项排队</exception>
+        </member>
+        <member name="M:Less.MultiThread.Pool.Wait">
+            <summary>
+            等待所有线程退出
+            </summary>
+        </member>
+        <member name="M:Less.MultiThread.Pool.Execute(System.Action)">
+            <summary>
+            在线程池实例中执行任务
+            </summary>
+            <param name="action">任务委托</param>
+            <exception cref="T:System.ApplicationException">遇到了内存不足的情况</exception>
+            <exception cref="T:System.OutOfMemoryException">无法将该工作项排队</exception>
+        </member>
+        <member name="M:Less.MultiThread.Pool.Execute``1(``0,System.Action{``0})">
+            <summary>
+            在线程池实例中执行任务
+            </summary>
+            <param name="value">委托参数</param>
+            <param name="action">任务委托</param>
+            <exception cref="T:System.ApplicationException">遇到了内存不足的情况</exception>
+            <exception cref="T:System.OutOfMemoryException">无法将该工作项排队</exception>
+        </member>
+        <member name="M:Less.MultiThread.Pool.Dispose">
+            <summary>
+            释放非托管资源
+            </summary>
+        </member>
+        <member name="T:Less.Network.EmailClient">
+            <summary>
+            电子邮件客户端
+            </summary>
+        </member>
+        <member name="M:Less.Network.EmailClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            创建客户端
+            </summary>
+            <param name="host">主机</param>
+            <param name="userName">登录名</param>
+            <param name="password">密码</param>
+        </member>
+        <member name="M:Less.Network.EmailClient.Send(System.String,System.String,System.String)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="to">收件人</param>
+            <param name="subject">邮件标题</param>
+            <param name="body">邮件正文</param>
+        </member>
+        <member name="M:Less.Network.EmailClient.Send(System.String,System.String,System.String,System.String)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="to">收件人</param>
+            <param name="toName">收件人显示名</param>
+            <param name="subject">邮件标题</param>
+            <param name="body">邮件正文</param>
+        </member>
+        <member name="M:Less.Network.EmailClient.Send(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="fromName">发件人显示名</param>
+            <param name="to">收件人</param>
+            <param name="toName">收件人显示名</param>
+            <param name="subject">邮件标题</param>
+            <param name="body">邮件正文</param>
+        </member>
+        <member name="M:Less.Network.EmailClient.Send(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="from">发件人</param>
+            <param name="fromName">发件人显示名</param>
+            <param name="to">收件人</param>
+            <param name="toName">收件人显示名</param>
+            <param name="subject">邮件标题</param>
+            <param name="body">邮件正文</param>
+        </member>
+        <member name="T:Less.Network.HttpMethod">
+            <summary>
+            http 请求方式
+            </summary>
+        </member>
+        <member name="P:Less.Network.HttpMethod.Get">
+            <summary>
+            GET
+            </summary>
+        </member>
+        <member name="P:Less.Network.HttpMethod.Post">
+            <summary>
+            POST
+            </summary>
+        </member>
+        <member name="M:Less.Network.HttpMethod.op_Equality(Less.Network.HttpMethod,Less.Network.HttpMethod)">
+            <summary>
+            
+            </summary>
+            <param name="l"></param>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Network.HttpMethod.op_Inequality(Less.Network.HttpMethod,Less.Network.HttpMethod)">
+            <summary>
+            
+            </summary>
+            <param name="l"></param>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Network.HttpMethod.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Network.HttpMethod.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Network.HttpMethod.op_Implicit(System.String)~Less.Network.HttpMethod">
+            <summary>
+            从 string 到 HttpMethod 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Network.HttpMethod.op_Implicit(Less.Network.HttpMethod)~System.String">
+            <summary>
+            从 HttpMethod 到 string 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Network.MimeType">
+            <summary>
+            MimeType
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Image_Jpeg">
+            <summary>
+            image/jpeg
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Image_Png">
+            <summary>
+            image/png
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Image_Gif">
+            <summary>
+            image/gif
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Image_Icon">
+            <summary>
+            image/icon
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Image_Bmp">
+            <summary>
+            image/bmp
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Image_Tiff">
+            <summary>
+            image/tiff
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Image_Exif">
+            <summary>
+            image/exif
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Image_Emf">
+            <summary>
+            image/emf
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Image_Wmf">
+            <summary>
+            image/wmf
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Image_MemoryBmp">
+            <summary>
+            image/memorybmp
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Text_Html">
+            <summary>
+            text/html
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Text_Xml">
+            <summary>
+            text/xml
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Text_Css">
+            <summary>
+            text/css
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.Application_Json">
+            <summary>
+            application/json
+            </summary>
+        </member>
+        <member name="P:Less.Network.MimeType.All">
+            <summary>
+            */*
+            </summary>
+        </member>
+        <member name="M:Less.Network.MimeType.op_Equality(Less.Network.MimeType,Less.Network.MimeType)">
+            <summary>
+            
+            </summary>
+            <param name="l"></param>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Network.MimeType.op_Inequality(Less.Network.MimeType,Less.Network.MimeType)">
+            <summary>
+            
+            </summary>
+            <param name="l"></param>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Network.MimeType.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Network.MimeType.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Network.MimeType.op_Implicit(Less.Network.MimeType)~System.String">
+            <summary>
+            从 MimeType 到 string 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Network.MimeType.op_Implicit(System.String)~Less.Network.MimeType">
+            <summary>
+            从 string 到 MimeType 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Text.CaseOptions">
+            <summary>
+            大小写选项
+            </summary>
+        </member>
+        <member name="F:Less.Text.CaseOptions.IgnoreCase">
+            <summary>
+            忽略大小写
+            </summary>
+        </member>
+        <member name="F:Less.Text.CaseOptions.CaseSensitive">
+            <summary>
+            大小写敏感
+            </summary>
+        </member>
+        <member name="T:Less.Text.CaseOptionsExtensions">
+            <summary>
+            CaseOptions 的扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.Text.CaseOptionsExtensions.ToStringComparison(Less.Text.CaseOptions)">
+            <summary>
+            根据大小写选项决定字符串查找选项
+            </summary>
+            <param name="caseOption"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Text.CombineExtensions">
+            <summary>
+            拼接
+            </summary>
+        </member>
+        <member name="M:Less.Text.CombineExtensions.Join``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            连接字符串
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.CombineExtensions.Join``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            用指定的分隔符连接字符串
+            </summary>
+            <param name="items"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.CombineExtensions.List(System.Collections.Specialized.NameValueCollection,System.String)">
+            <summary>
+            用文字表示键值集合
+            </summary>
+            <param name="list">键值集合</param>
+            <param name="separator">分隔符</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.CombineExtensions.Repeat(System.String,System.Int32)">
+            <summary>
+            重复字符串
+            </summary>
+            <param name="s"></param>
+            <param name="count">重复次数</param>
+            <returns>重复后的字符串</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">重复次数不能小于零</exception>
+        </member>
+        <member name="T:Less.Text.CompareExtensions">
+            <summary>
+            比较
+            </summary>
+        </member>
+        <member name="M:Less.Text.CompareExtensions.NotIn(System.String,System.String[])">
+            <summary>
+            字符串不是数组中的任意一项
+            </summary>
+            <param name="s"></param>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.CompareExtensions.NotIn(System.String,Less.Text.CaseOptions,System.String[])">
+            <summary>
+            字符串不是数组中的任意一项
+            </summary>
+            <param name="s"></param>
+            <param name="option"></param>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.CompareExtensions.In(System.String,System.String[])">
+            <summary>
+            字符串是否与数组中的任意一项相等
+            大小写敏感
+            </summary>
+            <param name="s"></param>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.CompareExtensions.In(System.String,Less.Text.CaseOptions,System.String[])">
+            <summary>
+            字符串是否与数组中的任意一项相等
+            </summary>
+            <param name="s"></param>
+            <param name="option">大小写选项</param>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.CompareExtensions.CompareIgnoreCase(System.String,System.String)">
+            <summary>
+            不分大小写比较字符串
+            </summary>
+            <param name="s"></param>
+            <param name="toCompare">要比较的字符串</param>
+            <returns>是否相同</returns>
+            <exception cref="T:System.NullReferenceException">字符串不能为 null</exception>
+        </member>
+        <member name="M:Less.Text.CompareExtensions.CompareTrim(System.String,System.String)">
+            <summary>
+            比较字符串
+            去除首尾空格
+            </summary>
+            <param name="s"></param>
+            <param name="toCompare">要比较的字符串</param>
+            <returns>是否相同</returns>
+            <exception cref="T:System.NullReferenceException">字符串不能为 null toCompare 不能为 null</exception>
+        </member>
+        <member name="M:Less.Text.CompareExtensions.CompareTrimAndIgnoreCase(System.String,System.String)">
+            <summary>
+            去除首尾空格
+            不分大小写比较字符串
+            </summary>
+            <param name="s"></param>
+            <param name="toCompare">要比较的字符串</param>
+            <returns>是否相同</returns>
+            <exception cref="T:System.NullReferenceException">字符串不能为 null toCompare 不能为 null</exception>
+        </member>
+        <member name="T:Less.Text.ConvertExtensions">
+            <summary>
+            转换
+            </summary>
+        </member>
+        <member name="M:Less.Text.ConvertExtensions.ToRegex(System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            转换成 Regex
+            </summary>
+            <param name="s"></param>
+            <param name="options">Regex 选项</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.ConvertExtensions.ToRegex(System.String)">
+            <summary>
+            转换成 Regex
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.ConvertExtensions.ToByteArray(System.String,System.Text.Encoding)">
+            <summary>
+            转换成 byte[]
+            </summary>
+            <param name="s"></param>
+            <param name="encoding">指定的编码</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">字符串不能为 null</exception>
+            <exception cref="T:System.Text.EncoderFallbackException">
+            发生回退（请参见了解编码以获得完整的解释） 
+            - 并且 - 
+            System.Text.Encoding.EncoderFallback 被设置为 System.Text.EncoderExceptionFallback
+            </exception>
+        </member>
+        <member name="M:Less.Text.ConvertExtensions.ToDateTime(System.String)">
+            <summary>
+            转换成 DateTime
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.ConvertExtensions.ToGuid(System.String)">
+            <summary>
+            转换成 Guid
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.ConvertExtensions.ToGuidArray(System.String[])">
+            <summary>
+            转换成 Guid[]
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.ConvertExtensions.ToDecimal(System.String)">
+            <summary>
+            转换成 decimal
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.ConvertExtensions.ToByte(System.String)">
+            <summary>
+            转换成 byte
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.ConvertExtensions.ToShort(System.String)">
+            <summary>
+            转换成 short
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.ConvertExtensions.ToInt(System.String)">
+            <summary>
+            转换成 int
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.ConvertExtensions.ToIntArray(System.String[])">
+            <summary>
+            转换成 int[]
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.ConvertExtensions.ToLong(System.String)">
+            <summary>
+            转换成 long
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.ConvertExtensions.ToBool(System.String)">
+            <summary>
+            转换成 bool
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Text.EditExtensions">
+            <summary>
+            编辑
+            </summary>
+        </member>
+        <member name="M:Less.Text.EditExtensions.FormatString(System.String,System.Object)">
+            <summary>
+            替换
+            </summary>
+            <param name="s"></param>
+            <param name="arg0"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.FormatString(System.String,System.Object,System.Object)">
+            <summary>
+            替换
+            </summary>
+            <param name="s"></param>
+            <param name="arg0"></param>
+            <param name="arg1"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.FormatString(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            替换
+            </summary>
+            <param name="s"></param>
+            <param name="arg0"></param>
+            <param name="arg1"></param>
+            <param name="arg2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.FormatString(System.String,System.Object[])">
+            <summary>
+            替换
+            </summary>
+            <param name="s"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.Ellipsis(System.String,System.Int32)">
+            <summary>
+            省略文本
+            </summary>
+            <param name="s"></param>
+            <param name="keepUnicodeCharCount">要保留的 unicode 字符数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.Trim(System.String,System.Int32)">
+            <summary>
+            根据 Unicode 字符数截取字符串
+            </summary>
+            <param name="s">要进行截取的字符串</param>
+            <param name="keepUnicodeCharCount">要保留的 Unicode 字符数</param>
+            <returns>截取结果</returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.TrimStart(System.String,System.String,System.StringComparison)">
+            <summary>
+            清除头部字符串
+            </summary>
+            <param name="s"></param>
+            <param name="startString"></param>
+            <param name="stringComparison"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.TrimStart(System.String,System.String)">
+            <summary>
+            清除头部字符串
+            大小写敏感
+            </summary>
+            <param name="s"></param>
+            <param name="startString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.TrimStart(System.String)">
+            <summary>
+            清除头部空白
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.TrimEnd(System.String,System.String,System.StringComparison)">
+            <summary>
+            清除尾部字符串
+            </summary>
+            <param name="s"></param>
+            <param name="endString"></param>
+            <param name="stringComparison"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.TrimEnd(System.String,System.String)">
+            <summary>
+            清除尾部字符串
+            大小写敏感
+            </summary>
+            <param name="s"></param>
+            <param name="endString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.TrimEnd(System.String)">
+            <summary>
+            清除尾部空白
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.Clear(System.String,System.Text.RegularExpressions.Regex)">
+            <summary>
+            清除指定的匹配
+            </summary>
+            <param name="s"></param>
+            <param name="regex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.Clear(System.String,System.String)">
+            <summary>
+            清除字符串中的指定字符串
+            区分大小写
+            </summary>
+            <param name="s">字符串</param>
+            <param name="stringToClear">指定字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.Clear(System.String,System.String,Less.Text.CaseOptions)">
+            <summary>
+            清除字符串中的指定字符串
+            </summary>
+            <param name="s">字符串</param>
+            <param name="stringToClear">指定字符串</param>
+            <param name="caseOption">大小写选项</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EditExtensions.Replace(System.String,System.String,System.String,Less.Text.CaseOptions)">
+            <summary>
+            替换文本中的字符串
+            </summary>
+            <param name="s">文本</param>
+            <param name="oldValue">要替换的字符串</param>
+            <param name="newValue">取而代之的字符串</param>
+            <param name="caseOption">大小写选项</param>
+            <returns>替换之后的文本</returns>
+        </member>
+        <member name="T:Less.Text.EncodeExtensions">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="M:Less.Text.EncodeExtensions.UrlDecode(System.String)">
+            <summary>
+            url 解码
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EncodeExtensions.UrlEncode(System.String)">
+            <summary>
+            url 编码
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EncodeExtensions.HtmlDecode(System.String)">
+            <summary>
+            html 解码
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.EncodeExtensions.HtmlEncode(System.String)">
+            <summary>
+            html 编码
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Text.MyEncoding">
+            <summary>
+            常用编码
+            </summary>
+        </member>
+        <member name="P:Less.Text.MyEncoding.GB2312">
+            <summary>
+            GB2312 编码
+            </summary>
+        </member>
+        <member name="P:Less.Text.MyEncoding.GBK">
+            <summary>
+            GBK 编码
+            </summary>
+        </member>
+        <member name="T:Less.Text.RegexExtensions">
+            <summary>
+            正则匹配
+            </summary>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.GlobalMatching(System.String)">
+            <summary>
+            把正则模式修改为全局匹配
+            </summary>
+            <param name="pattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.FindAll(System.String,System.String)">
+            <summary>
+            查找所有匹配
+            </summary>
+            <param name="s"></param>
+            <param name="regex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.FindAll(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            查找所有匹配
+            </summary>
+            <param name="s"></param>
+            <param name="regex"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.FindAll(System.String,System.String,System.Int32)">
+            <summary>
+            查找所有匹配
+            </summary>
+            <param name="s"></param>
+            <param name="regex"></param>
+            <param name="beginning"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.FindAll(System.String,System.String,System.Int32,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            查找所有匹配
+            </summary>
+            <param name="s"></param>
+            <param name="regex"></param>
+            <param name="beginning"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Find(System.String,System.String)">
+            <summary>
+            根据正则表达式查找内容
+            </summary>
+            <param name="s"></param>
+            <param name="regex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Find(System.String,System.String,System.Int32)">
+            <summary>
+            根据正则表达式查找内容
+            </summary>
+            <param name="s"></param>
+            <param name="regex"></param>
+            <param name="beginning"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Find(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            根据正则表达式查找内容
+            </summary>
+            <param name="s"></param>
+            <param name="options"></param>
+            <param name="regex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Find(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            根据正则表达式查找内容
+            </summary>
+            <param name="s"></param>
+            <param name="regex"></param>
+            <param name="beginning"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Find(System.String,System.String,System.Int32,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            根据正则表达式查找内容
+            </summary>
+            <param name="s"></param>
+            <param name="regex"></param>
+            <param name="beginning"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Find(System.String,System.String,System.Int32,System.Int32,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            根据正则表达式查找内容
+            </summary>
+            <param name="s"></param>
+            <param name="regex"></param>
+            <param name="beginning"></param>
+            <param name="length"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Matches(System.String,System.String)">
+            <summary>
+            正则匹配
+            </summary>
+            <param name="s"></param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Matches(System.String,System.String,System.Int32)">
+            <summary>
+            正则匹配
+            </summary>
+            <param name="s"></param>
+            <param name="input"></param>
+            <param name="beginning"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Matches(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            正则匹配
+            </summary>
+            <param name="s"></param>
+            <param name="input"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Matches(System.String,System.String,System.Int32,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            正则匹配
+            </summary>
+            <param name="s"></param>
+            <param name="input"></param>
+            <param name="beginning"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Match(System.String,System.String)">
+            <summary>
+            正则匹配
+            </summary>
+            <param name="s"></param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Match(System.String,System.String,System.Int32)">
+            <summary>
+            正则匹配
+            </summary>
+            <param name="s"></param>
+            <param name="input"></param>
+            <param name="beginning"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            正则匹配
+            </summary>
+            <param name="s"></param>
+            <param name="input"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Match(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            正则匹配
+            </summary>
+            <param name="s"></param>
+            <param name="input"></param>
+            <param name="beginning"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Match(System.String,System.String,System.Int32,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            正则匹配
+            </summary>
+            <param name="s"></param>
+            <param name="input"></param>
+            <param name="beginning"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.RegexExtensions.Match(System.String,System.String,System.Int32,System.Int32,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            正则匹配
+            </summary>
+            <param name="s"></param>
+            <param name="input"></param>
+            <param name="beginning"></param>
+            <param name="length"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Text.SeparatorOptions">
+            <summary>
+            分隔符选项
+            </summary>
+        </member>
+        <member name="F:Less.Text.SeparatorOptions.NoSeparator">
+            <summary>
+            不包括分隔符
+            </summary>
+        </member>
+        <member name="F:Less.Text.SeparatorOptions.PreSeparator">
+            <summary>
+            前置分隔符
+            </summary>
+        </member>
+        <member name="F:Less.Text.SeparatorOptions.PostSeparator">
+            <summary>
+            后置分隔符
+            </summary>
+        </member>
+        <member name="T:Less.Text.SplitExtensions">
+            <summary>
+            分隔
+            </summary>
+        </member>
+        <member name="M:Less.Text.SplitExtensions.SubstringUnsafe(System.String,System.Int32)">
+            <summary>
+            获取引用此实例地址的子字符串
+            </summary>
+            <param name="s"></param>
+            <param name="startIndex">起始索引</param>
+            <returns>返回引用此实例地址的子字符串</returns>
+            <exception cref="T:System.NullReferenceException">字符串不能为 null</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">起始索引不能小于零</exception>
+        </member>
+        <member name="M:Less.Text.SplitExtensions.SubstringUnsafe(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取引用此实例地址的子字符串
+            </summary>
+            <param name="s"></param>
+            <param name="startIndex">起始索引</param>
+            <param name="length">长度</param>
+            <returns>返回引用此实例地址的子字符串</returns>
+            <exception cref="T:System.NullReferenceException">字符串不能为 null</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">起始索引不能小于零</exception>
+            <exception cref="T:System.ArgumentException">length 不能大于 startIndex 到数组末尾的元素数</exception>
+        </member>
+        <member name="M:Less.Text.SplitExtensions.SplitByFirst(System.String,System.Char)">
+            <summary>
+            根据出现的第一个分隔符分隔字符串
+            </summary>
+            <param name="s"></param>
+            <param name="separator">分隔符</param>
+            <returns></returns>
+            <exception cref="T:System.NullReferenceException">字符串不能为 null</exception>
+        </member>
+        <member name="M:Less.Text.SplitExtensions.GetCorpus(System.String,System.Func{System.String,System.Boolean})">
+            <summary>
+            获取语料
+            </summary>
+            <param name="s"></param>
+            <param name="func">断句委托 返回 true 表示断句 返回 false 表示连接</param>
+        </member>
+        <member name="M:Less.Text.SplitExtensions.GetCorpus(System.String,System.Func{System.String,System.Int32,System.Boolean})">
+            <summary>
+            获取语料
+            </summary>
+            <param name="s"></param>
+            <param name="func">断句委托 返回 true 表示断句 返回 false 表示连接</param>
+        </member>
+        <member name="M:Less.Text.SplitExtensions.SplitByNewLine(System.String)">
+            <summary>
+            根据换行符分隔字符串
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.SplitExtensions.SplitByWhiteSpace(System.String)">
+            <summary>
+            根据空白字符分隔字符串
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">参数为 null</exception>
+        </member>
+        <member name="M:Less.Text.SplitExtensions.IndexOfWhiteSpace(System.String)">
+            <summary>
+            空白字符的索引
+            </summary>
+            <param name="s"></param>
+            <returns>第一个值是索引 第二个值是长度</returns>
+            <exception cref="T:System.ArgumentNullException">参数为 null</exception>
+        </member>
+        <member name="M:Less.Text.SplitExtensions.IndexOfWhiteSpace(System.String,System.Int32)">
+            <summary>
+            空白字符的索引
+            </summary>
+            <param name="s"></param>
+            <param name="startIndex"></param>
+            <returns>第一个值是索引 第二个值是长度</returns>
+            <exception cref="T:System.ArgumentNullException">参数为 null</exception>
+        </member>
+        <member name="M:Less.Text.SplitExtensions.IndexOfWhiteSpace(System.String,System.Int32,System.Int32)">
+            <summary>
+            空白字符的索引
+            </summary>
+            <param name="s"></param>
+            <param name="startIndex"></param>
+            <param name="count"></param>
+            <returns>第一个值是索引 第二个值是长度</returns>
+            <exception cref="T:System.ArgumentNullException">参数为 null</exception>
+        </member>
+        <member name="M:Less.Text.SplitExtensions.Split(System.String,System.String)">
+            <summary>
+            分隔字符串
+            </summary>
+            <param name="s">要分隔的字符串</param>
+            <param name="separator">分隔符</param>
+            <returns>分隔后的字符串数组</returns>
+        </member>
+        <member name="M:Less.Text.SplitExtensions.Split(System.String,System.String,Less.Text.CaseOptions)">
+            <summary>
+            分隔字符串
+            </summary>
+            <param name="s">要分隔的字符串</param>
+            <param name="separator">分隔符</param>
+            <param name="caseOption">大小写选项</param>
+            <returns>分隔后的字符串数组</returns>
+        </member>
+        <member name="M:Less.Text.SplitExtensions.Split(System.String,System.String,Less.Text.CaseOptions,Less.Text.SeparatorOptions)">
+            <summary>
+            分隔字符串
+            </summary>
+            <param name="s">要分隔的字符串</param>
+            <param name="separator">分隔符</param>
+            <param name="caseOption">大小写选项</param>
+            <param name="separatorOption">分隔符选项</param>
+            <returns>分隔后的字符串数组</returns>
+        </member>
+        <member name="T:Less.Text.StringEnum">
+            <summary>
+            字符串枚举
+            </summary>
+        </member>
+        <member name="P:Less.Text.StringEnum.Value">
+            <summary>
+            字符串值
+            </summary>
+        </member>
+        <member name="M:Less.Text.StringEnum.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Less.Text.StringEnum.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.StringEnum.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Text.Symbol">
+            <summary>
+            提供常用符号
+            </summary>
+        </member>
+        <member name="P:Less.Text.Symbol.Space">
+            <summary>
+            半角空格
+            </summary>
+        </member>
+        <member name="P:Less.Text.Symbol.FullWidthSpace">
+            <summary>
+            全角空格
+            </summary>
+        </member>
+        <member name="P:Less.Text.Symbol.Tab">
+            <summary>
+            制表符
+            </summary>
+        </member>
+        <member name="P:Less.Text.Symbol.NewLine">
+            <summary>
+            换车符加换行符
+            </summary>
+        </member>
+        <member name="P:Less.Text.Symbol.EnterChar">
+            <summary>
+            回车符
+            </summary>
+        </member>
+        <member name="P:Less.Text.Symbol.NewLineChar">
+            <summary>
+            换行符
+            </summary>
+        </member>
+        <member name="T:Less.Text.VerifyExtensions">
+            <summary>
+            验证
+            </summary>
+        </member>
+        <member name="M:Less.Text.VerifyExtensions.IsIpv4(System.String)">
+            <summary>
+            是否 ipv4 地址
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.VerifyExtensions.ContainsAnyOf(System.String,System.String[])">
+            <summary>
+            是否包含 values 中的任意一个值
+            </summary>
+            <param name="s"></param>
+            <param name="values"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">values 不能为 null</exception>
+        </member>
+        <member name="M:Less.Text.VerifyExtensions.HasUnicode(System.String)">
+            <summary>
+            是否存在 unicode 字符
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.VerifyExtensions.IsInt(System.String)">
+            <summary>
+            检查字符串是否一个整数
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">字符串不能为 null</exception>
+        </member>
+        <member name="M:Less.Text.VerifyExtensions.IsNotWhiteSpace(System.String)">
+            <summary>
+            是否不为 null 或 "" 或只有空白字符
+            
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.VerifyExtensions.IsWhiteSpace(System.String)">
+            <summary>
+            是否 null 或 "" 或只有空白字符
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.VerifyExtensions.IsNotEmpty(System.String)">
+            <summary>
+            是否不为 null 或 ""
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.VerifyExtensions.IsEmpty(System.String,System.String)">
+            <summary>
+            是否 null 或 ""
+            </summary>
+            <param name="s"></param>
+            <param name="instead">替代字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.VerifyExtensions.IsEmpty(System.String)">
+            <summary>
+            是否 null 或 ""
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.VerifyExtensions.IsAllEmpty(System.String[])">
+            <summary>
+            是否全部 null 或 ""
+            </summary>
+            <param name="s">待判断的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.VerifyExtensions.IsAllNull(System.String[])">
+            <summary>
+            是否全部 null
+            </summary>
+            <param name="s">待判断的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.VerifyExtensions.IsAnyNull(System.String[])">
+            <summary>
+            是否存在 null
+            </summary>
+            <param name="s">待判断的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Text.VerifyExtensions.IsNotNull(System.String[])">
+            <summary>
+            是否没有 null
+            </summary>
+            <param name="s">待判断的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Windows.Agent">
+            <summary>
+            代理作业
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Agent.Mode">
+            <summary>
+            代理作业模式
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Agent.Interval">
+            <summary>
+            执行间隔
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Agent.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Agent.Last">
+            <summary>
+            最近一次开始时间
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Agent.HasShutDown">
+            <summary>
+            是否已经停止
+            </summary>
+        </member>
+        <member name="M:Less.Windows.Agent.#ctor(System.String,Less.Windows.AgentMode,System.Int32)">
+            <summary>
+            创建一个每天执行的代理作业
+            </summary>
+            <param name="command">命令 包括文件名和参数</param>
+            <param name="mode">代理作业模式</param>
+            <param name="hour">开始执行时间 时</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">hour 超出范围</exception>
+        </member>
+        <member name="M:Less.Windows.Agent.#ctor(System.String,Less.Windows.AgentMode,System.Int32,System.Int32)">
+            <summary>
+            创建一个每天执行的代理作业
+            </summary>
+            <param name="command">命令 包括文件名和参数</param>
+            <param name="mode">代理作业模式</param>
+            <param name="hour">开始执行时间 时</param>
+            <param name="minute">开始执行时间 分</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">hour 或 minute 超出范围</exception>
+        </member>
+        <member name="M:Less.Windows.Agent.#ctor(System.String,Less.Windows.AgentMode,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            创建一个每天执行的代理作业
+            </summary>
+            <param name="command">命令 包括文件名和参数</param>
+            <param name="mode">代理作业模式</param>
+            <param name="hour">开始执行时间 时</param>
+            <param name="minute">开始执行时间 分</param>
+            <param name="second">开始执行时间 秒</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">hour 或 minute 或 second 超出范围</exception>
+        </member>
+        <member name="M:Less.Windows.Agent.#ctor(System.String,Less.Windows.AgentMode,System.TimeSpan)">
+            <summary>
+            创建一个启动即执行的代理作业
+            </summary>
+            <param name="command">命令 包括文件名和参数</param>
+            <param name="mode">代理作业模式</param>
+            <param name="interval">执行间隔</param>
+        </member>
+        <member name="M:Less.Windows.Agent.#ctor(System.String,Less.Windows.AgentMode,System.TimeSpan,System.DateTime)">
+            <summary>
+            初始化
+            </summary>
+            <param name="command">命令 包括文件名和参数</param>
+            <param name="mode">代理作业模式</param>
+            <param name="interval">执行间隔</param>
+            <param name="startTime">开始时间</param>
+        </member>
+        <member name="M:Less.Windows.Agent.Finalize">
+            <summary>
+            析构
+            </summary>
+        </member>
+        <member name="M:Less.Windows.Agent.StartUp">
+            <summary>
+            启动
+            </summary>
+        </member>
+        <member name="M:Less.Windows.Agent.ShutDown">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="M:Less.Windows.Agent.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:Less.Windows.AgentMode">
+            <summary>
+            代理作业模式
+            </summary>
+        </member>
+        <member name="F:Less.Windows.AgentMode.Singleton">
+            <summary>
+            单实例，如果进程在运行，则忽略
+            </summary>
+        </member>
+        <member name="F:Less.Windows.AgentMode.Restart">
+            <summary>
+            单实例，如果进程在运行，则重启
+            </summary>
+        </member>
+        <member name="F:Less.Windows.AgentMode.New">
+            <summary>
+            在新的进程中执行
+            </summary>
+        </member>
+        <member name="T:Less.Windows.Application">
+            <summary>
+            应用程序相关
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Application.SetupDir">
+            <summary>
+            安装目录
+            </summary>
+        </member>
+        <member name="T:Less.Windows.Cmd">
+            <summary>
+            提供在命令提示符中执行命令的方法
+            </summary>
+        </member>
+        <member name="M:Less.Windows.Cmd.Exec(System.String)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="cmd">命令文本</param>
+        </member>
+        <member name="M:Less.Windows.Cmd.Exec(System.String,System.Action{System.Char})">
+            <summary>
+            执行命令
+            </summary>
+            <param name="cmd">命令文本</param>
+            <param name="action">输出处理</param>
+        </member>
+        <member name="T:Less.Windows.ConsoleApp">
+            <summary>
+            控制台应用
+            </summary>
+        </member>
+        <member name="P:Less.Windows.ConsoleApp.Functions">
+            <summary>
+            功能集合
+            </summary>
+        </member>
+        <member name="M:Less.Windows.ConsoleApp.Start(System.String,System.String[])">
+            <summary>
+            启动并执行命令
+            </summary>
+            <param name="function">要执行的命令</param>
+            <param name="args">命令参数</param>
+        </member>
+        <member name="M:Less.Windows.ConsoleApp.Start">
+            <summary>
+            启动
+            </summary>
+        </member>
+        <member name="M:Less.Windows.ConsoleApp.AddFuntion(Less.Windows.Function)">
+            <summary>
+            添加功能
+            </summary>
+            <param name="function"></param>
+        </member>
+        <member name="T:Less.Windows.Function">
+            <summary>
+            功能
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Function.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Function.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="M:Less.Windows.Function.Execute(System.String[])">
+            <summary>
+            执行
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.Function.WriteLine">
+            <summary>
+            输出一行
+            </summary>
+        </member>
+        <member name="M:Less.Windows.Function.WriteLine(System.Object)">
+            <summary>
+            输出一行
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:Less.Windows.Function.WriteLine(System.String,System.String[])">
+            <summary>
+            输出一行
+            </summary>
+            <param name="content"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Less.Windows.Function.WriteLine(System.String)">
+            <summary>
+            输出一行
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="T:Less.Windows.Exit">
+            <summary>
+            退出程序
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Exit.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="M:Less.Windows.Exit.Execute(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Windows.Menu">
+            <summary>
+            列出菜单
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Menu.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="M:Less.Windows.Menu.Execute(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Windows.Config">
+            <summary>
+            提供获取配置的方法
+            </summary>
+        </member>
+        <member name="M:Less.Windows.Config.GetAppSetting(System.String)">
+            <summary>
+            获取程序配置
+            </summary>
+            <param name="key">配置名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.Config.GetConnectionStrings">
+            <summary>
+            获取连接字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.Config.GetConnectionString(System.String)">
+            <summary>
+            获取连接字符串
+            </summary>
+            <param name="name">连接字符串名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.Config.GetConnectionStringSettings">
+            <summary>
+            获取连接字符串对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.Config.GetConnectionStringSetting(System.String)">
+            <summary>
+            获取连接字符串对象
+            </summary>
+            <param name="name">连接字符串名</param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Windows.ControlExtensions">
+            <summary>
+            Control 扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.Windows.ControlExtensions.Invoke(System.Windows.Forms.Control,System.Action)">
+            <summary>
+            使用控件的线程执行
+            </summary>
+            <param name="c"></param>
+            <param name="action"></param>
+        </member>
+        <member name="T:Less.Windows.Buffer">
+            <summary>
+            缓冲器
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Buffer.Capacity">
+            <summary>
+            初始容量
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Buffer.Space">
+            <summary>
+            空间
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Buffer.Position">
+            <summary>
+            当前写入位置
+            </summary>
+        </member>
+        <member name="M:Less.Windows.Buffer.#ctor(System.Int32)">
+            <summary>
+            创建缓冲器
+            </summary>
+            <param name="capacity">初始容量</param>
+            <exception cref="T:System.OverflowException">capacity 不能为负数</exception>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+        </member>
+        <member name="M:Less.Windows.Buffer.Buff(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            缓冲 从源数据流读取数据 缓存之后写入到目标数据流
+            </summary>
+            <param name="from">源数据流</param>
+            <param name="to">目标数据流</param>
+            <exception cref="T:System.NullReferenceException">from 不能为 null 且 to 不能为 null</exception>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.OverflowException">数据过多</exception>
+            <exception cref="T:System.IO.IOException">from 读取错误 或 to 写入错误</exception>
+            <exception cref="T:System.NotSupportedException">from 不支持读取 或 to 不支持写入</exception>
+            <exception cref="T:System.ObjectDisposedException">from 已关闭 或 to 已关闭</exception>
+        </member>
+        <member name="M:Less.Windows.Buffer.Buff(System.IO.Stream,System.Int32,System.IO.Stream,System.Int32)">
+            <summary>
+            缓冲 从源数据流读取数据 缓存之后写入到目标数据流
+            </summary>
+            <param name="from">源数据流</param>
+            <param name="fromOnce">每次读取的字节数</param>
+            <param name="to">目标数据流</param>
+            <param name="toOnce">缓存到达或超过此字节数则写入目标流</param>
+            <exception cref="T:System.NullReferenceException">from 不能为 null 且 to 不能为 null</exception>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.OverflowException">数据过多</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">fromOnce 不能为负数</exception>
+            <exception cref="T:System.IO.IOException">from 读取错误 或 to 写入错误</exception>
+            <exception cref="T:System.NotSupportedException">from 不支持读取 或 to 不支持写入</exception>
+            <exception cref="T:System.ObjectDisposedException">from 已关闭 或 to 已关闭</exception>
+        </member>
+        <member name="M:Less.Windows.Buffer.Buff(System.IO.Stream,System.Action{System.Byte[]})">
+            <summary>
+            读取流并执行委托
+            </summary>
+            <param name="s">要读取的流</param>
+            <param name="action">要执行的委托</param>
+            <exception cref="T:System.NullReferenceException">s 不能为 null 且 action 不能为 null</exception>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.IO.IOException">读取错误</exception>
+            <exception cref="T:System.NotSupportedException">s 不支持读取</exception>
+            <exception cref="T:System.ObjectDisposedException">s 已关闭</exception>
+        </member>
+        <member name="M:Less.Windows.Buffer.Buff(System.IO.Stream,System.Int32,System.Action{System.Byte[]},System.Int32)">
+            <summary>
+            读取流并执行委托
+            </summary>
+            <param name="s">要读取的流</param>
+            <param name="fromOnce">每次读取的字节数</param>
+            <param name="action">要执行的委托</param>
+            <param name="toOnce">缓存到达或超过此字节数则执行委托</param>
+            <exception cref="T:System.NullReferenceException">s 不能为 null 且 action 不能为 null</exception>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.OverflowException">数据过多</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">fromOnce 不能为负数</exception>
+            <exception cref="T:System.IO.IOException">读取错误</exception>
+            <exception cref="T:System.NotSupportedException">s 不支持读取</exception>
+            <exception cref="T:System.ObjectDisposedException">s 已关闭</exception>
+        </member>
+        <member name="M:Less.Windows.Buffer.Buff(System.IO.Stream)">
+            <summary>
+            读取流并写入缓存
+            </summary>
+            <param name="s">要读取的流</param>
+            <exception cref="T:System.NullReferenceException">s 不能为 null</exception>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.OverflowException">数据过多</exception>
+            <exception cref="T:System.IO.IOException">读取错误</exception>
+            <exception cref="T:System.NotSupportedException">s 不支持读取</exception>
+            <exception cref="T:System.ObjectDisposedException">s 已关闭</exception>
+        </member>
+        <member name="M:Less.Windows.Buffer.Buff(System.IO.Stream,System.Int32)">
+            <summary>
+            读取流并写入缓存
+            </summary>
+            <param name="s">要读取的流</param>
+            <param name="once">每次读取的字节数</param>
+            <exception cref="T:System.NullReferenceException">s 不能为 null</exception>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.OverflowException">数据过多</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">once 不能为负数</exception>
+            <exception cref="T:System.IO.IOException">读取错误</exception>
+            <exception cref="T:System.NotSupportedException">s 不支持读取</exception>
+            <exception cref="T:System.ObjectDisposedException">s 已关闭</exception>
+        </member>
+        <member name="M:Less.Windows.Buffer.Buff(System.Func{System.Byte[],System.Int32,System.Int32,System.Int32},System.Int32)">
+            <summary>
+            读取数据写入缓存
+            </summary>
+            <param name="func">读取数据委托</param>
+            <param name="once">每次读取的字节数</param>
+            <exception cref="T:System.NullReferenceException">func 不能为 null</exception>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.OverflowException">数据过多</exception>
+        </member>
+        <member name="M:Less.Windows.Buffer.ToByteArray">
+            <summary>
+            输出字节数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.Buffer.Reset">
+            <summary>
+            重置缓冲器
+            </summary>
+        </member>
+        <member name="M:Less.Windows.Buffer.CheckSpace(System.Int32)">
+            <summary>
+            检查存储空间 空间不足则扩展
+            </summary>
+            <param name="write">将要写入的数据长度</param>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.OverflowException">数组超过了最大长度</exception>
+        </member>
+        <member name="T:Less.Windows.ByteExtensions">
+            <summary>
+            Byte[] 扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.Windows.ByteExtensions.ToMemoryStream(System.Byte[])">
+            <summary>
+            转换为 MemoryStream
+            </summary>
+            <param name="byteArray"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Less.Windows.StreamExtensions">
+            <summary>
+            Stream 扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.Windows.StreamExtensions.Write(System.IO.Stream,System.Byte[])">
+            <summary>
+            全部写入
+            </summary>
+            <param name="s"></param>
+            <param name="data"></param>
+            <exception cref="T:System.NullReferenceException">Stream 不能为 null</exception>
+            <exception cref="T:System.ArgumentNullException">data 不能为 null</exception>
+            <exception cref="T:System.ArgumentException">data 的长度大于 Stream 缓冲区的长度</exception>
+            <exception cref="T:System.IO.IOException">写入错误</exception>
+            <exception cref="T:System.NotSupportedException">Stream 不支持写入</exception>
+            <exception cref="T:System.ObjectDisposedException">Stream 已关闭</exception>
+        </member>
+        <member name="M:Less.Windows.StreamExtensions.ToString(System.IO.Stream,System.Text.Encoding)">
+            <summary>
+            转换为 String
+            </summary>
+            <param name="s"></param>
+            <param name="e">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.StreamExtensions.ToByteArray(System.IO.Stream)">
+            <summary>
+            转换为 byte[]
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.OverflowException">数据过多</exception>
+        </member>
+        <member name="T:Less.Windows.StringExtensions">
+            <summary>
+            String 扩展方法
+            </summary>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.CopyDirToDir(System.String,System.String)">
+            <summary>
+            复制目录到指定目录
+            </summary>
+            <param name="s"></param>
+            <param name="destDirName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.CopyDirToDir(System.String,System.String,System.Boolean)">
+            <summary>
+            复制目录到指定目录
+            </summary>
+            <param name="s"></param>
+            <param name="destDirName"></param>
+            <param name="merge"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.CopyDir(System.String,System.String)">
+            <summary>
+            复制目录
+            </summary>
+            <param name="s"></param>
+            <param name="destDirName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.CopyDir(System.String,System.String,System.Boolean)">
+            <summary>
+            复制目录
+            </summary>
+            <param name="s"></param>
+            <param name="destDirName"></param>
+            <param name="merge"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.IsChildDirOf(System.String,System.String)">
+            <summary>
+            是否指定目录的子目录
+            </summary>
+            <param name="s"></param>
+            <param name="dirName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.CopyFileToDir(System.String,System.String)">
+            <summary>
+            复制文件到指定目录
+            </summary>
+            <param name="s"></param>
+            <param name="destDirName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.CopyFileToDir(System.String,System.String,System.Boolean)">
+            <summary>
+            复制文件到指定目录
+            </summary>
+            <param name="s"></param>
+            <param name="destDirName"></param>
+            <param name="overwrite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.CopyFile(System.String,System.String,System.Boolean)">
+            <summary>
+            复制文件
+            </summary>
+            <param name="s"></param>
+            <param name="destFileName"></param>
+            <param name="overwrite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.CopyFile(System.String,System.String)">
+            <summary>
+            复制文件
+            </summary>
+            <param name="s"></param>
+            <param name="destFileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.ReadString(System.String,System.Text.Encoding)">
+            <summary>
+            读取文件
+            </summary>
+            <param name="s"></param>
+            <param name="e">编码</param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限 或 路径是一个目录</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+            <exception cref="T:System.IO.FileNotFoundException">找不到指定文件</exception>
+            <exception cref="T:System.NotSupportedException">指定的路径格式无效</exception>
+            <exception cref="T:System.IO.IOException">读取错误</exception>
+            <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.Text.DecoderFallbackException">
+            发生回退（请参见了解编码以获得完整的解释） 
+            - 并且 - 
+            System.Text.Encoding.DecoderFallback 被设置为 System.Text.DecoderExceptionFallback
+            </exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.ReadString(System.String,System.Text.Encoding,System.Boolean)">
+            <summary>
+            读取文件
+            </summary>
+            <param name="s"></param>
+            <param name="e">编码</param>
+            <param name="cache">是否使用缓存</param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限 或 路径是一个目录</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+            <exception cref="T:System.IO.FileNotFoundException">找不到指定文件</exception>
+            <exception cref="T:System.NotSupportedException">指定的路径格式无效</exception>
+            <exception cref="T:System.IO.IOException">读取错误</exception>
+            <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.Text.DecoderFallbackException">
+            发生回退（请参见了解编码以获得完整的解释） 
+            - 并且 - 
+            System.Text.Encoding.DecoderFallback 被设置为 System.Text.DecoderExceptionFallback
+            </exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.ReadBytes(System.String)">
+            <summary>
+            读取文件
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限 或 路径是一个目录</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+            <exception cref="T:System.IO.FileNotFoundException">找不到指定文件</exception>
+            <exception cref="T:System.NotSupportedException">指定的路径格式无效</exception>
+            <exception cref="T:System.IO.IOException">读取错误</exception>
+            <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.ReadBytes(System.String,System.Boolean)">
+            <summary>
+            读取文件
+            </summary>
+            <param name="s"></param>
+            <param name="cache">是否使用缓存</param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限 或 路径是一个目录</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+            <exception cref="T:System.IO.FileNotFoundException">找不到指定文件</exception>
+            <exception cref="T:System.NotSupportedException">指定的路径格式无效</exception>
+            <exception cref="T:System.IO.IOException">读取错误</exception>
+            <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.ReadStream(System.String)">
+            <summary>
+            读取文件
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限 或 路径是一个目录</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+            <exception cref="T:System.IO.FileNotFoundException">找不到指定文件</exception>
+            <exception cref="T:System.NotSupportedException">指定的路径格式无效</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.Write(System.String,System.IO.Stream)">
+            <summary>
+            写入数据流 目录不存在则创建 文件存在则覆盖
+            </summary>
+            <param name="s"></param>
+            <param name="readStream">数据流</param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限 或 路径是一个目录 或文件是只读的</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null 且 readStream 不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.IOException">读取错误 或 写入错误</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+            <exception cref="T:System.IO.FileNotFoundException">找不到指定文件</exception>
+            <exception cref="T:System.NotSupportedException">指定的路径格式无效</exception>
+            <exception cref="T:System.OutOfMemoryException">内存不足</exception>
+            <exception cref="T:System.OverflowException">数据过多</exception>
+            <exception cref="T:System.NotSupportedException">readStream 不支持读取</exception>
+            <exception cref="T:System.ObjectDisposedException">readStream 已关闭</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.Write(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            使用指定的编码写入字符串
+            </summary>
+            <param name="s"></param>
+            <param name="content">要写入的内容</param>
+            <param name="encoding">编码</param>
+            <returns></returns>
+            <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限 或 路径是一个目录 或文件是只读的</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null 且 content 不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.IOException">写入错误</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+            <exception cref="T:System.IO.FileNotFoundException">找不到指定文件</exception>
+            <exception cref="T:System.NotSupportedException">指定的路径格式无效</exception>
+            <exception cref="T:System.Text.EncoderFallbackException">
+            发生回退（请参见了解编码以获得完整的解释） 
+            - 并且 - 
+            System.Text.Encoding.EncoderFallback 被设置为 System.Text.EncoderExceptionFallback
+            </exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.Write(System.String,System.Byte[])">
+            <summary>
+            写入数据 目录不存在则创建 文件存在则覆盖
+            </summary>
+            <param name="s"></param>
+            <param name="data">数据</param>
+            <returns></returns>
+            <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限 或 路径是一个目录 或文件是只读的</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.IOException">写入错误</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+            <exception cref="T:System.IO.FileNotFoundException">找不到指定文件</exception>
+            <exception cref="T:System.NotSupportedException">指定的路径格式无效</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.AppendLine(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            向文件写入一行 文件不存在则创建
+            </summary>
+            <param name="s"></param>
+            <param name="content">内容</param>
+            <param name="e">编码</param>
+            <returns></returns>
+            <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限 或 路径是一个目录 或文件是只读的</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.IOException">写入错误</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+            <exception cref="T:System.IO.FileNotFoundException">找不到指定文件</exception>
+            <exception cref="T:System.NotSupportedException">指定的路径格式无效</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.DeleteFile(System.String)">
+            <summary>
+            删除文件 文件不存在不抛出异常
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.IOException">指定的文件正在使用中</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+            <exception cref="T:System.NotSupportedException">指定的路径格式无效</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.ExistsDir(System.String)">
+            <summary>
+            目录是否存在
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.ExistsFile(System.String)">
+            <summary>
+            文件是否存在
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.ChangeFileName(System.String,System.String)">
+            <summary>
+            修改文件名 保留扩展名
+            </summary>
+            <param name="s"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.GetExtension(System.String)">
+            <summary>
+            获取扩展名
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.GetFileNameWithoutExtension(System.String)">
+            <summary>
+            获取不带扩展名的文件名
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.GetFileName(System.String)">
+            <summary>
+            获取文件名
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.HasExtension(System.String)">
+            <summary>
+            是否包括扩展名
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.SearchFiles(System.String,System.String)">
+            <summary>
+            查找以一定前缀开始的文件
+            按文件名的升序返回文件路径
+            </summary>
+            <param name="s">查找目录</param>
+            <param name="startWith">文件前缀</param>
+            <returns>返回找的文件的路径</returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.SearchFiles(System.String,System.String,System.Boolean)">
+            <summary>
+            查找以一定前缀开始的文件
+            </summary>
+            <param name="s">查找目录</param>
+            <param name="startWith">文件前缀</param>
+            <param name="ascending">是否按升序返回文件</param>
+            <returns>返回找的文件的路径</returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.GetFiles(System.String,System.String)">
+            <summary>
+            获取指定路径下的文件
+            </summary>
+            <param name="s"></param>
+            <param name="searchPattern"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.GetFiles(System.String)">
+            <summary>
+            获取指定路径下的所有文件
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.IOException">路径是一个文件名</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.ClearEmptyDir(System.String)">
+            <summary>
+            清理指定路径下的空目录
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.IOException">路径是一个文件名 或 该目录为应用程序的当前工作目录</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.DeleteDir(System.String,System.Boolean)">
+            <summary>
+            删除目录、文件及子目录
+            </summary>
+            <param name="s"></param>
+            <param name="deleteAll"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.IOException">路径是一个文件名 或 该目录为应用程序的当前工作目录</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.DeleteDir(System.String)">
+            <summary>
+            删除空目录
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.IOException">路径是一个文件名 或 该目录为应用程序的当前工作目录 或 指定的目录不为空</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.IsEmptyDir(System.String)">
+            <summary>
+            是否空目录
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.IOException">路径是一个文件名</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.CreateDir(System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.IOException">指定的目录是只读的</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+            <exception cref="T:System.NotSupportedException">路径中含有非法字符</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.GetFolderName(System.String)">
+            <summary>
+            获取文件夹名
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+            <exception cref="T:System.Security.SecurityException">调用方没有所要求的权限</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.GetDirectoryName(System.String)">
+            <summary>
+            获取目录
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.GetDirectories(System.String)">
+            <summary>
+            获取指定路径下的所有目录
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException">调用方没有所要求的权限</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.IO.PathTooLongException">路径或文件名超出了系统定义的最大长度</exception>
+            <exception cref="T:System.IO.IOException">路径是一个文件名</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException">指定的路径无效</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.ChangeExtension(System.String,System.String)">
+            <summary>
+            更改扩展名
+            </summary>
+            <param name="s"></param>
+            <param name="extension">扩展名</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.CombinePath(System.String,System.Object[])">
+            <summary>
+            连接文件路径
+            </summary>
+            <param name="s"></param>
+            <param name="paths"></param>
+            <returns></returns>
+            <exception cref="T:System.NullReferenceException">路径不能为 null 且 paths 不能为 null</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+        </member>
+        <member name="M:Less.Windows.StringExtensions.CombinePath(System.String,System.String[])">
+            <summary>
+            连接文件路径
+            </summary>
+            <param name="s"></param>
+            <param name="paths"></param>
+            <returns></returns>
+            <exception cref="T:System.NullReferenceException">paths 不能为 null</exception>
+            <exception cref="T:System.ArgumentNullException">路径不能为 null</exception>
+            <exception cref="T:System.ArgumentException">路径中含有非法字符</exception>
+        </member>
+        <member name="T:Less.Windows.Performance">
+            <summary>
+            性能计数
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Performance.CpuTime">
+            <summary>
+            cpu 使用率
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Performance.MemoryAvailable">
+            <summary>
+            可用内存
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Performance.NumberOfCores">
+            <summary>
+            核心数
+            </summary>
+        </member>
+        <member name="P:Less.Windows.Performance.NumberOfLogicalProcessors">
+            <summary>
+            处理器数
+            </summary>
+        </member>
+        <member name="T:Less.UriString">
+            <summary>
+            表示 uri 字符串
+            </summary>
+        </member>
+        <member name="P:Less.UriString.Parameters">
+            <summary>
+            uri 的查询参数集合
+            </summary>
+        </member>
+        <member name="M:Less.UriString.#ctor(System.Uri)">
+            <summary>
+            创建 UriString 实例
+            </summary>
+            <param name="uri"></param>
+        </member>
+        <member name="M:Less.UriString.#ctor(System.String)">
+            <summary>
+            创建 UriString 实例
+            </summary>
+            <param name="uri"></param>
+        </member>
+        <member name="M:Less.UriString.#ctor(System.Uri,System.String)">
+            <summary>
+            创建 UriString 实例
+            </summary>
+            <param name="baseUri"></param>
+            <param name="relativeUri"></param>
+        </member>
+        <member name="M:Less.UriString.op_Implicit(System.String)~Less.UriString">
+            <summary>
+            从 string 到 UriString 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.UriString.op_Implicit(Less.UriString)~System.String">
+            <summary>
+            从 UriString 到 string 的隐式转换
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Less.UriString.SetQuery(System.String)">
+            <summary>
+            设置 uri 的查询参数
+            已经存在的查询参数会覆盖 否则会添加
+            </summary>
+            <param name="query">
+            查询参数
+            格式 name1=value1&amp;name2=value2 或 ?name1=value1&amp;name2=value2
+            </param>
+            <returns>返回一个新的 UriString 实例</returns>
+        </member>
+        <member name="M:Less.UriString.GetUriString(System.String)">
+            <summary>
+            根据相对 uri 创建新的 uri
+            </summary>
+            <param name="relativeUri">相对 uri</param>
+            <returns>返回一个新的 UriString 实例</returns>
+            <exception cref="T:System.UriFormatException">uri 格式无效</exception>
+        </member>
+        <member name="M:Less.UriString.IsIpHost">
+            <summary>
+            判断 Host 是否 ip 地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Less.UriString.GetDomain">
+            <summary>
+            获取 uri 的域名
+            </summary>
+            <returns>返回 uri 的域名 如果没有域名 返回 null</returns>
+        </member>
+        <member name="T:Less.ValueSet`8">
+            <summary>
+            值的集合
+            </summary>
+            <typeparam name="T1"></typeparam>
+            <typeparam name="T2"></typeparam>
+            <typeparam name="T3"></typeparam>
+            <typeparam name="T4"></typeparam>
+            <typeparam name="T5"></typeparam>
+            <typeparam name="T6"></typeparam>
+            <typeparam name="T7"></typeparam>
+            <typeparam name="T8"></typeparam>
+        </member>
+        <member name="P:Less.ValueSet`8.Value8">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Less.ValueSet`8.#ctor(`0,`1,`2,`3,`4,`5,`6,`7)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <param name="value3"></param>
+            <param name="value4"></param>
+            <param name="value5"></param>
+            <param name="value6"></param>
+            <param name="value7"></param>
+            <param name="value8"></param>
+        </member>
+        <member name="T:Less.ValueSet`7">
+            <summary>
+            值的集合
+            </summary>
+            <typeparam name="T1"></typeparam>
+            <typeparam name="T2"></typeparam>
+            <typeparam name="T3"></typeparam>
+            <typeparam name="T4"></typeparam>
+            <typeparam name="T5"></typeparam>
+            <typeparam name="T6"></typeparam>
+            <typeparam name="T7"></typeparam>
+        </member>
+        <member name="P:Less.ValueSet`7.Value7">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Less.ValueSet`7.#ctor(`0,`1,`2,`3,`4,`5,`6)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <param name="value3"></param>
+            <param name="value4"></param>
+            <param name="value5"></param>
+            <param name="value6"></param>
+            <param name="value7"></param>
+        </member>
+        <member name="T:Less.ValueSet`6">
+            <summary>
+            值的集合
+            </summary>
+            <typeparam name="T1"></typeparam>
+            <typeparam name="T2"></typeparam>
+            <typeparam name="T3"></typeparam>
+            <typeparam name="T4"></typeparam>
+            <typeparam name="T5"></typeparam>
+            <typeparam name="T6"></typeparam>
+        </member>
+        <member name="P:Less.ValueSet`6.Value6">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Less.ValueSet`6.#ctor(`0,`1,`2,`3,`4,`5)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <param name="value3"></param>
+            <param name="value4"></param>
+            <param name="value5"></param>
+            <param name="value6"></param>
+        </member>
+        <member name="T:Less.ValueSet`5">
+            <summary>
+            值的集合
+            </summary>
+            <typeparam name="T1"></typeparam>
+            <typeparam name="T2"></typeparam>
+            <typeparam name="T3"></typeparam>
+            <typeparam name="T4"></typeparam>
+            <typeparam name="T5"></typeparam>
+        </member>
+        <member name="P:Less.ValueSet`5.Value5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Less.ValueSet`5.#ctor(`0,`1,`2,`3,`4)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <param name="value3"></param>
+            <param name="value4"></param>
+            <param name="value5"></param>
+        </member>
+        <member name="T:Less.ValueSet`4">
+            <summary>
+            值的集合
+            </summary>
+            <typeparam name="T1"></typeparam>
+            <typeparam name="T2"></typeparam>
+            <typeparam name="T3"></typeparam>
+            <typeparam name="T4"></typeparam>
+        </member>
+        <member name="P:Less.ValueSet`4.Value4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Less.ValueSet`4.#ctor(`0,`1,`2,`3)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <param name="value3"></param>
+            <param name="value4"></param>
+        </member>
+        <member name="T:Less.ValueSet`3">
+            <summary>
+            值的集合
+            </summary>
+            <typeparam name="T1"></typeparam>
+            <typeparam name="T2"></typeparam>
+            <typeparam name="T3"></typeparam>
+        </member>
+        <member name="P:Less.ValueSet`3.Value3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Less.ValueSet`3.#ctor(`0,`1,`2)">
+            <summary>
+            
+            </summary>
+            <param name="value1"></param>
+            <param name="value2"></param>
+            <param name="value3"></param>
+        </member>
+        <member name="T:Less.ValueSet`2">
+            <summary>
+            值的集合
+            </summary>
+            <typeparam name="T1"></typeparam>
+            <typeparam name="T2"></typeparam>
+        </member>
+        <member name="P:Less.ValueSet`2.Value1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Less.ValueSet`2.Value2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Less.ValueSet`2.#ctor(`0,`1)">
+            <summary>
+            
+            </summary>
+            <param name="val1"></param>
+            <param name="val2"></param>
+        </member>
+    </members>
+</doc>
