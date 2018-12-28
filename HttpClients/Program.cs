@@ -72,7 +72,7 @@ namespace HttpClients
             using (var client = HttpApiClient.Create<IMyWebApi>())
             {
                 //登陆
-                await client.LognWithFormAsync(new UserInfo { j_username = "13880947825", j_password = "vk680680" });
+                await client.LognWithFormAsync(new UserInfo { j_username = "", j_password = "" });
                 //队列空则停止
                 while (!ltid.IsEmpty)
                 {
